@@ -1,0 +1,24 @@
+---
+title: "ML Notes"
+page-layout: full
+---
+
+Welcome 👋
+
+This is a living notebook of machine learning notes: daily logs, concept explainers,
+math derivations, reading notes, and small projects.
+
+::: {.callout-note}
+**Tip:** Use the navbar to jump straight to daily notes, concepts, math, projects, or readings.
+:::
+
+## Latest posts (optional listing)
+
+You can add a listing here later, for example:
+
+```{.listing}
+---
+contents: posts
+sort: "date desc"
+---
+```

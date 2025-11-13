@@ -1,0 +1,10 @@
+---
+title: "Concepts"
+listing:
+  contents: .
+  sort: "title"
+  type: default
+page-layout: full
+---
+
+More polished explanations of ML concepts that I want to be able to reference later.

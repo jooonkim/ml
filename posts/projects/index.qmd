@@ -1,0 +1,11 @@
+---
+title: "Projects & Experiments"
+listing:
+  contents: .
+  sort: "date desc"
+  type: default
+page-layout: full
+---
+
+Small experiments and projects: training models, reproducing papers, and playing
+with datasets.

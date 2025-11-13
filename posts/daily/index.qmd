@@ -1,0 +1,10 @@
+---
+title: "Daily ML Logs"
+listing:
+  contents: .
+  sort: "date desc"
+  type: default
+page-layout: full
+---
+
+Short, lightly edited logs of what I worked on each day.

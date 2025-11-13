@@ -1,0 +1,10 @@
+---
+title: "Readings"
+listing:
+  contents: .
+  sort: "date desc"
+  type: default
+page-layout: full
+---
+
+Notes from textbooks, blog posts, and research papers.

@@ -1,0 +1,10 @@
+---
+title: "Math Notes"
+listing:
+  contents: .
+  sort: "title"
+  type: default
+page-layout: full
+---
+
+Derivations, proofs, and small math notes related to machine learning.

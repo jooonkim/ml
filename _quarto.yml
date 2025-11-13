@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  title: "ML Notes"
+  description: "Incremental notes on machine learning, math, and experiments."
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Daily
+        href: posts/daily/index.qmd
+      - text: Concepts
+        href: posts/concepts/index.qmd
+      - text: Math
+        href: posts/math/index.qmd
+      - text: Projects
+        href: posts/projects/index.qmd
+      - text: Readings
+        href: posts/readings/index.qmd
+    right:
+      - icon: github
+        href: https://github.com/<you>/<repo>
+  # site-url: https://ml.yourdomain.com
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-copy: true
+    df-print: paged
+    highlight-style: github
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false
