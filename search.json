@@ -7,32 +7,39 @@
     "text": "---\ntitle: \"ML Notes — 2025-11-12\"\ncategories: [daily-notes]\nformat: \n  html:\n    code-fold: false\njupyter: python3\n---"
   },
   {
-    "objectID": "posts/daily/2025-11-14/index.html#questions-i-still-have",
-    "href": "posts/daily/2025-11-14/index.html#questions-i-still-have",
-    "title": "2025-11-14",
-    "section": "## Questions I still have",
-    "text": "## Questions I still have"
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#tomorrows-plan",
-    "href": "posts/daily/2025-11-14/index.html#tomorrows-plan",
-    "title": "2025-11-14",
-    "section": "## Tomorrow’s plan",
-    "text": "## Tomorrow’s plan"
-  },
-  {
-    "objectID": "posts/concepts/index.html",
-    "href": "posts/concepts/index.html",
-    "title": "Concepts",
+    "objectID": "posts/daily/index.html",
+    "href": "posts/daily/index.html",
+    "title": "Daily ML Logs",
     "section": "",
-    "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/readings/index.html",
-    "href": "posts/readings/index.html",
-    "title": "Readings",
+    "objectID": "posts/math/index.html",
+    "href": "posts/math/index.html",
+    "title": "Math Notes",
     "section": "",
-    "text": "Notes from textbooks, blog posts, and research papers.\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Derivations, proofs, and small math notes related to machine learning.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/projects/index.html",
+    "href": "posts/projects/index.html",
+    "title": "Projects & Experiments",
+    "section": "",
+    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ML Notes by Joon Kim",
+    "section": "",
+    "text": "A repository of ML notes as I learn in public. Partially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable."
+  },
+  {
+    "objectID": "index.html#latest-posts",
+    "href": "index.html#latest-posts",
+    "title": "ML Notes by Joon Kim",
+    "section": "Latest Posts",
+    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "hello.html",
@@ -49,73 +56,31 @@
     "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 4 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ML Notes by Joon Kim",
+    "objectID": "posts/readings/index.html",
+    "href": "posts/readings/index.html",
+    "title": "Readings",
     "section": "",
-    "text": "A repository of ML notes as I learn in public. Partially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable."
+    "text": "Notes from textbooks, blog posts, and research papers.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html#latest-posts",
-    "href": "index.html#latest-posts",
-    "title": "ML Notes by Joon Kim",
-    "section": "Latest Posts",
-    "text": "Latest Posts\n---\ncontents: posts\nsort: \"date desc\"\ntype: default\nmax-items: 10\n---"
-  },
-  {
-    "objectID": "posts/projects/index.html",
-    "href": "posts/projects/index.html",
-    "title": "Projects & Experiments",
+    "objectID": "posts/concepts/index.html",
+    "href": "posts/concepts/index.html",
+    "title": "Concepts",
     "section": "",
-    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/math/index.html",
-    "href": "posts/math/index.html",
-    "title": "Math Notes",
-    "section": "",
-    "text": "Derivations, proofs, and small math notes related to machine learning.\n\n\n\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/daily/2025-11-14/index.html#questions-i-still-have",
+    "href": "posts/daily/2025-11-14/index.html#questions-i-still-have",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "## Questions I still have",
+    "text": "## Questions I still have"
   },
   {
-    "objectID": "posts/daily/index.html",
-    "href": "posts/daily/index.html",
-    "title": "Daily ML Logs",
-    "section": "",
-    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily ML Log — 2025-11-12\n\n\n\n\n\n\n\n\nNov 12, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/daily/2025-11-12/index.html",
-    "href": "posts/daily/2025-11-12/index.html",
-    "title": "Daily ML Log — 2025-11-12",
-    "section": "",
-    "text": "Logistic regression and the connection between odds and the sigmoid function.\nGradient of the binary cross-entropy loss."
-  },
-  {
-    "objectID": "posts/daily/2025-11-12/index.html#what-i-studied",
-    "href": "posts/daily/2025-11-12/index.html#what-i-studied",
-    "title": "Daily ML Log — 2025-11-12",
-    "section": "",
-    "text": "Logistic regression and the connection between odds and the sigmoid function.\nGradient of the binary cross-entropy loss."
-  },
-  {
-    "objectID": "posts/daily/2025-11-12/index.html#key-formulas",
-    "href": "posts/daily/2025-11-12/index.html#key-formulas",
-    "title": "Daily ML Log — 2025-11-12",
-    "section": "Key formulas",
-    "text": "Key formulas\nFor binary labels \\(y \\in \\{0,1\\}\\) and logit \\(z = w^\\top x\\):\n\\[\np(y=1 \\mid x) = \\sigma(z) = \\frac{1}{1+e^{-z}}.\n\\]\nThe per-example loss:\n\\[\n\\ell(w) = - \\big[ y \\log \\sigma(z) + (1-y) \\log (1-\\sigma(z)) \\big].\n\\]\nGradient w.r.t. \\(w\\):\n\\[\n\\nabla_w \\ell(w) = (\\sigma(z) - y) x.\n\\]"
-  },
-  {
-    "objectID": "posts/daily/2025-11-12/index.html#quick-sanity-check-in-code",
-    "href": "posts/daily/2025-11-12/index.html#quick-sanity-check-in-code",
-    "title": "Daily ML Log — 2025-11-12",
-    "section": "Quick sanity check in code",
-    "text": "Quick sanity check in code\n\nimport numpy as np\n\ndef sigmoid(z):\n    return 1 / (1 + np.exp(-z))\n\nrng = np.random.default_rng(0)\nX = rng.normal(size=(5, 3))\nw = rng.normal(size=3)\ny = (rng.random(5) &lt; 0.4).astype(float)\n\nz = X @ w\ngrad = ((sigmoid(z) - y)[:, None] * X).mean(axis=0)\ngrad\n\narray([-0.56860236, -0.20048999, -0.1503372 ])"
-  },
-  {
-    "objectID": "posts/daily/2025-11-12/index.html#questions-for-tomorrow",
-    "href": "posts/daily/2025-11-12/index.html#questions-for-tomorrow",
-    "title": "Daily ML Log — 2025-11-12",
-    "section": "Questions for tomorrow",
-    "text": "Questions for tomorrow\n\nHow does this generalize to multi-class (softmax) regression?\nWhat happens to the gradient when the model is very overconfident and wrong?"
+    "objectID": "posts/daily/2025-11-14/index.html#tomorrows-plan",
+    "href": "posts/daily/2025-11-14/index.html#tomorrows-plan",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "## Tomorrow’s plan",
+    "text": "## Tomorrow’s plan"
   }
 ]
