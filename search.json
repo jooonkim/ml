@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "hello.html",
-    "href": "hello.html",
-    "title": "Quarto Basics",
-    "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 4 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
-  },
-  {
-    "objectID": "hello.html#polar-axis",
-    "href": "hello.html#polar-axis",
-    "title": "Quarto Basics",
-    "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 4 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
-  },
-  {
-    "objectID": "daily.html",
-    "href": "daily.html",
-    "title": "ML Notes",
-    "section": "",
-    "text": "---\ntitle: \"ML Notes — 2025-11-12\"\ncategories: [daily-notes]\nformat: \n  html:\n    code-fold: false\njupyter: python3\n---"
-  },
-  {
-    "objectID": "posts/concepts/index.html",
-    "href": "posts/concepts/index.html",
-    "title": "Concepts",
-    "section": "",
-    "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/daily/2025-11-14/index.html#questions-i-still-have",
     "href": "posts/daily/2025-11-14/index.html#questions-i-still-have",
     "title": "Daily Notes: 2025-11-14",
@@ -42,25 +14,11 @@
     "text": "## Tomorrow’s plan"
   },
   {
-    "objectID": "posts/projects/index.html",
-    "href": "posts/projects/index.html",
-    "title": "Projects & Experiments",
+    "objectID": "posts/concepts/index.html",
+    "href": "posts/concepts/index.html",
+    "title": "Concepts",
     "section": "",
-    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/daily/index.html",
-    "href": "posts/daily/index.html",
-    "title": "Daily ML Logs",
-    "section": "",
-    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/math/index.html",
-    "href": "posts/math/index.html",
-    "title": "Math Notes",
-    "section": "",
-    "text": "Derivations, proofs, and small math notes related to machine learning.\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/readings/index.html",
@@ -82,5 +40,26 @@
     "title": "ML Notes by Joon Kim",
     "section": "Latest Posts",
     "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/projects/index.html",
+    "href": "posts/projects/index.html",
+    "title": "Projects & Experiments",
+    "section": "",
+    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/math/index.html",
+    "href": "posts/math/index.html",
+    "title": "Math Notes",
+    "section": "",
+    "text": "Derivations, proofs, and small math notes related to machine learning.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/daily/index.html",
+    "href": "posts/daily/index.html",
+    "title": "Daily ML Logs",
+    "section": "",
+    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
   }
 ]
