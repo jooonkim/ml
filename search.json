@@ -1,75 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ML Notes by Joon Kim",
-    "section": "",
-    "text": "Hello, World! This is my repository of ML notes as I learn in public.\nPartially a resource for others, partially a tool to measure progress, and partially a method of keeping myself accountable.\nYou can find the GitHub repository here."
-  },
-  {
-    "objectID": "index.html#latest-posts",
-    "href": "index.html#latest-posts",
-    "title": "ML Notes by Joon Kim",
-    "section": "Latest Posts",
-    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/concepts/index.html",
-    "href": "posts/concepts/index.html",
-    "title": "Concepts",
-    "section": "",
-    "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/daily/2025-11-15/index.html",
-    "href": "posts/daily/2025-11-15/index.html",
-    "title": "Daily Notes: 2025-11-15",
-    "section": "",
-    "text": "A Mental Map for ML\n\nMachine Learning: Broad umbrella\nDeep Learning: Subset of ML using multi-layer neural networks\nTransformer architectures: Specific type of neural network architecture introduced in Attention Is All You Need (Vaswani et al., 2017).\nLLMs: a large transformer architecture, using a large corpus of text.\n\nThe importance of Linear Algebra\n\nLinear Algebra is the language of ML because ML is fundamentally the art of taking something (image, soundwave, text, etc.), representing it as a vector (or matrix), and creating a model that transforms that vector into another vector.\nAs an example, for a neural network layer, \\(y = Wx + b\\) represents \\(y\\) the output vector, \\(W\\) the learned weights (as a matrix), \\(x\\) the input vector, and \\(b\\) the bias vector.\nLinear Algebra permits us not only a compact representation, but also a language to reason about and manipulate these representations.\n\nMiscellaneous\n\nSurprisingly, according to ChatGPT as an answer to one of my questions yesterday, Reinforcement Learning is typically “harder” than Unsupervised Learning.\n\nSupervised Learning is the “easiest” because you have clear labels, a clear objective, and a clear way of measuring success (goal: minimize loss).\nUnsupervised Learning is “conceptually tricky, computationally easy.” Yes, there’s no objective ground truth, but optimization is “stable” (i.e., the loss function is well-behaved, gradient descent makes progress reliably, feedback is consistent). Examples: PCA, k-means, etc.\nReinforcement Learning is hard because the environment is stochastic, the feedback is often delayed/sparse, and the optimization is unstable.\n\nTo answer another question from yesterday, here is the meaning of ““If you compute parameters for feature scaling or dimensionality reduction using all the data (train + test), the test performance becomes overly optimistic.”: your model has seen structures of the test data before evaluation, which means that there was leakage. The test set is supposed to simulate new, unseen, real-world data, and so it underestimates the “true error” that the model would have."
-  },
-  {
-    "objectID": "posts/daily/2025-11-15/index.html#ml-notes",
-    "href": "posts/daily/2025-11-15/index.html#ml-notes",
-    "title": "Daily Notes: 2025-11-15",
-    "section": "",
-    "text": "A Mental Map for ML\n\nMachine Learning: Broad umbrella\nDeep Learning: Subset of ML using multi-layer neural networks\nTransformer architectures: Specific type of neural network architecture introduced in Attention Is All You Need (Vaswani et al., 2017).\nLLMs: a large transformer architecture, using a large corpus of text.\n\nThe importance of Linear Algebra\n\nLinear Algebra is the language of ML because ML is fundamentally the art of taking something (image, soundwave, text, etc.), representing it as a vector (or matrix), and creating a model that transforms that vector into another vector.\nAs an example, for a neural network layer, \\(y = Wx + b\\) represents \\(y\\) the output vector, \\(W\\) the learned weights (as a matrix), \\(x\\) the input vector, and \\(b\\) the bias vector.\nLinear Algebra permits us not only a compact representation, but also a language to reason about and manipulate these representations.\n\nMiscellaneous\n\nSurprisingly, according to ChatGPT as an answer to one of my questions yesterday, Reinforcement Learning is typically “harder” than Unsupervised Learning.\n\nSupervised Learning is the “easiest” because you have clear labels, a clear objective, and a clear way of measuring success (goal: minimize loss).\nUnsupervised Learning is “conceptually tricky, computationally easy.” Yes, there’s no objective ground truth, but optimization is “stable” (i.e., the loss function is well-behaved, gradient descent makes progress reliably, feedback is consistent). Examples: PCA, k-means, etc.\nReinforcement Learning is hard because the environment is stochastic, the feedback is often delayed/sparse, and the optimization is unstable.\n\nTo answer another question from yesterday, here is the meaning of ““If you compute parameters for feature scaling or dimensionality reduction using all the data (train + test), the test performance becomes overly optimistic.”: your model has seen structures of the test data before evaluation, which means that there was leakage. The test set is supposed to simulate new, unseen, real-world data, and so it underestimates the “true error” that the model would have."
-  },
-  {
-    "objectID": "posts/daily/2025-11-15/index.html#personal-notes",
-    "href": "posts/daily/2025-11-15/index.html#personal-notes",
-    "title": "Daily Notes: 2025-11-15",
-    "section": "Personal Notes",
-    "text": "Personal Notes\nI finally learned the differences between pip, Anaconda, and Miniconda today.\n\npip is a lightweight universal package installer that can install python libraries (e.g., numpy) pretty much anywhere. It only installs packages from PyPI.\nAnaconda is a (huge… 3-5 GB) Python distribution + environment manager - it bundles everything (pip, pre-compiled scientific packages, etc.) in one. Its scope goes beyond PyPI.\nMiniconda is a lighter version of Anaconda. It has the environment management that pip doesn’t have by default, and Python, but nothing else out the gate. This is important because you can manage your own Python versions in isolated environments.\nRecommendation: Use Miniconda for environment management + Python version control, use pip within each conda environment for packages.\nI created an environment using miniconda called pyml with the following packages: NumPy 1.21.2 SciPy 1.7.0 Scikit-learn 1.0 Matplotlib 3.4.3 pandas 1.3.2 python 3.9\n\nA “Karpathy-style” learning math on demand roadmap\n\nNote: Linear Algebra, followed by Probability, followed by Calculus are the most important\n\n\nStart with a tiny ML/DL problem first (e.g., train a linear classifier or a 2-layer neural net) You will immediately run into the following math concepts that need refreshing:\n\n\ngradients → calc\nmatrix multiplies → Lin Alg\nloss functions → probability + info theory\noptimization steps → calc + LA\nembeddings → SVD intuition\n\n\nWhen you start reading transformers papers, refresh only:\n\n\ndot products\nmatrix multiplications\nsoftmax derivatives\neigen decomposition (for understanding attention as soft nearest-neighbor search)\nprobability for next-token prediction\n\n\nWhen you study self-supervised methods, refresh only:\n\n\nKL divergence\ncross-entropy\ncovariance\nGaussians\ncontrastive loss geometry\n\n\nWhen you start fine-tuning LLMs, refresh only:\n\n\ngradients of logits\nJacobians\nbasic linear algebra on embeddings\nmatrix factorization intuition"
-  },
-  {
-    "objectID": "posts/daily/2025-11-15/index.html#questions-i-still-have",
-    "href": "posts/daily/2025-11-15/index.html#questions-i-still-have",
-    "title": "Daily Notes: 2025-11-15",
-    "section": "Questions I still have",
-    "text": "Questions I still have"
-  },
-  {
-    "objectID": "posts/daily/2025-11-15/index.html#tomorrows-plan",
-    "href": "posts/daily/2025-11-15/index.html#tomorrows-plan",
-    "title": "Daily Notes: 2025-11-15",
-    "section": "Tomorrow’s plan",
-    "text": "Tomorrow’s plan"
-  },
-  {
-    "objectID": "posts/daily/index.html",
-    "href": "posts/daily/index.html",
-    "title": "Daily ML Logs",
-    "section": "",
-    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/projects/index.html",
-    "href": "posts/projects/index.html",
-    "title": "Projects & Experiments",
-    "section": "",
-    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/daily/2025-11-14/index.html",
     "href": "posts/daily/2025-11-14/index.html",
     "title": "Daily Notes: 2025-11-14",
@@ -112,6 +42,13 @@
     "text": "Addendum: Raschka’s Tweet\n“I often get questions from readers about how to read and get the most out of my book(s) on building LLMs from scratch. My advice is usually based on how I read technical books myself. This is not a one-size-fits-all approach, but I thought it may be useful to share:\n\nRead the chapter preferably offline, away from the computer. Either classic physical form or at least on digital devices without internet. This really helps with focus time and minimizing distractions while reading. Highlighting or annotating confusing or interesting things is good, but I would not look things up at this stage. I also wouldn’t run code at this stage. At least not yet.\nOn the second read-through, type up and run the code from the chapter. Copying code is tempting because retyping is a lot of work, but it usually helps me to think about the code a bit more (versus just glancing over it). If I get different results than in the book, I would check the book’s GitHub repo and try the code from there. If I still get different results, I would try to see if it’s due to different package versions, random seeds, CPU/CUDA, etc. If I then still can’t find it out, asking the author would not be a bad idea (via book forum, public GitHub repo issues or discussions, and as a last resort, email)\nAfter the second read-through and retyping the code, it’s usually a good time to try the exercises to solidify my understanding. To check whether I actually understand the content and can work with it independently.\nGo through the highlights and annotations. I would bookmark important learnings or takeaways, if relevant for a given project, in my notes documents. Often, I also look up additional references to read more about a topic of interest. Also, if I still have any questions that I feel are unanswered after my previous readthroughs and exercises, I would do an online search to find out more.\nThe previous steps were all about soaking up knowledge. Eventually, though, I somehow want to use that knowledge. So I think about which projects would benefit from what I’ve learned and incorporate it into them. This could involve using the main concept from the chapter, but also sometimes minor tidbits I learned along the way, e.g., even trivial things like whether it actually makes a difference in my project to explicitly call torch.mps.manual_seed(seed) instead of just torch.manual_seed(seed).\n\nOf course, none of the above is set in stone. If the topic is overall very familiar or easy, and I am primarily reading the book to get some information in later chapters, skimming a chapter is ok (to not waste my time).\nAnyway, I hope this is useful. And happy reading and learning!”"
   },
   {
+    "objectID": "posts/daily/index.html",
+    "href": "posts/daily/index.html",
+    "title": "Daily ML Logs",
+    "section": "",
+    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/math/index.html",
     "href": "posts/math/index.html",
     "title": "Math Notes",
@@ -119,10 +56,73 @@
     "text": "Derivations, proofs, and small math notes related to machine learning.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "posts/projects/index.html",
+    "href": "posts/projects/index.html",
+    "title": "Projects & Experiments",
+    "section": "",
+    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ML Notes by Joon Kim",
+    "section": "",
+    "text": "Hello, World! This is my repository of ML notes as I learn in public.\nPartially a resource for others, partially a tool to measure progress, and partially a method of keeping myself accountable.\nYou can find the GitHub repository here."
+  },
+  {
+    "objectID": "index.html#latest-posts",
+    "href": "index.html#latest-posts",
+    "title": "ML Notes by Joon Kim",
+    "section": "Latest Posts",
+    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/readings/index.html",
     "href": "posts/readings/index.html",
     "title": "Readings",
     "section": "",
     "text": "Notes from textbooks, blog posts, and research papers.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/concepts/index.html",
+    "href": "posts/concepts/index.html",
+    "title": "Concepts",
+    "section": "",
+    "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/daily/2025-11-15/index.html",
+    "href": "posts/daily/2025-11-15/index.html",
+    "title": "Daily Notes: 2025-11-15",
+    "section": "",
+    "text": "A Mental Map for ML\n\nMachine Learning: Broad umbrella\nDeep Learning: Subset of ML using multi-layer neural networks\nTransformer architectures: Specific type of neural network architecture introduced in Attention Is All You Need (Vaswani et al., 2017).\nLLMs: a large transformer architecture, using a large corpus of text.\n\nThe importance of Linear Algebra\n\nLinear Algebra is the language of ML because ML is fundamentally the art of taking something (image, soundwave, text, etc.), representing it as a vector (or matrix), and creating a model that transforms that vector into another vector.\nAs an example, for a neural network layer, \\(y = Wx + b\\) represents \\(y\\) the output vector, \\(W\\) the learned weights (as a matrix), \\(x\\) the input vector, and \\(b\\) the bias vector.\nLinear Algebra permits us not only a compact representation, but also a language to reason about and manipulate these representations.\n\nMiscellaneous\n\nSurprisingly, according to ChatGPT as an answer to one of my questions yesterday, Reinforcement Learning is typically “harder” than Unsupervised Learning.\n\nSupervised Learning is the “easiest” because you have clear labels, a clear objective, and a clear way of measuring success (goal: minimize loss).\nUnsupervised Learning is “conceptually tricky, computationally easy.” Yes, there’s no objective ground truth, but optimization is “stable” (i.e., the loss function is well-behaved, gradient descent makes progress reliably, feedback is consistent). Examples: PCA, k-means, etc.\nReinforcement Learning is hard because the environment is stochastic, the feedback is often delayed/sparse, and the optimization is unstable.\n\nTo answer another question from yesterday, here is the meaning of ““If you compute parameters for feature scaling or dimensionality reduction using all the data (train + test), the test performance becomes overly optimistic.”: your model has seen structures of the test data before evaluation, which means that there was leakage. The test set is supposed to simulate new, unseen, real-world data, and so it underestimates the “true error” that the model would have."
+  },
+  {
+    "objectID": "posts/daily/2025-11-15/index.html#ml-notes",
+    "href": "posts/daily/2025-11-15/index.html#ml-notes",
+    "title": "Daily Notes: 2025-11-15",
+    "section": "",
+    "text": "A Mental Map for ML\n\nMachine Learning: Broad umbrella\nDeep Learning: Subset of ML using multi-layer neural networks\nTransformer architectures: Specific type of neural network architecture introduced in Attention Is All You Need (Vaswani et al., 2017).\nLLMs: a large transformer architecture, using a large corpus of text.\n\nThe importance of Linear Algebra\n\nLinear Algebra is the language of ML because ML is fundamentally the art of taking something (image, soundwave, text, etc.), representing it as a vector (or matrix), and creating a model that transforms that vector into another vector.\nAs an example, for a neural network layer, \\(y = Wx + b\\) represents \\(y\\) the output vector, \\(W\\) the learned weights (as a matrix), \\(x\\) the input vector, and \\(b\\) the bias vector.\nLinear Algebra permits us not only a compact representation, but also a language to reason about and manipulate these representations.\n\nMiscellaneous\n\nSurprisingly, according to ChatGPT as an answer to one of my questions yesterday, Reinforcement Learning is typically “harder” than Unsupervised Learning.\n\nSupervised Learning is the “easiest” because you have clear labels, a clear objective, and a clear way of measuring success (goal: minimize loss).\nUnsupervised Learning is “conceptually tricky, computationally easy.” Yes, there’s no objective ground truth, but optimization is “stable” (i.e., the loss function is well-behaved, gradient descent makes progress reliably, feedback is consistent). Examples: PCA, k-means, etc.\nReinforcement Learning is hard because the environment is stochastic, the feedback is often delayed/sparse, and the optimization is unstable.\n\nTo answer another question from yesterday, here is the meaning of ““If you compute parameters for feature scaling or dimensionality reduction using all the data (train + test), the test performance becomes overly optimistic.”: your model has seen structures of the test data before evaluation, which means that there was leakage. The test set is supposed to simulate new, unseen, real-world data, and so it underestimates the “true error” that the model would have."
+  },
+  {
+    "objectID": "posts/daily/2025-11-15/index.html#personal-notes",
+    "href": "posts/daily/2025-11-15/index.html#personal-notes",
+    "title": "Daily Notes: 2025-11-15",
+    "section": "Personal Notes",
+    "text": "Personal Notes\nI finally learned the differences between pip, Anaconda, and Miniconda today.\n\npip is a lightweight universal package installer that can install python libraries (e.g., numpy) pretty much anywhere. It only installs packages from PyPI.\nAnaconda is a (huge… 3-5 GB) Python distribution + environment manager - it bundles everything (pip, pre-compiled scientific packages, etc.) in one. Its scope goes beyond PyPI.\nMiniconda is a lighter version of Anaconda. It has the environment management that pip doesn’t have by default, and Python, but nothing else out the gate. This is important because you can manage your own Python versions in isolated environments.\nRecommendation: Use Miniconda for environment management + Python version control, use pip within each conda environment for packages.\nI created an environment using miniconda called pyml with the following packages: NumPy 1.21.2 SciPy 1.7.0 Scikit-learn 1.0 Matplotlib 3.4.3 pandas 1.3.2 python 3.9\n\nA “Karpathy-style” learning math on demand roadmap\n\nNote: Linear Algebra, followed by Probability, followed by Calculus are the most important\n\n\nStart with a tiny ML/DL problem first (e.g., train a linear classifier or a 2-layer neural net) You will immediately run into the following math concepts that need refreshing:\n\n\ngradients → calc\nmatrix multiplies → Lin Alg\nloss functions → probability + info theory\noptimization steps → calc + LA\nembeddings → SVD intuition\n\n\nWhen you start reading transformers papers, refresh only:\n\n\ndot products\nmatrix multiplications\nsoftmax derivatives\neigen decomposition (for understanding attention as soft nearest-neighbor search)\nprobability for next-token prediction\n\n\nWhen you study self-supervised methods, refresh only:\n\n\nKL divergence\ncross-entropy\ncovariance\nGaussians\ncontrastive loss geometry\n\n\nWhen you start fine-tuning LLMs, refresh only:\n\n\ngradients of logits\nJacobians\nbasic linear algebra on embeddings\nmatrix factorization intuition"
+  },
+  {
+    "objectID": "posts/daily/2025-11-15/index.html#questions-i-still-have",
+    "href": "posts/daily/2025-11-15/index.html#questions-i-still-have",
+    "title": "Daily Notes: 2025-11-15",
+    "section": "Questions I still have",
+    "text": "Questions I still have"
+  },
+  {
+    "objectID": "posts/daily/2025-11-15/index.html#tomorrows-plan",
+    "href": "posts/daily/2025-11-15/index.html#tomorrows-plan",
+    "title": "Daily Notes: 2025-11-15",
+    "section": "Tomorrow’s plan",
+    "text": "Tomorrow’s plan"
   }
 ]
