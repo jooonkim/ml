@@ -7,11 +7,24 @@ categories: [daily]
 
 ML Notes
 - 
-- Three main types of ML: **Supervised Learning, Unsupervised Learning, Reinforcement Learning**
+Three main types of ML.
+
+- **Supervised Learning, Unsupervised Learning, Reinforcement Learning**
 - **Supervised Learning**: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: *Classification* is a problem of *discrete variables*, *Regression* is a problem of *continuous variables*.
 - **Unsupervised Learning**: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success? 
 - **Reinforcement Learning**: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?
 - Unsupervised Learning has some interesting subfields. One is **clustering** which can be called **unsupervised classification**, and another is **dimensionality reduction** which can be helpful in preprocessing to remove noise from data.
+
+Math Notation
+
+- **Features** are $x$ - think of this as variables, inputs, predictors, dimensions, etc.
+- **Targets** are $y$ - think of this as outcome, response variable, dependent variable, output, etc.
+- **Training Examples** are samples, instances, observations, etc. I prefer training example over sample because samples can also be used to refer to a collection of training examples.
+- Superscript $i$ refers to the $i$th training example, and subscript $j$ refers to the $j$th feature. Superscript on top, subscript on the bottom $x^i_j$
+- Vectors are $x \in \mathbb{R}^{n \times 1}$ and Matrices are $X \in \mathbb{R}^{n \times m}$
+- $x_{ij}$ and $x^i_j$ are both valid ways of writing the $j$th feature of the $i$th training example
+- You can think of every feature as an $i$-dimensional column vector $X^i \in \mathbb{R}^{i \times 1}$ (basically, think of a vertical vector)
+
 
 Personal Notes
 -
