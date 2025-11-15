@@ -240,7 +240,7 @@ Note
 <h2 class="anchored" data-anchor-id="latest-posts">Latest Posts</h2>
 <div id="listing-latest-posts" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZGFpbHk=" data-listing-date-sort="1763107200000" data-listing-file-modified-sort="1763178189843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="10">
+<div class="quarto-post image-right" data-index="0" data-categories="ZGFpbHk=" data-listing-date-sort="1763107200000" data-listing-file-modified-sort="1763179284459" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
 <div class="thumbnail"><a href="./posts/daily/2025-11-14/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -251,9 +251,7 @@ Note
 <a href="./posts/daily/2025-11-14/index.html" class="no-external">Daily Notes: 2025-11-14</a>
 </h3>
 <div class="delink listing-description"><a href="./posts/daily/2025-11-14/index.html" class="no-external">
-
-
-
+asdf
 </a></div>
 </div>
 <div class="metadata">
@@ -346,7 +344,7 @@ Nov 14, 2025
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/jooonkim\.github\.io\/ml\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

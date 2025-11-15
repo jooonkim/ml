@@ -16,7 +16,7 @@ This site separates my notes into:
 
 Everything is organized into standalone “posts” (which I believe is Quarto's recommended best practices).
 
-## 🚀 Quick Start (Note to Self)
+## Quick Start
 0) Install [Quarto](https://quarto.org/docs/get-started)
 1) Preview locally
 ```bash 
@@ -37,7 +37,7 @@ quarto publish gh-pages
 ```
 The live site will be served from the ```gh-pages``` branch, automatically updated whenever you run quarto publish.
 
-## 🗓 Creating a New Daily ML Note
+## Simple Workflow for Daily Notes
 
 This project includes a helper script called ```new-daily``` that automatically creates a daily ML post in the correct folder structure and inserts a template for consistent note-taking.
 
@@ -88,7 +88,7 @@ You can then edit the file normally.
 
 If desired, this script can be extended to accept manual dates, open VS Code automatically, or auto-commit + auto-publish.
 
-## ✏️ Creating New Notes (Quarto 1.8+)
+## Creating New Notes (Quarto 1.8+)
 
 Posts are created by simply making a folder and adding an ```index.qmd```.
 
@@ -157,7 +157,7 @@ categories: [readings]
 
 Reference citations via the included ```references.bib```.
 
-## 🐙 Understanding main vs. gh-pages
+## Understanding main vs. gh-pages
 
 - ```main``` branch: Contains all source files (.qmd, .ipynb, posts, images, config). This is where editing happens.
 
@@ -176,7 +176,7 @@ This:
 
 Your live site updates instantly.
 
-## 📁 Project Structure Overview
+## Project Structure Overview
 ```pgsql
 ml/
 ├── _quarto.yml
@@ -199,7 +199,7 @@ ml/
 
 Quarto automatically lists posts on the homepage and within category pages.
 
-## 🧠 Personal Reminders (Future Self)
+## Personal Reminders...
 
 Always edit ```main``` branch, never ```gh-pages```
 
