@@ -20,6 +20,15 @@ The importance of Linear Algebra
 - As an example, for a neural network layer, $y = Wx + b$ represents $y$ the output vector, $W$ the learned weights (as a matrix), $x$ the input vector,  and $b$ the bias vector.
 - Linear Algebra permits us not only a compact representation, but also a language to reason about and manipulate these representations.
 
+The importance of Probability
+
+- The guiding principle here is that some branches of computer science deal with entities that are **deterministic** and certain, but ML deals with entities that are **stochastic** (nondeterministic) and uncertain.
+- Probability is how you reason in the presence of uncertainty. Interestingly, uncertainty is more common than we think... how many propositions are guaranteed to be true, or events are guaranteed to occur?
+- Three possibile sources of uncertainty according to [Goodfellow](https://www.deeplearningbook.org):
+    - Inherent stochasticity in the system being modeled
+    - Incomplete observability: Even in a deterministic system, can't observe all the variables that drive behavior (e.g., Monty Hall problem)
+    - Incomplete modeling: This one is the most interesting. *A model must sometimes discard observed information.* Sometimes, it's more practical to use a simple & uncertain rule than a complex & certain & deterministic rule (e.g., "most birds fly" is better than "birds fly, except..."). It's hard to develop, communicate, maintain, and make it resilient against failure.
+
 Miscellaneous
 
 - Surprisingly, according to ChatGPT as an answer to one of my questions yesterday, **Reinforcement Learning** is typically "harder" than **Unsupervised Learning**.
@@ -27,6 +36,15 @@ Miscellaneous
     - **Unsupervised Learning** is "conceptually tricky, computationally easy." Yes, there's no objective ground truth, but optimization is "stable" (i.e., the loss function is well-behaved, gradient descent makes progress reliably, feedback is consistent). Examples: PCA, k-means, etc.
     - **Reinforcement Learning** is hard because the environment is stochastic, the feedback is often delayed/sparse, and the optimization is unstable.
 - To answer another question from yesterday, here is the meaning of "“If you compute parameters for feature scaling or dimensionality reduction using all the data (train + test), the test performance becomes overly optimistic.": your model has seen structures of the test data before evaluation, which means that there was **leakage**. The test set is supposed to simulate new, unseen, real-world data, and so it underestimates the "true error" that the model would have.
+
+Rendering Python using Quarto...
+```{python}
+import numpy as np 
+
+x = np.arange(5)
+x
+
+```
 
 Personal Notes
 -

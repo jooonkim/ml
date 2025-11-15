@@ -33,5 +33,6 @@ format:
 
 execute:
   freeze: auto
+  cache: true
   echo: true
   warning: false
