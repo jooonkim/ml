@@ -223,7 +223,7 @@ window.Quarto = {
 
 
 <p>Welcome! This is my repository of ML notes as I <a href="https://www.swyx.io/learn-in-public">learn in public</a>.</p>
-<p>Partially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable.</p>
+<p>Partially a resource for others, partially a tool to measure progress, and partially a method of keeping myself accountable.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -234,7 +234,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Tip:</strong> You can use the navbar to access my daily notes, concepts, math, projects, or readings.</p>
+<p>All I have thus far are daily notes. Later, I hope to have separate sections for concepts, math, projects, and readings.</p>
 </div>
 </div>
 <section id="latest-posts" class="level2">
@@ -345,7 +345,7 @@ Nov 14, 2025
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/jooonkim\.github\.io\/ml\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
