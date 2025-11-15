@@ -1,5 +1,6 @@
 ---
 title: "Daily ML Logs"
+item-type: section
 listing:
   contents: .
   sort: "date desc"

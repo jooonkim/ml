@@ -1,6 +1,6 @@
 # Joon Kim's ML Notes
 
-A repository of ML notes as I learn in public. Hosted on [Quarto](https://quarto.org) and GitHub Pages.
+A repository of ML notes as I learn in public. Hosted using [Quarto](https://quarto.org) and GitHub Pages.
 
 This site separates my notes into:
 
@@ -14,10 +14,10 @@ This site separates my notes into:
 
 ```readings/``` — book & paper notes
 
-Everything is organized into standalone “posts” using Quarto’s built-in listing system.
+Everything is organized into standalone “posts” (which I believe is Quarto's recommended best practices).
 
 ## 🚀 Quick Start (Note to Self)
-0) Install Quarto (https://quarto.org/docs/get-started)
+0) Install [Quarto](https://quarto.org/docs/get-started)
 1) Preview locally
 ```bash 
 quarto preview
@@ -35,8 +35,7 @@ git push -u origin main
 ```bash
 quarto publish gh-pages
 ```
-
-The live site will be served from the gh-pages branch, automatically updated whenever you run quarto publish.
+The live site will be served from the ```gh-pages``` branch, automatically updated whenever you run quarto publish.
 
 ## 🗓 Creating a New Daily ML Note
 
@@ -60,7 +59,7 @@ posts/daily/YYYY-MM-DD/index.qmd
 With frontmatter:
 ```yaml
 ---
-title: "YYYY-MM-DD"
+title: "Daily Notes: YYYY-MM-DD"
 date: YYYY-MM-DD
 categories: [daily]
 ---
@@ -200,7 +199,7 @@ ml/
 
 Quarto automatically lists posts on the homepage and within category pages.
 
-## 🧠 Notes to Future Joon
+## 🧠 Personal Reminders (Future Self)
 
 Always edit ```main``` branch, never ```gh-pages```
 
@@ -213,5 +212,5 @@ quarto publish gh-pages
 
 Preview locally first:
 ```bash
-quarto 
+quarto preview
 ```

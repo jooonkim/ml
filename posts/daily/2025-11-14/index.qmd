@@ -1,8 +1,9 @@
 ---
-title: "2025-11-14"
+title: "Daily Notes: 2025-11-14"
 date: 2025-11-14
 categories: [daily]
 ---
+
 
 ## Notes
 - 

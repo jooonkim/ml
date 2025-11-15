@@ -1,5 +1,6 @@
 ---
 title: "Readings"
+item-type: section
 listing:
   contents: .
   sort: "date desc"

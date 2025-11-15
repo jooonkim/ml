@@ -14,10 +14,11 @@ mkdir -p "$DIR"
 # 2. Create index.qmd with correct frontmatter
 cat > "$DIR/index.qmd" << EOF
 ---
-title: "$TODAY"
+title: "Daily Notes: $TODAY"
 date: $TODAY
 categories: [daily]
 ---
+
 
 ## Notes
 - 

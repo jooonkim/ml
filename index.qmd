@@ -1,6 +1,14 @@
 ---
 title: "ML Notes by Joon Kim"
 page-layout: full
+listing:
+  id: latest-posts
+  contents: posts
+  sort: "date desc"
+  type: default
+  max-items: 10
+  exclude:
+    item-type: "section"
 ---
 
 A repository of ML notes as I [learn in public](https://www.swyx.io/learn-in-public). Partially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable. 
@@ -11,11 +19,5 @@ A repository of ML notes as I [learn in public](https://www.swyx.io/learn-in-pub
 
 ## Latest Posts
 
-```{.listing}
----
-contents: posts
-sort: "date desc"
-type: default
-max-items: 10
----
-```
+:::{#latest-posts}
+:::

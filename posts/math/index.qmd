@@ -1,5 +1,6 @@
 ---
 title: "Math Notes"
+item-type: section
 listing:
   contents: .
   sort: "title"

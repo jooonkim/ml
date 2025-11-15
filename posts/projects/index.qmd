@@ -1,5 +1,6 @@
 ---
 title: "Projects & Experiments"
+item-type: section
 listing:
   contents: .
   sort: "date desc"
