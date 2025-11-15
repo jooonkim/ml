@@ -93,15 +93,22 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "ML Notes",
+    "title": "ML Notes by Joon Kim",
     "section": "",
-    "text": "Welcome 👋\nThis is a living notebook of machine learning notes: daily logs, concept explainers, math derivations, reading notes, and small projects."
+    "text": "A repository of ML notes as I learn in public. Partially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable."
   },
   {
-    "objectID": "index.html#latest-posts-optional-listing",
-    "href": "index.html#latest-posts-optional-listing",
-    "title": "ML Notes",
-    "section": "Latest posts (optional listing)",
-    "text": "Latest posts (optional listing)\nYou can add a listing here later, for example:\n---\ncontents: posts\nsort: \"date desc\"\n---"
+    "objectID": "index.html#latest-posts",
+    "href": "index.html#latest-posts",
+    "title": "ML Notes by Joon Kim",
+    "section": "Latest Posts",
+    "text": "Latest Posts"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "ML Notes by Joon Kim",
+    "section": "```",
+    "text": "```\ncontents: posts sort: “date desc” type: default max-items: 10 —"
   }
 ]

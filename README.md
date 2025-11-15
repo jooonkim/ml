@@ -2,16 +2,21 @@
 
 A repository of ML notes as I learn in public. Hosted on [Quarto](https://quarto.org) and GitHub Pages.
 
-It separates:
-- `daily/` — daily learning logs
-- `concepts/` — polished concept explainers (Work in Progress)
-- `math/` — derivations and math notes (Work in Progress)
-- `projects/` — code-heavy experiments, demos (Work in Progress)
-- `readings/` — paper & textbook notes (Work in Progress)
+This site separates my notes into:
 
-## Quick start - note to self
+daily/ — daily learning logs
 
-```bash
+concepts/ — polished concept explainers
+
+math/ — derivations and math notes
+
+projects/ — experiments, notebooks, demos
+
+readings/ — book & paper notes
+
+Everything is organized into standalone “posts” using Quarto’s built-in listing system.
+
+🚀 Quick Start (Note to Self)
 # 0) Install Quarto (https://quarto.org/docs/get-started)
 # 1) Preview locally
 quarto preview
@@ -26,38 +31,187 @@ git push -u origin main
 
 # 3) Publish to GitHub Pages (creates gh-pages branch)
 quarto publish gh-pages
-```
 
-## Creating new notes
 
-### Daily log
+The live site will be served from the gh-pages branch, automatically updated whenever you run quarto publish.
 
-```bash
-quarto create post "Daily ML Log — 2025-11-13" \
-  --date 2025-11-13 \
-  --dir posts/daily/2025-11-13
-```
+🗓 Creating a New Daily ML Note
 
-### Concept explainer
+This project includes a helper script called new-daily that automatically creates a daily ML post in the correct folder structure and inserts a template for consistent note-taking.
 
-```bash
-quarto create post "Softmax Intuition" \
-  --dir posts/concepts/softmax-intuition
-```
+One-time setup
+chmod +x new-daily
 
-### Math derivation
+Usage
+./new-daily
 
-```bash
-quarto create post "Backprop Through ReLU" \
-  --dir posts/math/relu-backprop
-```
 
-### Project notebook
+This generates:
 
-Put your notebook under:
+posts/daily/YYYY-MM-DD/index.qmd
 
-```text
-posts/projects/<project-name>/<something>.ipynb
-```
 
-Quarto will render it as a post.
+With frontmatter:
+
+---
+title: "YYYY-MM-DD"
+date: YYYY-MM-DD
+categories: [daily]
+---
+
+
+And a template body:
+
+## Notes
+-
+
+## Questions I still have
+-
+
+## Tomorrow's plan
+-
+
+
+You can then edit the file normally.
+
+How it works
+
+Determines today’s date using date +%Y-%m-%d
+
+Creates the folder posts/daily/YYYY-MM-DD/
+
+Writes an index.qmd file with the appropriate metadata + sections
+
+Compatible with Quarto 1.8+ (which removed quarto create post)
+
+If desired, this script can be extended to accept manual dates, open VS Code automatically, or auto-commit + auto-publish.
+
+✏️ Creating New Notes (Quarto 1.8+)
+
+Quarto 1.8 no longer supports quarto create post, so posts are created by simply making a folder and adding an index.qmd.
+
+This approach is simple, future-proof, and fully compatible with Quarto’s listing system.
+
+📝 Concept Explainer
+
+Example: “Softmax Intuition”
+
+mkdir -p posts/concepts/softmax-intuition
+nano posts/concepts/softmax-intuition/index.qmd
+
+
+Frontmatter:
+
+---
+title: "Softmax Intuition"
+date: YYYY-MM-DD
+categories: [concepts]
+---
+
+
+Write the explainer below the YAML block.
+
+🧮 Math Derivation
+mkdir -p posts/math/relu-backprop
+nano posts/math/relu-backprop/index.qmd
+
+
+Frontmatter:
+
+---
+title: "Backprop Through ReLU"
+date: YYYY-MM-DD
+categories: [math]
+---
+
+🧪 Project Notebook
+
+Projects live under:
+
+posts/projects/<project-name>/
+
+
+Add notebooks directly:
+
+mkdir -p posts/projects/mnist-from-scratch
+cp mnist.ipynb posts/projects/mnist-from-scratch/
+
+
+Quarto automatically renders .ipynb files when publishing.
+
+📚 Reading Notes
+mkdir -p posts/readings/murphy-ch3
+nano posts/readings/murphy-ch3/index.qmd
+
+
+Frontmatter:
+
+---
+title: "Murphy — Chapter 3 Notes"
+date: YYYY-MM-DD
+categories: [readings]
+---
+
+
+Reference citations via the included references.bib.
+
+🐙 Understanding main vs. gh-pages
+
+main branch
+Contains all source files (.qmd, .ipynb, posts, images, config).
+This is where editing happens.
+
+gh-pages branch
+Contains the rendered HTML website.
+Do NOT edit this branch manually—Quarto overwrites it on each publish.
+
+Publishing workflow:
+
+quarto publish gh-pages
+
+
+This:
+
+Builds the site → _site/
+
+Writes it into gh-pages branch
+
+Pushes it to GitHub Pages
+
+Your live site updates instantly.
+
+📁 Project Structure Overview
+ml/
+├── _quarto.yml
+├── index.qmd
+├── references.bib
+└── posts/
+    ├── daily/
+    │   └── YYYY-MM-DD/
+    │       └── index.qmd
+    ├── concepts/
+    │   └── <topic>/index.qmd
+    ├── math/
+    │   └── <topic>/index.qmd
+    ├── projects/
+    │   └── <project>/index.qmd or *.ipynb
+    └── readings/
+        └── <source>/index.qmd
+
+
+Quarto automatically lists posts on the homepage and within category pages.
+
+🧠 Notes to Future Joon
+
+Always edit main branch, never gh-pages
+
+Use ./new-daily every morning
+
+Publish updates with:
+
+quarto publish gh-pages
+
+
+Preview locally first:
+
+quarto preview

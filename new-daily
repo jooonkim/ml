@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Today's date
+TODAY=$(date +%Y-%m-%d)
+
+# Directory for the new post
+DIR="posts/daily/$TODAY"
+
+echo "Creating daily ML post for $TODAY..."
+
+# 1. Create directory
+mkdir -p "$DIR"
+
+# 2. Create index.qmd with correct frontmatter
+cat > "$DIR/index.qmd" << EOF
+---
+title: "$TODAY"
+date: $TODAY
+categories: [daily]
+---
+
+## Notes
+- 
+
+## Questions I still have
+- 
+
+## Tomorrow's plan
+- 
+
+EOF
+
+echo "Done! File created at:"
+echo "$DIR/index.qmd"
+
