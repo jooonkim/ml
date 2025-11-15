@@ -17,12 +17,12 @@ This site separates my notes into:
 Everything is organized into standalone “posts” using Quarto’s built-in listing system.
 
 ## 🚀 Quick Start (Note to Self)
-### 0) Install Quarto (https://quarto.org/docs/get-started)
-### 1) Preview locally
+0) Install Quarto (https://quarto.org/docs/get-started)
+1) Preview locally
 ```bash 
 quarto preview
 ```
-### 2) Initialize git and push to GitHub
+2) Initialize git and push to GitHub
 ```bash
 git init
 git add .
@@ -31,8 +31,7 @@ git branch -M main
 git remote add origin https://github.com/<you>/<repo>.git
 git push -u origin main
 ```
-
-# 3) Publish to GitHub Pages (creates gh-pages branch)
+3) Publish to GitHub Pages (creates gh-pages branch)
 ```bash
 quarto publish gh-pages
 ```
@@ -41,7 +40,7 @@ The live site will be served from the gh-pages branch, automatically updated whe
 
 ## 🗓 Creating a New Daily ML Note
 
-This project includes a helper script called new-daily that automatically creates a daily ML post in the correct folder structure and inserts a template for consistent note-taking.
+This project includes a helper script called ```new-daily``` that automatically creates a daily ML post in the correct folder structure and inserts a template for consistent note-taking.
 
 One-time setup
 ```bash
@@ -83,10 +82,11 @@ You can then edit the file normally.
 
 ### How it works
 
-- Determines today’s date using date +%Y-%m-%d
-- Creates the folder posts/daily/YYYY-MM-DD/
-- Writes an index.qmd file with the appropriate metadata + sections
-- Compatible with Quarto 1.8+ (which removed quarto create post)
+- Determines today’s date using date ```+%Y-%m-%d```
+- Creates the folder ```posts/daily/YYYY-MM-DD/```
+- Writes an ```index.qmd``` file with the appropriate metadata + sections
+- Compatible with Quarto 1.8+
+
 If desired, this script can be extended to accept manual dates, open VS Code automatically, or auto-commit + auto-publish.
 
 ## ✏️ Creating New Notes (Quarto 1.8+)
@@ -113,7 +113,7 @@ categories: [concepts]
 ```
 Write the explainer below the YAML block.
 
-🧮 Math Derivation
+### 🧮 Math Derivation
 ```bash
 mkdir -p posts/math/relu-backprop
 nano posts/math/relu-backprop/index.qmd
@@ -127,7 +127,7 @@ date: YYYY-MM-DD
 categories: [math]
 ---
 ```
-🧪 Project Notebook
+### 🧪 Project Notebook
 
 Projects live under:
 ```bash
@@ -142,12 +142,11 @@ cp mnist.ipynb posts/projects/mnist-from-scratch/
 
 Quarto automatically renders ```.ipynb``` files when publishing.
 
-📚 Reading Notes
+### 📚 Reading Notes
 ```bash
 mkdir -p posts/readings/murphy-ch3
 nano posts/readings/murphy-ch3/index.qmd
 ```
-
 Frontmatter:
 ```yaml
 ---
@@ -179,6 +178,7 @@ This:
 Your live site updates instantly.
 
 ## 📁 Project Structure Overview
+```pgsql
 ml/
 ├── _quarto.yml
 ├── index.qmd
@@ -195,6 +195,7 @@ ml/
     │   └── <project>/index.qmd or *.ipynb
     └── readings/
         └── <source>/index.qmd
+```
 
 
 Quarto automatically lists posts on the homepage and within category pages.

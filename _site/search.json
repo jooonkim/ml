@@ -63,6 +63,13 @@
     "text": "Questions for tomorrow\n\nHow does this generalize to multi-class (softmax) regression?\nWhat happens to the gradient when the model is very overconfident and wrong?"
   },
   {
+    "objectID": "posts/daily/index.html",
+    "href": "posts/daily/index.html",
+    "title": "Daily ML Logs",
+    "section": "",
+    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily ML Log — 2025-11-12\n\n\n\n\n\n\n\n\nNov 12, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/projects/index.html",
     "href": "posts/projects/index.html",
     "title": "Projects & Experiments",
@@ -70,11 +77,18 @@
     "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/daily/index.html",
-    "href": "posts/daily/index.html",
-    "title": "Daily ML Logs",
-    "section": "",
-    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily ML Log — 2025-11-12\n\n\n\n\n\n\n\n\nNov 12, 2025\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/daily/2025-11-14/index.html#questions-i-still-have",
+    "href": "posts/daily/2025-11-14/index.html#questions-i-still-have",
+    "title": "2025-11-14",
+    "section": "## Questions I still have",
+    "text": "## Questions I still have"
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html#tomorrows-plan",
+    "href": "posts/daily/2025-11-14/index.html#tomorrows-plan",
+    "title": "2025-11-14",
+    "section": "## Tomorrow’s plan",
+    "text": "## Tomorrow’s plan"
   },
   {
     "objectID": "posts/math/index.html",
@@ -102,13 +116,6 @@
     "href": "index.html#latest-posts",
     "title": "ML Notes by Joon Kim",
     "section": "Latest Posts",
-    "text": "Latest Posts"
-  },
-  {
-    "objectID": "index.html#section",
-    "href": "index.html#section",
-    "title": "ML Notes by Joon Kim",
-    "section": "```",
-    "text": "```\ncontents: posts sort: “date desc” type: default max-items: 10 —"
+    "text": "Latest Posts\n---\ncontents: posts\nsort: \"date desc\"\ntype: default\nmax-items: 10\n---"
   }
 ]
