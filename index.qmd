@@ -1,24 +1,20 @@
 ---
-title: "ML Notes"
+title: "ML Notes by Joon Kim"
 page-layout: full
 ---
 
-Welcome 👋
-
-This is a living notebook of machine learning notes: daily logs, concept explainers,
-math derivations, reading notes, and small projects.
+A repository of ML notes as I [learn in public](https://www.swyx.io/learn-in-public). Partially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable. 
 
 ::: {.callout-note}
-**Tip:** Use the navbar to jump straight to daily notes, concepts, math, projects, or readings.
+**Tip:** You can use the navbar to access my daily notes, concepts, math, projects, or readings.
 :::
 
-## Latest posts (optional listing)
-
-You can add a listing here later, for example:
+## Latest Posts
 
 ```{.listing}
 ---
 contents: posts
 sort: "date desc"
+type: default
+max-items: 10
 ---
-```
