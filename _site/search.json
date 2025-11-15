@@ -1,24 +1,17 @@
 [
   {
-    "objectID": "hello.html",
-    "href": "hello.html",
-    "title": "Quarto Basics",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ML Notes by Joon Kim",
     "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 4 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
+    "text": "Welcome! This is my repository of ML notes as I learn in public.\nPartially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable."
   },
   {
-    "objectID": "hello.html#polar-axis",
-    "href": "hello.html#polar-axis",
-    "title": "Quarto Basics",
-    "section": "",
-    "text": "For a demonstration of a line plot on a polar axis, see Figure 1.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 4 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
-  },
-  {
-    "objectID": "daily.html",
-    "href": "daily.html",
-    "title": "ML Notes",
-    "section": "",
-    "text": "---\ntitle: \"ML Notes — 2025-11-12\"\ncategories: [daily-notes]\nformat: \n  html:\n    code-fold: false\njupyter: python3\n---"
+    "objectID": "index.html#latest-posts",
+    "href": "index.html#latest-posts",
+    "title": "ML Notes by Joon Kim",
+    "section": "Latest Posts",
+    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/concepts/index.html",
@@ -26,6 +19,27 @@
     "title": "Concepts",
     "section": "",
     "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html",
+    "href": "posts/daily/2025-11-14/index.html",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "",
+    "text": "Three main types of ML: Supervised Learning, Unsupervised Learning, Reinforcement Learning\nSupervised Learning: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: Classification is a problem of discrete variables, Regression is a problem of continuous variables.\nUnsupervised Learning: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?\nReinforcement Learning: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?\nUnsupervised Learning has some interesting subfields. One is clustering which can be called unsupervised classification, and another is dimensionality reduction which can be helpful in preprocessing to remove noise from data."
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html#ml-notes",
+    "href": "posts/daily/2025-11-14/index.html#ml-notes",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "",
+    "text": "Three main types of ML: Supervised Learning, Unsupervised Learning, Reinforcement Learning\nSupervised Learning: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: Classification is a problem of discrete variables, Regression is a problem of continuous variables.\nUnsupervised Learning: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?\nReinforcement Learning: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?\nUnsupervised Learning has some interesting subfields. One is clustering which can be called unsupervised classification, and another is dimensionality reduction which can be helpful in preprocessing to remove noise from data."
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html#personal-notes",
+    "href": "posts/daily/2025-11-14/index.html#personal-notes",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "Personal Notes",
+    "text": "Personal Notes\n\nSebastian Raschka’s tweet (preserved below) is an incredible framework for how to read technical textbooks. When reading How to Read a Book by Mortimer J. Adler, I learned that non-fiction books and fiction books must be read in a different fashion. I now understand that technical books require a third approach. Too often, I find myself in “tutorial hell” where I take extensive notes on the first 1-2 chapters of any one book, and flit around from book to book. I also find that extensive notes in the beginning runs the risk of “missing the forest for the trees” with understanding what concepts are most important.\nI find Raschka’s writing style most compelling, so I will use Machine Learning with PyTorch and Scikit-Learn as my daily driver. I’m supplementing this with Tom Mitchell’s classic ML textbook (from the 1990s, but required by my course) and the Hands-On ML textbook by Aurélien Géron (there’s a newer PyTorch version of this book, but I’m finding it… hard to acquire).\nI understand that the most important part is not the qualitative note-taking, but the exercises and coding and deliberately breaking things. This is a difficult habit. I found it hard to get into Karpathy’s Zero to Hero and Jeremy Howard’s Fast AI courses for this reason. I hope that Raschka’s tweet will be a good framework.\nMy current study plan is measured by input rather than output - I am trying to hold myself accountable to 14 hours of input / week. I’m not measuring output at this stage because I’d like to allow myself random restarts (see the hill climbing problem). I am, however, forcing myself to continue to invest quality hours in a simple, measureable format.\nI really enjoyed watching these YouTube videos: Transformer Neural Networks by StatQuest and AI Engineering in 76 Minutes by Marina Wyss."
   },
   {
     "objectID": "posts/daily/2025-11-14/index.html#questions-i-still-have",
@@ -40,6 +54,13 @@
     "title": "Daily Notes: 2025-11-14",
     "section": "Tomorrow’s plan",
     "text": "Tomorrow’s plan\n\nContinue to read through Raschka."
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html#addendum-raschkas-tweet",
+    "href": "posts/daily/2025-11-14/index.html#addendum-raschkas-tweet",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "Addendum: Raschka’s Tweet",
+    "text": "Addendum: Raschka’s Tweet\n“I often get questions from readers about how to read and get the most out of my book(s) on building LLMs from scratch. My advice is usually based on how I read technical books myself. This is not a one-size-fits-all approach, but I thought it may be useful to share:\n\nRead the chapter preferably offline, away from the computer. Either classic physical form or at least on digital devices without internet. This really helps with focus time and minimizing distractions while reading. Highlighting or annotating confusing or interesting things is good, but I would not look things up at this stage. I also wouldn’t run code at this stage. At least not yet.\nOn the second read-through, type up and run the code from the chapter. Copying code is tempting because retyping is a lot of work, but it usually helps me to think about the code a bit more (versus just glancing over it). If I get different results than in the book, I would check the book’s GitHub repo and try the code from there. If I still get different results, I would try to see if it’s due to different package versions, random seeds, CPU/CUDA, etc. If I then still can’t find it out, asking the author would not be a bad idea (via book forum, public GitHub repo issues or discussions, and as a last resort, email)\nAfter the second read-through and retyping the code, it’s usually a good time to try the exercises to solidify my understanding. To check whether I actually understand the content and can work with it independently.\nGo through the highlights and annotations. I would bookmark important learnings or takeaways, if relevant for a given project, in my notes documents. Often, I also look up additional references to read more about a topic of interest. Also, if I still have any questions that I feel are unanswered after my previous readthroughs and exercises, I would do an online search to find out more.\nThe previous steps were all about soaking up knowledge. Eventually, though, I somehow want to use that knowledge. So I think about which projects would benefit from what I’ve learned and incorporate it into them. This could involve using the main concept from the chapter, but also sometimes minor tidbits I learned along the way, e.g., even trivial things like whether it actually makes a difference in my project to explicitly call torch.mps.manual_seed(seed) instead of just torch.manual_seed(seed).\n\nOf course, none of the above is set in stone. If the topic is overall very familiar or easy, and I am primarily reading the book to get some information in later chapters, skimming a chapter is ok (to not waste my time).\nAnyway, I hope this is useful. And happy reading and learning!”"
   },
   {
     "objectID": "posts/projects/index.html",
@@ -68,54 +89,5 @@
     "title": "Readings",
     "section": "",
     "text": "Notes from textbooks, blog posts, and research papers.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ML Notes by Joon Kim",
-    "section": "",
-    "text": "A repository of ML notes as I learn in public. Partially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable."
-  },
-  {
-    "objectID": "index.html#latest-posts",
-    "href": "index.html#latest-posts",
-    "title": "ML Notes by Joon Kim",
-    "section": "Latest Posts",
-    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#notes",
-    "href": "posts/daily/2025-11-14/index.html#notes",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "",
-    "text": "Three main subfields of ML: Supervised Learning, Unsupervised Learning, Reinforcement Learning"
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html",
-    "href": "posts/daily/2025-11-14/index.html",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "",
-    "text": "Three main types of ML: Supervised Learning, Unsupervised Learning, Reinforcement Learning\nSupervised Learning: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: Classification is a problem of discrete variables, Regression is a problem of continuous variables.\nUnsupervised Learning: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?\nReinforcement Learning: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?\nUnsupervised Learning has some interesting subfields. One is clustering which can be called unsupervised classification, and another is dimensionality reduction which can be helpful in preprocessing to remove noise from data."
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#ml-notes",
-    "href": "posts/daily/2025-11-14/index.html#ml-notes",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "",
-    "text": "Three main types of ML: Supervised Learning, Unsupervised Learning, Reinforcement Learning\nSupervised Learning: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: Classification is a problem of discrete variables, Regression is a problem of continuous variables.\nUnsupervised Learning: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?\nReinforcement Learning: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?\nUnsupervised Learning has some interesting subfields. One is clustering which can be called unsupervised classification, and another is dimensionality reduction which can be helpful in preprocessing to remove noise from data."
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#personal-notes",
-    "href": "posts/daily/2025-11-14/index.html#personal-notes",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "Personal Notes",
-    "text": "Personal Notes\n\nSebastian Raschka’s tweet (preserved below) is an incredible framework for how to read technical textbooks. When reading How to Read a Book by Mortimer J. Adler, I learned that non-fiction books and fiction books must be read in a different fashion. I now understand that technical books require a third approach. Too often, I find myself in “tutorial hell” where I take extensive notes on the first 1-2 chapters of any one book, and flit around from book to book. I also find that extensive notes in the beginning runs the risk of “missing the forest for the trees” with understanding what concepts are most important.\nI find Raschka’s writing style most compelling, so I will use Machine Learning with PyTorch and Scikit-Learn as my daily driver. I’m supplementing this with Tom Mitchell’s classic ML textbook (from the 1990s, but required by my course) and the Hands-On ML textbook by Aurélien Géron (there’s a newer PyTorch version of this book, but I’m finding it… hard to acquire).\nI understand that the most important part is not the qualitative note-taking, but the exercises and coding and deliberately breaking things. This is a difficult habit. I found it hard to get into Karpathy’s Zero to Hero and Jeremy Howard’s Fast AI courses for this reason. I hope that Raschka’s tweet will be a good framework.\nMy current study plan is measured by input rather than output - I am trying to hold myself accountable to 14 hours of input / week. I’m not measuring output at this stage because I’d like to allow myself random restarts (see the hill climbing problem). I am, however, forcing myself to continue to invest quality hours in a simple, measureable format.\nI really enjoyed watching these YouTube videos: Transformer Neural Networks by StatQuest and AI Engineering in 76 Minutes by Marina Wyss."
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#addendum-raschkas-tweet",
-    "href": "posts/daily/2025-11-14/index.html#addendum-raschkas-tweet",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "Addendum: Raschka’s Tweet",
-    "text": "Addendum: Raschka’s Tweet\n“I often get questions from readers about how to read and get the most out of my book(s) on building LLMs from scratch. My advice is usually based on how I read technical books myself. This is not a one-size-fits-all approach, but I thought it may be useful to share:\n\nRead the chapter preferably offline, away from the computer. Either classic physical form or at least on digital devices without internet. This really helps with focus time and minimizing distractions while reading. Highlighting or annotating confusing or interesting things is good, but I would not look things up at this stage. I also wouldn’t run code at this stage. At least not yet.\nOn the second read-through, type up and run the code from the chapter. Copying code is tempting because retyping is a lot of work, but it usually helps me to think about the code a bit more (versus just glancing over it). If I get different results than in the book, I would check the book’s GitHub repo and try the code from there. If I still get different results, I would try to see if it’s due to different package versions, random seeds, CPU/CUDA, etc. If I then still can’t find it out, asking the author would not be a bad idea (via book forum, public GitHub repo issues or discussions, and as a last resort, email)\nAfter the second read-through and retyping the code, it’s usually a good time to try the exercises to solidify my understanding. To check whether I actually understand the content and can work with it independently.\nGo through the highlights and annotations. I would bookmark important learnings or takeaways, if relevant for a given project, in my notes documents. Often, I also look up additional references to read more about a topic of interest. Also, if I still have any questions that I feel are unanswered after my previous readthroughs and exercises, I would do an online search to find out more.\nThe previous steps were all about soaking up knowledge. Eventually, though, I somehow want to use that knowledge. So I think about which projects would benefit from what I’ve learned and incorporate it into them. This could involve using the main concept from the chapter, but also sometimes minor tidbits I learned along the way, e.g., even trivial things like whether it actually makes a difference in my project to explicitly call torch.mps.manual_seed(seed) instead of just torch.manual_seed(seed).\n\nOf course, none of the above is set in stone. If the topic is overall very familiar or easy, and I am primarily reading the book to get some information in later chapters, skimming a chapter is ok (to not waste my time).\nAnyway, I hope this is useful. And happy reading and learning!”"
   }
 ]

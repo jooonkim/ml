@@ -11,7 +11,9 @@ listing:
     item-type: "section"
 ---
 
-A repository of ML notes as I [learn in public](https://www.swyx.io/learn-in-public). Partially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable. 
+Welcome! This is my repository of ML notes as I [learn in public](https://www.swyx.io/learn-in-public). 
+
+Partially a source to help others, partially a tool to measure progress, and partially a method of keeping myself accountable. 
 
 ::: {.callout-note}
 **Tip:** You can use the navbar to access my daily notes, concepts, math, projects, or readings.

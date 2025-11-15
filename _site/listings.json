@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/posts/daily/2025-11-14/index.html"
+    ]
+  },
+  {
     "listing": "/posts/concepts/index.html",
     "items": []
   },
@@ -20,11 +26,5 @@
   {
     "listing": "/posts/readings/index.html",
     "items": []
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/posts/daily/2025-11-14/index.html"
-    ]
   }
 ]
