@@ -11,7 +11,7 @@ listing:
     item-type: "section"
 ---
 
-Welcome! This is my repository of ML notes as I [learn in public](https://www.swyx.io/learn-in-public). 
+Hello, World! This is my repository of ML notes as I [learn in public](https://www.swyx.io/learn-in-public). 
 
 Partially a resource for others, partially a tool to measure progress, and partially a method of keeping myself accountable. 
 

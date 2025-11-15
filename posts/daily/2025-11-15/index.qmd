@@ -1,0 +1,87 @@
+---
+title: "Daily Notes: 2025-11-15"
+date: 2025-11-15
+categories: [daily]
+---
+
+
+ML Notes
+- 
+A Mental Map for ML
+
+- Machine Learning: Broad umbrella
+- Deep Learning: Subset of ML using multi-layer neural networks
+- Transformer architectures: Specific type of neural network architecture introduced in *Attention Is All You Need (Vaswani et al., 2017).*
+- LLMs: a large transformer architecture, using a large corpus of text.
+
+The importance of Linear Algebra
+
+- Linear Algebra is the language of ML because ML is fundamentally the art of taking something (image, soundwave, text, etc.), representing it as a **vector** (or matrix), and creating a model that transforms that vector into another vector.
+- As an example, for a neural network layer, $y = Wx + b$ represents $y$ the output vector, $W$ the learned weights (as a matrix), $x$ the input vector,  and $b$ the bias vector.
+- Linear Algebra permits us not only a compact representation, but also a language to reason about and manipulate these representations.
+
+Miscellaneous
+
+- Surprisingly, according to ChatGPT as an answer to one of my questions yesterday, **Reinforcement Learning** is typically "harder" than **Unsupervised Learning**.
+    - **Supervised Learning** is the "easiest" because you have clear labels, a clear objective, and a clear way of measuring success (goal: minimize loss).
+    - **Unsupervised Learning** is "conceptually tricky, computationally easy." Yes, there's no objective ground truth, but optimization is "stable" (i.e., the loss function is well-behaved, gradient descent makes progress reliably, feedback is consistent). Examples: PCA, k-means, etc.
+    - **Reinforcement Learning** is hard because the environment is stochastic, the feedback is often delayed/sparse, and the optimization is unstable.
+- To answer another question from yesterday, here is the meaning of "“If you compute parameters for feature scaling or dimensionality reduction using all the data (train + test), the test performance becomes overly optimistic.": your model has seen structures of the test data before evaluation, which means that there was **leakage**. The test set is supposed to simulate new, unseen, real-world data, and so it underestimates the "true error" that the model would have.
+
+Personal Notes
+-
+I finally learned the differences between `pip`, Anaconda, and Miniconda today. 
+
+- `pip` is a lightweight universal package installer that can install python libraries (e.g., `numpy`) pretty much anywhere. It only installs packages from PyPI.
+- Anaconda is a (huge... 3-5 GB) Python distribution + environment manager - it bundles everything (`pip`, pre-compiled scientific packages, etc.) in one. Its scope goes beyond PyPI.
+- Miniconda is a lighter version of Anaconda. It has the environment management that `pip` doesn't have by default, and Python, but nothing else out the gate. This is important because you can manage your own Python versions in isolated environments.
+- *Recommendation*: Use Miniconda for environment management + Python version control, use `pip` within each conda environment for packages.
+- I created an environment using miniconda called `pyml` with the following packages: NumPy 1.21.2 SciPy 1.7.0 Scikit-learn 1.0 Matplotlib 3.4.3 pandas 1.3.2 python 3.9
+
+A "Karpathy-style" learning math on demand roadmap
+
+- Note: Linear Algebra, followed by Probability, followed by Calculus are the most important
+
+1. Start with a tiny ML/DL problem first (e.g., train a linear classifier or a 2-layer neural net)
+You will immediately run into the following math concepts that need refreshing:
+
+- gradients → calc
+- matrix multiplies → Lin Alg
+- loss functions → probability + info theory
+- optimization steps → calc + LA
+- embeddings → SVD intuition
+
+
+2. When you start reading transformers papers, refresh only:
+
+- dot products
+- matrix multiplications
+- softmax derivatives
+- eigen decomposition (for understanding attention as soft nearest-neighbor search)
+- probability for next-token prediction
+
+3. When you study self-supervised methods, refresh only:
+
+- KL divergence
+- cross-entropy
+- covariance
+- Gaussians
+- contrastive loss geometry
+
+4. When you start fine-tuning LLMs, refresh only:
+
+- gradients of logits
+- Jacobians
+- basic linear algebra on embeddings
+- matrix factorization intuition
+
+Questions I still have
+- 
+-
+
+
+Tomorrow's plan
+- 
+- 
+
+

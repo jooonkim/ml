@@ -25,6 +25,12 @@ Math Notation
 - $x_{ij}$ and $x^i_j$ are both valid ways of writing the $j$th feature of the $i$th training example
 - You can think of every feature as an $i$-dimensional column vector $X^i \in \mathbb{R}^{i \times 1}$ (basically, think of a vertical vector)
 
+Cross-Validation: The Answer to the Training vs. Testing vs. Validation problem
+
+- It makes sense to randomly divide a dataset into a training dataset and a testing dataset - you want to use the training data to train the model, and you want to use the testing dataset to evaluate the final model without any biases.
+- However, we only know that the model performs well on the test data - we need to further validate it on real-world data (a validation dataset). 
+- **Cross-Validation** allows us to further divide a datset into training and validation datasets to *estimate the generalization performance of a model*.
+
 
 Personal Notes
 -
@@ -37,9 +43,9 @@ Personal Notes
 Questions I still have
 - 
 - My grasp of the concept of unsupervised learning is admittedly still shakey. How do we know when we're not grasping in the dark for a pattern that's not there? Is this harder or easier than a typical SL or RL problem? 
-- My understanding of the ML that everyone finds most exciting right now is ML -> DL -> LLM-like transformer architectures (am I using the correct terminology?). What is the correct way to approach this topic?
+- My understanding of the ML that everyone finds most exciting right now is ML -> DL -> Transformer Architectures -> LLMs. What is the correct way to approach this topic?
 - Math... as a former Math major I find it embarrassing how much Calculus/Lin Alg/Probability I have forgotten. I'd love to refresh but would also love to understand exactly what concepts are most required first. I'm resisting the urge to start Calculus 101 all over again so that I can apply Andrej Karpathy's [mantra](https://x.com/karpathy/status/1325154823856033793?lang=en) of "learning on demand."
-
+- Importantly... parameters for techniques like **feature scaling** and **dimensionality reduction** are solely obtained from the training dataset... what does it mean that the performance measured on the test data is overly optimistic?
 
 Tomorrow's plan
 - 
