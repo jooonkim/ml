@@ -1,20 +1,5 @@
 [
   {
-    "listing": "/posts/daily/index.html",
-    "items": [
-      "/posts/daily/2025-11-15/index.html",
-      "/posts/daily/2025-11-14/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/math/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/projects/index.html",
-    "items": []
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/posts/daily/2025-11-15/index.html",
@@ -22,11 +7,26 @@
     ]
   },
   {
-    "listing": "/posts/readings/index.html",
+    "listing": "/posts/concepts/index.html",
     "items": []
   },
   {
-    "listing": "/posts/concepts/index.html",
+    "listing": "/posts/daily/index.html",
+    "items": [
+      "/posts/daily/2025-11-15/index.html",
+      "/posts/daily/2025-11-14/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/projects/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/math/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/readings/index.html",
     "items": []
   }
 ]
