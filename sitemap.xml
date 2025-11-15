@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jooonkim.github.io/ml/hello.html</loc>
-    <lastmod>2025-11-15T02:08:40.086Z</lastmod>
+    <loc>https://jooonkim.github.io/ml/daily.html</loc>
+    <lastmod>2025-11-15T02:55:20.243Z</lastmod>
   </url>
   <url>
-    <loc>https://jooonkim.github.io/ml/daily.html</loc>
-    <lastmod>2025-11-15T02:08:40.085Z</lastmod>
+    <loc>https://jooonkim.github.io/ml/posts/daily/2025-11-14/index.html</loc>
+    <lastmod>2025-11-15T02:55:20.247Z</lastmod>
   </url>
   <url>
     <loc>https://jooonkim.github.io/ml/posts/concepts/index.html</loc>
-    <lastmod>2025-11-15T02:08:40.099Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jooonkim.github.io/ml/posts/daily/2025-11-12/index.html</loc>
-    <lastmod>2025-11-15T02:08:40.101Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jooonkim.github.io/ml/posts/projects/index.html</loc>
-    <lastmod>2025-11-15T02:08:40.105Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jooonkim.github.io/ml/posts/daily/index.html</loc>
-    <lastmod>2025-11-15T02:08:40.102Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jooonkim.github.io/ml/posts/math/index.html</loc>
-    <lastmod>2025-11-15T02:08:40.104Z</lastmod>
+    <lastmod>2025-11-15T02:55:20.247Z</lastmod>
   </url>
   <url>
     <loc>https://jooonkim.github.io/ml/posts/readings/index.html</loc>
-    <lastmod>2025-11-15T02:08:40.107Z</lastmod>
+    <lastmod>2025-11-15T02:55:20.248Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jooonkim.github.io/ml/hello.html</loc>
+    <lastmod>2025-11-15T02:55:20.243Z</lastmod>
   </url>
   <url>
     <loc>https://jooonkim.github.io/ml/index.html</loc>
-    <lastmod>2025-11-15T02:25:54.111Z</lastmod>
+    <lastmod>2025-11-15T02:55:20.247Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jooonkim.github.io/ml/posts/projects/index.html</loc>
+    <lastmod>2025-11-15T02:55:20.248Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jooonkim.github.io/ml/posts/math/index.html</loc>
+    <lastmod>2025-11-15T02:55:20.247Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jooonkim.github.io/ml/posts/daily/index.html</loc>
+    <lastmod>2025-11-15T02:55:20.247Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jooonkim.github.io/ml/posts/daily/2025-11-12/index.html</loc>
+    <lastmod>2025-11-15T02:55:20.247Z</lastmod>
   </url>
 </urlset>
