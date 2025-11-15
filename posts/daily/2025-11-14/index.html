@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -178,12 +207,23 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="ml-notes" class="level2">
 <h2 class="anchored" data-anchor-id="ml-notes">ML Notes</h2>
+<p>Three main types of ML.</p>
 <ul>
-<li>Three main types of ML: <strong>Supervised Learning, Unsupervised Learning, Reinforcement Learning</strong></li>
+<li><strong>Supervised Learning, Unsupervised Learning, Reinforcement Learning</strong></li>
 <li><strong>Supervised Learning</strong>: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: <em>Classification</em> is a problem of <em>discrete variables</em>, <em>Regression</em> is a problem of <em>continuous variables</em>.</li>
 <li><strong>Unsupervised Learning</strong>: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?</li>
 <li><strong>Reinforcement Learning</strong>: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?</li>
 <li>Unsupervised Learning has some interesting subfields. One is <strong>clustering</strong> which can be called <strong>unsupervised classification</strong>, and another is <strong>dimensionality reduction</strong> which can be helpful in preprocessing to remove noise from data.</li>
+</ul>
+<p>Math Notation</p>
+<ul>
+<li><strong>Features</strong> are <span class="math inline">\(x\)</span> - think of this as variables, inputs, predictors, dimensions, etc.</li>
+<li><strong>Targets</strong> are <span class="math inline">\(y\)</span> - think of this as outcome, response variable, dependent variable, output, etc.</li>
+<li><strong>Training Examples</strong> are samples, instances, observations, etc. I prefer training example over sample because samples can also be used to refer to a collection of training examples.</li>
+<li>Superscript <span class="math inline">\(i\)</span> refers to the <span class="math inline">\(i\)</span>th training example, and subscript <span class="math inline">\(j\)</span> refers to the <span class="math inline">\(j\)</span>th feature. Superscript on top, subscript on the bottom <span class="math inline">\(x^i_j\)</span></li>
+<li>Vectors are <span class="math inline">\(x \in \mathbb{R}^{n \times 1}\)</span> and Matrices are <span class="math inline">\(X \in \mathbb{R}^{n \times m}\)</span></li>
+<li><span class="math inline">\(x_{ij}\)</span> and <span class="math inline">\(x^i_j\)</span> are both valid ways of writing the <span class="math inline">\(j\)</span>th feature of the <span class="math inline">\(i\)</span>th training example</li>
+<li>You can think of every feature as an <span class="math inline">\(i\)</span>-dimensional column vector <span class="math inline">\(X^i \in \mathbb{R}^{i \times 1}\)</span> (basically, think of a vertical vector)</li>
 </ul>
 </section>
 <section id="personal-notes" class="level2">
