@@ -1,0 +1,12 @@
+{
+  "hash": "bea215527ed795271abe28a59a1fe8ba",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Daily ML Log — 2025-11-12\"\ncategories: [daily]\ndate: 2025-11-12\n---\n\n## What I studied\n\n- Logistic regression and the connection between odds and the sigmoid function.\n- Gradient of the binary cross-entropy loss.\n\n## Key formulas\n\nFor binary labels $y \\in \\{0,1\\}$ and logit $z = w^\\top x$:\n\n$$\np(y=1 \\mid x) = \\sigma(z) = \\frac{1}{1+e^{-z}}.\n$$\n\nThe per-example loss:\n\n$$\n\\ell(w) = - \\big[ y \\log \\sigma(z) + (1-y) \\log (1-\\sigma(z)) \\big].\n$$\n\nGradient w.r.t. $w$:\n\n$$\n\\nabla_w \\ell(w) = (\\sigma(z) - y) x.\n$$\n\n## Quick sanity check in code\n\n::: {#38a5ac2a .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n\ndef sigmoid(z):\n    return 1 / (1 + np.exp(-z))\n\nrng = np.random.default_rng(0)\nX = rng.normal(size=(5, 3))\nw = rng.normal(size=3)\ny = (rng.random(5) < 0.4).astype(float)\n\nz = X @ w\ngrad = ((sigmoid(z) - y)[:, None] * X).mean(axis=0)\ngrad\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\narray([-0.56860236, -0.20048999, -0.1503372 ])\n```\n:::\n:::\n\n\n## Questions for tomorrow\n\n- How does this generalize to multi-class (softmax) regression?\n- What happens to the gradient when the model is very overconfident and wrong?\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
