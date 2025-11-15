@@ -137,9 +137,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#notes" id="toc-notes" class="nav-link active" data-scroll-target="#notes">Notes</a></li>
+  <li><a href="#ml-notes" id="toc-ml-notes" class="nav-link active" data-scroll-target="#ml-notes">ML Notes</a></li>
+  <li><a href="#personal-notes" id="toc-personal-notes" class="nav-link" data-scroll-target="#personal-notes">Personal Notes</a></li>
   <li><a href="#questions-i-still-have" id="toc-questions-i-still-have" class="nav-link" data-scroll-target="#questions-i-still-have">Questions I still have</a></li>
   <li><a href="#tomorrows-plan" id="toc-tomorrows-plan" class="nav-link" data-scroll-target="#tomorrows-plan">Tomorrow’s plan</a></li>
+  <li><a href="#addendum-raschkas-tweet" id="toc-addendum-raschkas-tweet" class="nav-link" data-scroll-target="#addendum-raschkas-tweet">Addendum: Raschka’s Tweet</a></li>
   </ul>
 </nav>
     </div>
@@ -174,16 +176,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="notes" class="level2">
-<h2 class="anchored" data-anchor-id="notes">Notes</h2>
-<p>asdf</p>
+<section id="ml-notes" class="level2">
+<h2 class="anchored" data-anchor-id="ml-notes">ML Notes</h2>
+<ul>
+<li>Three main types of ML: <strong>Supervised Learning, Unsupervised Learning, Reinforcement Learning</strong></li>
+<li><strong>Supervised Learning</strong>: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: <em>Classification</em> is a problem of <em>discrete variables</em>, <em>Regression</em> is a problem of <em>continuous variables</em>.</li>
+<li><strong>Unsupervised Learning</strong>: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?</li>
+<li><strong>Reinforcement Learning</strong>: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?</li>
+<li>Unsupervised Learning has some interesting subfields. One is <strong>clustering</strong> which can be called <strong>unsupervised classification</strong>, and another is <strong>dimensionality reduction</strong> which can be helpful in preprocessing to remove noise from data.</li>
+</ul>
+</section>
+<section id="personal-notes" class="level2">
+<h2 class="anchored" data-anchor-id="personal-notes">Personal Notes</h2>
+<ul>
+<li>Sebastian Raschka’s <a href="https://x.com/rasbt/status/1988626642990719440">tweet</a> (preserved below) is an incredible framework for how to read technical textbooks. When reading <em>How to Read a Book</em> by Mortimer J. Adler, I learned that non-fiction books and fiction books must be read in a different fashion. I now understand that technical books require a third approach. Too often, I find myself in “tutorial hell” where I take extensive notes on the first 1-2 chapters of any one book, and flit around from book to book. I also find that extensive notes in the beginning runs the risk of “missing the forest for the trees” with understanding what concepts are most important.</li>
+<li>I find Raschka’s writing style most compelling, so I will use <a href="https://www.amazon.com/Machine-Learning-PyTorch-Scikit-Learn-learning/dp/1801819319">Machine Learning with PyTorch and Scikit-Learn</a> as my daily driver. I’m supplementing this with Tom Mitchell’s classic ML textbook (from the 1990s, but required by my course) and the Hands-On ML textbook by Aurélien Géron (there’s a newer PyTorch version of this book, but I’m finding it… hard to acquire).</li>
+<li>I understand that the most important part is not the qualitative note-taking, but the exercises and coding and deliberately breaking things. This is a difficult habit. I found it hard to get into Karpathy’s Zero to Hero and Jeremy Howard’s Fast AI courses for this reason. I hope that Raschka’s tweet will be a good framework.</li>
+<li>My current study plan is measured by input rather than output - I am trying to hold myself accountable to 14 hours of input / week. I’m not measuring output at this stage because I’d like to allow myself random restarts (see the <a href="https://en.wikipedia.org/wiki/Hill_climbing">hill climbing</a> problem). I am, however, forcing myself to continue to invest quality hours in a simple, measureable format.</li>
+<li>I really enjoyed watching these YouTube videos: <a href="https://youtu.be/zxQyTK8quyY?si=mLBPJoS2eSLX4OiJ">Transformer Neural Networks by StatQuest</a> and <a href="https://www.youtube.com/watch?v=JV3pL1_mn2M&amp;">AI Engineering in 76 Minutes by Marina Wyss</a>.</li>
+</ul>
 </section>
 <section id="questions-i-still-have" class="level2">
 <h2 class="anchored" data-anchor-id="questions-i-still-have">Questions I still have</h2>
-<p>asdf</p>
+<ul>
+<li>My grasp of the concept of unsupervised learning is admittedly still shakey. How do we know when we’re not grasping in the dark for a pattern that’s not there? Is this harder or easier than a typical SL or RL problem?</li>
+<li>My understanding of the ML that everyone finds most exciting right now is ML -&gt; DL -&gt; LLM-like transformer architectures (am I using the correct terminology?). What is the correct way to approach this topic?</li>
+<li>Math… as a former Math major I find it embarrassing how much Calculus/Lin Alg/Probability I have forgotten. I’d love to refresh but would also love to understand exactly what concepts are most required first. I’m resisting the urge to start Calculus 101 all over again so that I can apply Andrej Karpathy’s <a href="https://x.com/karpathy/status/1325154823856033793?lang=en">mantra</a> of “learning on demand.”</li>
+</ul>
 </section>
 <section id="tomorrows-plan" class="level2">
 <h2 class="anchored" data-anchor-id="tomorrows-plan">Tomorrow’s plan</h2>
+<ul>
+<li>Continue to read through Raschka.</li>
+</ul>
+</section>
+<section id="addendum-raschkas-tweet" class="level2">
+<h2 class="anchored" data-anchor-id="addendum-raschkas-tweet">Addendum: Raschka’s <a href="https://x.com/rasbt/status/1988626642990719440">Tweet</a></h2>
+<p>“I often get questions from readers about how to read and get the most out of my book(s) on building LLMs from scratch. My advice is usually based on how I read technical books myself. This is not a one-size-fits-all approach, but I thought it may be useful to share:</p>
+<ol type="1">
+<li><p>Read the chapter preferably offline, away from the computer. Either classic physical form or at least on digital devices without internet. This really helps with focus time and minimizing distractions while reading. Highlighting or annotating confusing or interesting things is good, but I would not look things up at this stage. I also wouldn’t run code at this stage. At least not yet.</p></li>
+<li><p>On the second read-through, type up and run the code from the chapter. Copying code is tempting because retyping is a lot of work, but it usually helps me to think about the code a bit more (versus just glancing over it). If I get different results than in the book, I would check the book’s GitHub repo and try the code from there. If I still get different results, I would try to see if it’s due to different package versions, random seeds, CPU/CUDA, etc. If I then still can’t find it out, asking the author would not be a bad idea (via book forum, public GitHub repo issues or discussions, and as a last resort, email)</p></li>
+<li><p>After the second read-through and retyping the code, it’s usually a good time to try the exercises to solidify my understanding. To check whether I actually understand the content and can work with it independently.</p></li>
+<li><p>Go through the highlights and annotations. I would bookmark important learnings or takeaways, if relevant for a given project, in my notes documents. Often, I also look up additional references to read more about a topic of interest. Also, if I still have any questions that I feel are unanswered after my previous readthroughs and exercises, I would do an online search to find out more.</p></li>
+<li><p>The previous steps were all about soaking up knowledge. Eventually, though, I somehow want to use that knowledge. So I think about which projects would benefit from what I’ve learned and incorporate it into them. This could involve using the main concept from the chapter, but also sometimes minor tidbits I learned along the way, e.g., even trivial things like whether it actually makes a difference in my project to explicitly call <code>torch.mps.manual_seed(seed)</code> instead of just <code>torch.manual_seed(seed)</code>.</p></li>
+</ol>
+<p>Of course, none of the above is set in stone. If the topic is overall very familiar or easy, and I am primarily reading the book to get some information in later chapters, skimming a chapter is ok (to not waste my time).</p>
+<p>Anyway, I hope this is useful. And happy reading and learning!”</p>
 
 
 </section>
