@@ -4,8 +4,11 @@
     "items": []
   },
   {
-    "listing": "/posts/readings/index.html",
-    "items": []
+    "listing": "/posts/daily/index.html",
+    "items": [
+      "/posts/daily/2025-11-14/index.html",
+      "/posts/daily/2025-11-12/index.html"
+    ]
   },
   {
     "listing": "/posts/projects/index.html",
@@ -16,10 +19,7 @@
     "items": []
   },
   {
-    "listing": "/posts/daily/index.html",
-    "items": [
-      "/posts/daily/2025-11-14/index.html",
-      "/posts/daily/2025-11-12/index.html"
-    ]
+    "listing": "/posts/readings/index.html",
+    "items": []
   }
 ]
