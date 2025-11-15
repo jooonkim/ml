@@ -4,14 +4,14 @@
     "items": []
   },
   {
+    "listing": "/posts/projects/index.html",
+    "items": []
+  },
+  {
     "listing": "/posts/daily/index.html",
     "items": [
       "/posts/daily/2025-11-14/index.html"
     ]
-  },
-  {
-    "listing": "/posts/projects/index.html",
-    "items": []
   },
   {
     "listing": "/posts/math/index.html",
