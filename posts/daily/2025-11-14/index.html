@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-2ac2dd3b5788705101668349f3e969a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c9977d45a3686ad219da56a32de8e67a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -225,6 +225,12 @@ window.Quarto = {
 <li><span class="math inline">\(x_{ij}\)</span> and <span class="math inline">\(x^i_j\)</span> are both valid ways of writing the <span class="math inline">\(j\)</span>th feature of the <span class="math inline">\(i\)</span>th training example</li>
 <li>You can think of every feature as an <span class="math inline">\(i\)</span>-dimensional column vector <span class="math inline">\(X^i \in \mathbb{R}^{i \times 1}\)</span> (basically, think of a vertical vector)</li>
 </ul>
+<p>Cross-Validation: The Answer to the Training vs.&nbsp;Testing vs.&nbsp;Validation problem</p>
+<ul>
+<li>It makes sense to randomly divide a dataset into a training dataset and a testing dataset - you want to use the training data to train the model, and you want to use the testing dataset to evaluate the final model without any biases.</li>
+<li>However, we only know that the model performs well on the test data - we need to further validate it on real-world data (a validation dataset).</li>
+<li><strong>Cross-Validation</strong> allows us to further divide a datset into training and validation datasets to <em>estimate the generalization performance of a model</em>.</li>
+</ul>
 </section>
 <section id="personal-notes" class="level2">
 <h2 class="anchored" data-anchor-id="personal-notes">Personal Notes</h2>
@@ -242,6 +248,7 @@ window.Quarto = {
 <li>My grasp of the concept of unsupervised learning is admittedly still shakey. How do we know when we’re not grasping in the dark for a pattern that’s not there? Is this harder or easier than a typical SL or RL problem?</li>
 <li>My understanding of the ML that everyone finds most exciting right now is ML -&gt; DL -&gt; LLM-like transformer architectures (am I using the correct terminology?). What is the correct way to approach this topic?</li>
 <li>Math… as a former Math major I find it embarrassing how much Calculus/Lin Alg/Probability I have forgotten. I’d love to refresh but would also love to understand exactly what concepts are most required first. I’m resisting the urge to start Calculus 101 all over again so that I can apply Andrej Karpathy’s <a href="https://x.com/karpathy/status/1325154823856033793?lang=en">mantra</a> of “learning on demand.”</li>
+<li>Importantly… parameters for techniques like <strong>feature scaling</strong> and <strong>dimensionality reduction</strong> are solely obtained from the training dataset… what does it mean that the performance measured on the test data is overly optimistic?</li>
 </ul>
 </section>
 <section id="tomorrows-plan" class="level2">
