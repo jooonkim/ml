@@ -1,15 +1,15 @@
-# ML Notes — Quarto + GitHub Pages (Structured)
+# Joon Kim's ML Notes
 
-This is a **structured ML notes site** using [Quarto](https://quarto.org) and GitHub Pages.
+A repository of ML notes as I learn in public. Hosted on [Quarto](https://quarto.org) and GitHub Pages.
 
 It separates:
 - `daily/` — daily learning logs
-- `concepts/` — polished concept explainers
-- `math/` — derivations and math notes
-- `projects/` — code-heavy experiments, demos
-- `readings/` — paper & textbook notes
+- `concepts/` — polished concept explainers (Work in Progress)
+- `math/` — derivations and math notes (Work in Progress)
+- `projects/` — code-heavy experiments, demos (Work in Progress)
+- `readings/` — paper & textbook notes (Work in Progress)
 
-## Quick start
+## Quick start - note to self
 
 ```bash
 # 0) Install Quarto (https://quarto.org/docs/get-started)
