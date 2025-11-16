@@ -231,14 +231,37 @@ Note
 <p>If we introduce a <strong>bias unit</strong> <span class="math inline">\(b = -\theta\)</span>, then:</p>
 <p><span class="math inline">\(z = w^Tx\)</span> or <span class="math inline">\(z = w_1x_1 + w_2x_2 + ... + w_nx_n + b = w^Tx + b\)</span></p>
 <p><span class="math inline">\(f(z) = \begin{cases} 1, &amp; z \ge 0 \\ 0, &amp; z &lt; 0 \end{cases}\)</span></p>
-<ul>
-<li>This perceptron learning rule can be summarized as follows:
-<ul>
+<p>The <strong>perceptron learning rule</strong> can be summarized as follows:</p>
+<ol type="1">
 <li>Initialize the weights and bias unit to 0</li>
-<li>For each training example <span class="math inline">\(x_i\)</span>, compute the output value <span class="math inline">\(y_i\)</span> which is basically the class label predicted by the function <span class="math inline">\(f(z)\)</span></li>
-<li>Use <span class="math inline">\(y_i\)</span> to update the weights <span class="math inline">\(w\)</span> and bias unit <span class="math inline">\(b\)</span></li>
-</ul></li>
+<li>For each training example <span class="math inline">\(x^{(i)}\)</span>, compute the output value <span class="math inline">\(\hat{y}^{(i)}\)</span> which is the <em>predicted class label</em> of the <span class="math inline">\(i\)</span>th training example, predicted by the function <span class="math inline">\(f(z)\)</span></li>
+<li>Compare the <em>predicted class label</em> of the <span class="math inline">\(i\)</span>th training example <span class="math inline">\(\hat{y}^{(i)}\)</span> to the <em>true class label</em> of the <span class="math inline">\(i\)</span>th training example <span class="math inline">\(y^{(i)}\)</span></li>
+<li>Update the weights <span class="math inline">\(w\)</span> and bias unit <span class="math inline">\(b\)</span> simultaneously</li>
+</ol>
+<ul>
+<li>Each weight <span class="math inline">\(w_j\)</span> corresponds to a feature <span class="math inline">\(x_j\)</span>. The bias unit <span class="math inline">\(b\)</span> does not.</li>
+<li><em>The perceptron only updates when it makes a mistake in classification.</em></li>
+<li>If the data is <strong>linearly separable</strong>, the perceptron is guaranteed to find a <strong>separating hyperplane</strong> within a finite amount of updates. If not <strong>linearly separable</strong>, it will update forever.</li>
 </ul>
+<p>Formally,</p>
+<p><span class="math inline">\(\forall w_j \in w, w_j := w_j + \Delta w_j\)</span></p>
+<p><span class="math inline">\(\Delta w_j = \eta(y^{(i)} - \hat{y}^{(i)})* x^{(i)}\)</span></p>
+<p><span class="math inline">\(b := b + \Delta b\)</span></p>
+<p><span class="math inline">\(\Delta b = \eta(y^{(i)} - \hat{y}^{(i)})\)</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(:=\)</span> is “defined as”</p>
+<p><span class="math inline">\(\eta\)</span> is the Greek letter “eta” and is often used for the <strong>learning rate</strong> in ML, typically defined as a constant between 0 &amp; 1</p>
+</div>
+</div>
 </section>
 <section id="personal-notes" class="level2">
 <h2 class="anchored" data-anchor-id="personal-notes">Personal Notes</h2>
