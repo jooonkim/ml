@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-2ac2dd3b5788705101668349f3e969a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-c9977d45a3686ad219da56a32de8e67a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -177,14 +206,44 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="ml-notes" class="level2">
 <h2 class="anchored" data-anchor-id="ml-notes">ML Notes</h2>
+<p>Implementing the perceptron as a simple ML classification algorithm without scikit-learn</p>
 <ul>
-<li></li>
+<li><strong>Mc-Culloch-Pitts (MCP) neuron model</strong>: The biological neuron as a simple logic gate with multiple input signals arriving at the dendrites and a binary output.</li>
+<li><strong>Perceptron learning rule</strong>: Frank Rosenblatt built upon this MCP neuron model by proposing an algorithm that would <em>learn</em> a weight vector <span class="math inline">\(w\)</span> that would be multiplied with the input features <span class="math inline">\(x\)</span> to make a decision about whether the neuron fires or not: i.e., a binary output.</li>
+<li>This is helpful because it can predict with the classification problem: does a new data point belong to one class or another?</li>
+</ul>
+<p>Formally, a decision function <span class="math inline">\(f(z)\)</span> where, given a defined threshold <span class="math inline">\(\theta\)</span>:</p>
+<p><span class="math inline">\(z = w_1x_1 + w_2x_2 + ... + w_nx_n = w^Tx\)</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(w\)</span> and <span class="math inline">\(z\)</span> are both column vectors, which is why we take the <strong>transpose</strong> <span class="math inline">\(w^T\)</span> to get the <strong>dot product</strong> of the <span class="math inline">\((n \times 1)\)</span> column vectors. <span class="math inline">\((1 \times n) * (n \times 1) = 1 \times 1\)</span></p>
+</div>
+</div>
+<p><span class="math inline">\(f(z) = \begin{cases} 1, &amp; z \ge \theta \\ 0, &amp; z &lt; \theta \end{cases}\)</span></p>
+<p>If we introduce a <strong>bias unit</strong> <span class="math inline">\(b = -\theta\)</span>, then:</p>
+<p><span class="math inline">\(z = w^Tx\)</span> or <span class="math inline">\(z = w_1x_1 + w_2x_2 + ... + w_nx_n + b = w^Tx + b\)</span></p>
+<p><span class="math inline">\(f(z) = \begin{cases} 1, &amp; z \ge 0 \\ 0, &amp; z &lt; 0 \end{cases}\)</span></p>
+<ul>
+<li>This perceptron learning rule can be summarized as follows:
+<ul>
+<li>Initialize the weights and bias unit to 0</li>
+<li>For each training example <span class="math inline">\(x_i\)</span>, compute the output value <span class="math inline">\(y_i\)</span> which is basically the class label predicted by the function <span class="math inline">\(f(z)\)</span></li>
+<li>Use <span class="math inline">\(y_i\)</span> to update the weights <span class="math inline">\(w\)</span> and bias unit <span class="math inline">\(b\)</span></li>
+</ul></li>
 </ul>
 </section>
 <section id="personal-notes" class="level2">
 <h2 class="anchored" data-anchor-id="personal-notes">Personal Notes</h2>
 <ul>
-<li></li>
+<li>I first read about the MCP neuron model from <em>Why Machines Learn</em> by Anil Ananthaswamy and found his exposition to be helpful in understanding this chapter.</li>
 </ul>
 </section>
 <section id="questions-i-still-have" class="level2">
