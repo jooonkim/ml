@@ -95,11 +95,9 @@ You will immediately run into the following math concepts that need refreshing:
 
 Questions I still have
 - 
--
+- N/A as of now
 
 
 Tomorrow's plan
 - 
-- 
-
-
+- Actually implement something
