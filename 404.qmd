@@ -1,0 +1,10 @@
+---
+title: "404 - Page not found"
+# optional: keep it simple / full-width
+format:
+  html:
+    page-layout: full
+    toc: false
+---
+
+You're probably looking for my [ML notes](/posts/).
