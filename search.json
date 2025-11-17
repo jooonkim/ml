@@ -1,75 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Joon’s ML Notes",
-    "section": "",
-    "text": "Hello, World! This is my collection of ML notes & musings as I learn in public.\nYou can find the GitHub repository here."
-  },
-  {
-    "objectID": "index.html#latest-posts",
-    "href": "index.html#latest-posts",
-    "title": "Joon’s ML Notes",
-    "section": "Latest Posts",
-    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/readings/index.html",
-    "href": "posts/readings/index.html",
-    "title": "Readings",
-    "section": "",
-    "text": "Notes from textbooks, blog posts, and research papers.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/math/index.html",
-    "href": "posts/math/index.html",
-    "title": "Math Notes",
-    "section": "",
-    "text": "Derivations, proofs, and small math notes related to machine learning.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html",
-    "href": "posts/daily/2025-11-14/index.html",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "",
-    "text": "Three main types of ML.\n\nSupervised Learning, Unsupervised Learning, Reinforcement Learning\nSupervised Learning: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: Classification is a problem of discrete variables, Regression is a problem of continuous variables.\nUnsupervised Learning: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?\nReinforcement Learning: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?\nUnsupervised Learning has some interesting subfields. One is clustering which can be called unsupervised classification, and another is dimensionality reduction which can be helpful in preprocessing to remove noise from data.\n\nMath Notation\n\nFeatures are \\(x\\) - think of this as variables, inputs, predictors, dimensions, etc.\nTargets are \\(y\\) - think of this as outcome, response variable, dependent variable, output, etc.\nTraining Examples are samples, instances, observations, etc. I prefer training example over sample because samples can also be used to refer to a collection of training examples.\nSuperscript \\(i\\) refers to the \\(i\\)th training example, and subscript \\(j\\) refers to the \\(j\\)th feature. Superscript on top, subscript on the bottom \\(x^i_j\\)\nVectors are \\(x \\in \\mathbb{R}^{n \\times 1}\\) and Matrices are \\(X \\in \\mathbb{R}^{n \\times m}\\)\n\\(x_{ij}\\) and \\(x^i_j\\) are both valid ways of writing the \\(j\\)th feature of the \\(i\\)th training example\nYou can think of every feature as an \\(i\\)-dimensional column vector \\(X^i \\in \\mathbb{R}^{i \\times 1}\\) (basically, think of a vertical vector)\n\nCross-Validation: The Answer to the Training vs. Testing vs. Validation problem\n\nIt makes sense to randomly divide a dataset into a training dataset and a testing dataset - you want to use the training data to train the model, and you want to use the testing dataset to evaluate the final model without any biases.\nHowever, we only know that the model performs well on the test data - we need to further validate it on real-world data (a validation dataset).\nCross-Validation allows us to further divide a datset into training and validation datasets to estimate the generalization performance of a model."
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#ml-notes",
-    "href": "posts/daily/2025-11-14/index.html#ml-notes",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "",
-    "text": "Three main types of ML.\n\nSupervised Learning, Unsupervised Learning, Reinforcement Learning\nSupervised Learning: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: Classification is a problem of discrete variables, Regression is a problem of continuous variables.\nUnsupervised Learning: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?\nReinforcement Learning: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?\nUnsupervised Learning has some interesting subfields. One is clustering which can be called unsupervised classification, and another is dimensionality reduction which can be helpful in preprocessing to remove noise from data.\n\nMath Notation\n\nFeatures are \\(x\\) - think of this as variables, inputs, predictors, dimensions, etc.\nTargets are \\(y\\) - think of this as outcome, response variable, dependent variable, output, etc.\nTraining Examples are samples, instances, observations, etc. I prefer training example over sample because samples can also be used to refer to a collection of training examples.\nSuperscript \\(i\\) refers to the \\(i\\)th training example, and subscript \\(j\\) refers to the \\(j\\)th feature. Superscript on top, subscript on the bottom \\(x^i_j\\)\nVectors are \\(x \\in \\mathbb{R}^{n \\times 1}\\) and Matrices are \\(X \\in \\mathbb{R}^{n \\times m}\\)\n\\(x_{ij}\\) and \\(x^i_j\\) are both valid ways of writing the \\(j\\)th feature of the \\(i\\)th training example\nYou can think of every feature as an \\(i\\)-dimensional column vector \\(X^i \\in \\mathbb{R}^{i \\times 1}\\) (basically, think of a vertical vector)\n\nCross-Validation: The Answer to the Training vs. Testing vs. Validation problem\n\nIt makes sense to randomly divide a dataset into a training dataset and a testing dataset - you want to use the training data to train the model, and you want to use the testing dataset to evaluate the final model without any biases.\nHowever, we only know that the model performs well on the test data - we need to further validate it on real-world data (a validation dataset).\nCross-Validation allows us to further divide a datset into training and validation datasets to estimate the generalization performance of a model."
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#personal-notes",
-    "href": "posts/daily/2025-11-14/index.html#personal-notes",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "Personal Notes",
-    "text": "Personal Notes\n\nSebastian Raschka’s tweet (preserved below) is an incredible framework for how to read technical textbooks. When reading How to Read a Book by Mortimer J. Adler, I learned that non-fiction books and fiction books must be read in a different fashion. I now understand that technical books require a third approach. Too often, I find myself in “tutorial hell” where I take extensive notes on the first 1-2 chapters of any one book, and flit around from book to book. I also find that extensive notes in the beginning runs the risk of “missing the forest for the trees” with understanding what concepts are most important.\nI find Raschka’s writing style most compelling, so I will use Machine Learning with PyTorch and Scikit-Learn as my daily driver. I’m supplementing this with Tom Mitchell’s classic ML textbook (from the 1990s, but required by my course) and the Hands-On ML textbook by Aurélien Géron (there’s a newer PyTorch version of this book, but I’m finding it… hard to acquire).\nI understand that the most important part is not the qualitative note-taking, but the exercises and coding and deliberately breaking things. This is a difficult habit. I found it hard to get into Karpathy’s Zero to Hero and Jeremy Howard’s Fast AI courses for this reason. I hope that Raschka’s tweet will be a good framework.\nMy current study plan is measured by input rather than output - I am trying to hold myself accountable to 14 hours of input / week. I’m not measuring output at this stage because I’d like to allow myself random restarts (see the hill climbing problem). I am, however, forcing myself to continue to invest quality hours in a simple, measureable format.\nI really enjoyed watching these YouTube videos: Transformer Neural Networks by StatQuest and AI Engineering in 76 Minutes by Marina Wyss."
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#questions-i-still-have",
-    "href": "posts/daily/2025-11-14/index.html#questions-i-still-have",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "Questions I still have",
-    "text": "Questions I still have\n\nMy grasp of the concept of unsupervised learning is admittedly still shakey. How do we know when we’re not grasping in the dark for a pattern that’s not there? Is this harder or easier than a typical SL or RL problem?\nMy understanding of the ML that everyone finds most exciting right now is ML -&gt; DL -&gt; Transformer Architectures -&gt; LLMs. What is the correct way to approach this topic?\nMath… as a former Math major I find it embarrassing how much Calculus/Lin Alg/Probability I have forgotten. I’d love to refresh but would also love to understand exactly what concepts are most required first. I’m resisting the urge to start Calculus 101 all over again so that I can apply Andrej Karpathy’s mantra of “learning on demand.”\nImportantly… parameters for techniques like feature scaling and dimensionality reduction are solely obtained from the training dataset… what does it mean that the performance measured on the test data is overly optimistic?"
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#tomorrows-plan",
-    "href": "posts/daily/2025-11-14/index.html#tomorrows-plan",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "Tomorrow’s plan",
-    "text": "Tomorrow’s plan\n\nContinue to read through Raschka."
-  },
-  {
-    "objectID": "posts/daily/2025-11-14/index.html#addendum-raschkas-tweet",
-    "href": "posts/daily/2025-11-14/index.html#addendum-raschkas-tweet",
-    "title": "Daily Notes: 2025-11-14",
-    "section": "Addendum: Raschka’s Tweet",
-    "text": "Addendum: Raschka’s Tweet\n“I often get questions from readers about how to read and get the most out of my book(s) on building LLMs from scratch. My advice is usually based on how I read technical books myself. This is not a one-size-fits-all approach, but I thought it may be useful to share:\n\nRead the chapter preferably offline, away from the computer. Either classic physical form or at least on digital devices without internet. This really helps with focus time and minimizing distractions while reading. Highlighting or annotating confusing or interesting things is good, but I would not look things up at this stage. I also wouldn’t run code at this stage. At least not yet.\nOn the second read-through, type up and run the code from the chapter. Copying code is tempting because retyping is a lot of work, but it usually helps me to think about the code a bit more (versus just glancing over it). If I get different results than in the book, I would check the book’s GitHub repo and try the code from there. If I still get different results, I would try to see if it’s due to different package versions, random seeds, CPU/CUDA, etc. If I then still can’t find it out, asking the author would not be a bad idea (via book forum, public GitHub repo issues or discussions, and as a last resort, email)\nAfter the second read-through and retyping the code, it’s usually a good time to try the exercises to solidify my understanding. To check whether I actually understand the content and can work with it independently.\nGo through the highlights and annotations. I would bookmark important learnings or takeaways, if relevant for a given project, in my notes documents. Often, I also look up additional references to read more about a topic of interest. Also, if I still have any questions that I feel are unanswered after my previous readthroughs and exercises, I would do an online search to find out more.\nThe previous steps were all about soaking up knowledge. Eventually, though, I somehow want to use that knowledge. So I think about which projects would benefit from what I’ve learned and incorporate it into them. This could involve using the main concept from the chapter, but also sometimes minor tidbits I learned along the way, e.g., even trivial things like whether it actually makes a difference in my project to explicitly call torch.mps.manual_seed(seed) instead of just torch.manual_seed(seed).\n\nOf course, none of the above is set in stone. If the topic is overall very familiar or easy, and I am primarily reading the book to get some information in later chapters, skimming a chapter is ok (to not waste my time).\nAnyway, I hope this is useful. And happy reading and learning!”"
-  },
-  {
     "objectID": "posts/daily/2025-11-16/index.html",
     "href": "posts/daily/2025-11-16/index.html",
     "title": "Daily Notes: 2025-11-16",
@@ -103,20 +33,6 @@
     "title": "Daily Notes: 2025-11-16",
     "section": "Tomorrow’s plan",
     "text": "Tomorrow’s plan"
-  },
-  {
-    "objectID": "posts/projects/index.html",
-    "href": "posts/projects/index.html",
-    "title": "Projects & Experiments",
-    "section": "",
-    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/daily/index.html",
-    "href": "posts/daily/index.html",
-    "title": "Daily ML Logs",
-    "section": "",
-    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/daily/2025-11-15/index.html",
@@ -159,5 +75,89 @@
     "title": "Concepts",
     "section": "",
     "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/readings/index.html",
+    "href": "posts/readings/index.html",
+    "title": "Readings",
+    "section": "",
+    "text": "Notes from textbooks, blog posts, and research papers.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Joon’s ML Notes",
+    "section": "",
+    "text": "Hello, World! This is my collection of ML notes & musings as I learn in public.\nYou can find the GitHub repository here."
+  },
+  {
+    "objectID": "index.html#latest-posts",
+    "href": "index.html#latest-posts",
+    "title": "Joon’s ML Notes",
+    "section": "Latest Posts",
+    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/projects/index.html",
+    "href": "posts/projects/index.html",
+    "title": "Projects & Experiments",
+    "section": "",
+    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/math/index.html",
+    "href": "posts/math/index.html",
+    "title": "Math Notes",
+    "section": "",
+    "text": "Derivations, proofs, and small math notes related to machine learning.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/daily/index.html",
+    "href": "posts/daily/index.html",
+    "title": "Daily ML Logs",
+    "section": "",
+    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html",
+    "href": "posts/daily/2025-11-14/index.html",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "",
+    "text": "Three main types of ML.\n\nSupervised Learning, Unsupervised Learning, Reinforcement Learning\nSupervised Learning: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: Classification is a problem of discrete variables, Regression is a problem of continuous variables.\nUnsupervised Learning: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?\nReinforcement Learning: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?\nUnsupervised Learning has some interesting subfields. One is clustering which can be called unsupervised classification, and another is dimensionality reduction which can be helpful in preprocessing to remove noise from data.\n\nMath Notation\n\nFeatures are \\(x\\) - think of this as variables, inputs, predictors, dimensions, etc.\nTargets are \\(y\\) - think of this as outcome, response variable, dependent variable, output, etc.\nTraining Examples are samples, instances, observations, etc. I prefer training example over sample because samples can also be used to refer to a collection of training examples.\nSuperscript \\(i\\) refers to the \\(i\\)th training example, and subscript \\(j\\) refers to the \\(j\\)th feature. Superscript on top, subscript on the bottom \\(x^i_j\\)\nVectors are \\(x \\in \\mathbb{R}^{n \\times 1}\\) and Matrices are \\(X \\in \\mathbb{R}^{n \\times m}\\)\n\\(x_{ij}\\) and \\(x^i_j\\) are both valid ways of writing the \\(j\\)th feature of the \\(i\\)th training example\nYou can think of every feature as an \\(i\\)-dimensional column vector \\(X^i \\in \\mathbb{R}^{i \\times 1}\\) (basically, think of a vertical vector)\n\nCross-Validation: The Answer to the Training vs. Testing vs. Validation problem\n\nIt makes sense to randomly divide a dataset into a training dataset and a testing dataset - you want to use the training data to train the model, and you want to use the testing dataset to evaluate the final model without any biases.\nHowever, we only know that the model performs well on the test data - we need to further validate it on real-world data (a validation dataset).\nCross-Validation allows us to further divide a datset into training and validation datasets to estimate the generalization performance of a model."
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html#ml-notes",
+    "href": "posts/daily/2025-11-14/index.html#ml-notes",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "",
+    "text": "Three main types of ML.\n\nSupervised Learning, Unsupervised Learning, Reinforcement Learning\nSupervised Learning: Think of this as an approximation problem. Simplest way to distinguish the two types of Supervised Learning: Classification is a problem of discrete variables, Regression is a problem of continuous variables.\nUnsupervised Learning: Think of this as an extracting meaning problem. Given unlabeled data, what kinds of meaningful information can we extract without the guidance of a known outcome variable or measure of success?\nReinforcement Learning: This is basically supervised learning, but the feedback is not the correct ground truth. Rather, the feedback is a measure against a reward function. Central question: How do you maximize the (sometimes immediate, sometimes delayed) reward?\nUnsupervised Learning has some interesting subfields. One is clustering which can be called unsupervised classification, and another is dimensionality reduction which can be helpful in preprocessing to remove noise from data.\n\nMath Notation\n\nFeatures are \\(x\\) - think of this as variables, inputs, predictors, dimensions, etc.\nTargets are \\(y\\) - think of this as outcome, response variable, dependent variable, output, etc.\nTraining Examples are samples, instances, observations, etc. I prefer training example over sample because samples can also be used to refer to a collection of training examples.\nSuperscript \\(i\\) refers to the \\(i\\)th training example, and subscript \\(j\\) refers to the \\(j\\)th feature. Superscript on top, subscript on the bottom \\(x^i_j\\)\nVectors are \\(x \\in \\mathbb{R}^{n \\times 1}\\) and Matrices are \\(X \\in \\mathbb{R}^{n \\times m}\\)\n\\(x_{ij}\\) and \\(x^i_j\\) are both valid ways of writing the \\(j\\)th feature of the \\(i\\)th training example\nYou can think of every feature as an \\(i\\)-dimensional column vector \\(X^i \\in \\mathbb{R}^{i \\times 1}\\) (basically, think of a vertical vector)\n\nCross-Validation: The Answer to the Training vs. Testing vs. Validation problem\n\nIt makes sense to randomly divide a dataset into a training dataset and a testing dataset - you want to use the training data to train the model, and you want to use the testing dataset to evaluate the final model without any biases.\nHowever, we only know that the model performs well on the test data - we need to further validate it on real-world data (a validation dataset).\nCross-Validation allows us to further divide a datset into training and validation datasets to estimate the generalization performance of a model."
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html#personal-notes",
+    "href": "posts/daily/2025-11-14/index.html#personal-notes",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "Personal Notes",
+    "text": "Personal Notes\n\nSebastian Raschka’s tweet (preserved below) is an incredible framework for how to read technical textbooks. When reading How to Read a Book by Mortimer J. Adler, I learned that non-fiction books and fiction books must be read in a different fashion. I now understand that technical books require a third approach. Too often, I find myself in “tutorial hell” where I take extensive notes on the first 1-2 chapters of any one book, and flit around from book to book. I also find that extensive notes in the beginning runs the risk of “missing the forest for the trees” with understanding what concepts are most important.\nI find Raschka’s writing style most compelling, so I will use Machine Learning with PyTorch and Scikit-Learn as my daily driver. I’m supplementing this with Tom Mitchell’s classic ML textbook (from the 1990s, but required by my course) and the Hands-On ML textbook by Aurélien Géron (there’s a newer PyTorch version of this book, but I’m finding it… hard to acquire).\nI understand that the most important part is not the qualitative note-taking, but the exercises and coding and deliberately breaking things. This is a difficult habit. I found it hard to get into Karpathy’s Zero to Hero and Jeremy Howard’s Fast AI courses for this reason. I hope that Raschka’s tweet will be a good framework.\nMy current study plan is measured by input rather than output - I am trying to hold myself accountable to 14 hours of input / week. I’m not measuring output at this stage because I’d like to allow myself random restarts (see the hill climbing problem). I am, however, forcing myself to continue to invest quality hours in a simple, measureable format.\nI really enjoyed watching these YouTube videos: Transformer Neural Networks by StatQuest and AI Engineering in 76 Minutes by Marina Wyss."
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html#questions-i-still-have",
+    "href": "posts/daily/2025-11-14/index.html#questions-i-still-have",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "Questions I still have",
+    "text": "Questions I still have\n\nMy grasp of the concept of unsupervised learning is admittedly still shakey. How do we know when we’re not grasping in the dark for a pattern that’s not there? Is this harder or easier than a typical SL or RL problem?\nMy understanding of the ML that everyone finds most exciting right now is ML -&gt; DL -&gt; Transformer Architectures -&gt; LLMs. What is the correct way to approach this topic?\nMath… as a former Math major I find it embarrassing how much Calculus/Lin Alg/Probability I have forgotten. I’d love to refresh but would also love to understand exactly what concepts are most required first. I’m resisting the urge to start Calculus 101 all over again so that I can apply Andrej Karpathy’s mantra of “learning on demand.”\nImportantly… parameters for techniques like feature scaling and dimensionality reduction are solely obtained from the training dataset… what does it mean that the performance measured on the test data is overly optimistic?"
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html#tomorrows-plan",
+    "href": "posts/daily/2025-11-14/index.html#tomorrows-plan",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "Tomorrow’s plan",
+    "text": "Tomorrow’s plan\n\nContinue to read through Raschka."
+  },
+  {
+    "objectID": "posts/daily/2025-11-14/index.html#addendum-raschkas-tweet",
+    "href": "posts/daily/2025-11-14/index.html#addendum-raschkas-tweet",
+    "title": "Daily Notes: 2025-11-14",
+    "section": "Addendum: Raschka’s Tweet",
+    "text": "Addendum: Raschka’s Tweet\n“I often get questions from readers about how to read and get the most out of my book(s) on building LLMs from scratch. My advice is usually based on how I read technical books myself. This is not a one-size-fits-all approach, but I thought it may be useful to share:\n\nRead the chapter preferably offline, away from the computer. Either classic physical form or at least on digital devices without internet. This really helps with focus time and minimizing distractions while reading. Highlighting or annotating confusing or interesting things is good, but I would not look things up at this stage. I also wouldn’t run code at this stage. At least not yet.\nOn the second read-through, type up and run the code from the chapter. Copying code is tempting because retyping is a lot of work, but it usually helps me to think about the code a bit more (versus just glancing over it). If I get different results than in the book, I would check the book’s GitHub repo and try the code from there. If I still get different results, I would try to see if it’s due to different package versions, random seeds, CPU/CUDA, etc. If I then still can’t find it out, asking the author would not be a bad idea (via book forum, public GitHub repo issues or discussions, and as a last resort, email)\nAfter the second read-through and retyping the code, it’s usually a good time to try the exercises to solidify my understanding. To check whether I actually understand the content and can work with it independently.\nGo through the highlights and annotations. I would bookmark important learnings or takeaways, if relevant for a given project, in my notes documents. Often, I also look up additional references to read more about a topic of interest. Also, if I still have any questions that I feel are unanswered after my previous readthroughs and exercises, I would do an online search to find out more.\nThe previous steps were all about soaking up knowledge. Eventually, though, I somehow want to use that knowledge. So I think about which projects would benefit from what I’ve learned and incorporate it into them. This could involve using the main concept from the chapter, but also sometimes minor tidbits I learned along the way, e.g., even trivial things like whether it actually makes a difference in my project to explicitly call torch.mps.manual_seed(seed) instead of just torch.manual_seed(seed).\n\nOf course, none of the above is set in stone. If the topic is overall very familiar or easy, and I am primarily reading the book to get some information in later chapters, skimming a chapter is ok (to not waste my time).\nAnyway, I hope this is useful. And happy reading and learning!”"
   }
 ]
