@@ -189,6 +189,6 @@ Questions I still have
 
 Tomorrow's plan
 - 
-- 
+- Continue with Chapter 2 of Raschka's ML textbook.
 
 

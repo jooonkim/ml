@@ -11,12 +11,12 @@ listing:
     item-type: "section"
 ---
 
-Hello, World! This is my collection of ML notes & musings as I [learn in public](https://www.swyx.io/learn-in-public). 
+My collection of ML notes & musings as I [learn in public](https://www.swyx.io/learn-in-public). 
 
 You can find the GitHub repository [here](https://github.com/jooonkim/ml).
 
 ::: {.callout-note}
-All I have thus far are daily notes. Later, I hope to have separate sections for concepts, math, projects, and readings.
+Separate sections for [concepts](https://jooonkim.github.io/ml/posts/concepts/), [math](https://jooonkim.github.io/ml/posts/math/), [projects](https://jooonkim.github.io/ml/posts/projects/), and [readings](https://jooonkim.github.io/ml/posts/readings/) are a work in progress.
 :::
 
 ## Latest Posts
