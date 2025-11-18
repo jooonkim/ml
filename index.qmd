@@ -1,5 +1,5 @@
 ---
-title: "Joon's ML Notes"
+title: "Joon Kim / ML Notes"
 page-layout: full
 listing:
   id: latest-posts
@@ -13,11 +13,11 @@ listing:
 
 My collection of ML notes & musings as I [learn in public](https://www.swyx.io/learn-in-public). 
 
-You can find the GitHub repository [here](https://github.com/jooonkim/ml).
+## Useful Links
 
-::: {.callout-note}
-Separate sections for [concepts](https://jooonkim.github.io/ml/posts/concepts/), [math](https://jooonkim.github.io/ml/posts/math/), [projects](https://jooonkim.github.io/ml/posts/projects/), and [readings](https://jooonkim.github.io/ml/posts/readings/) are a work in progress.
-:::
+- [GitHub Repository](https://github.com/jooonkim/ml)
+- [Personal Website](https://www.joon.kim)
+
 
 ## Latest Posts
 
