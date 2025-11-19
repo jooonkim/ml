@@ -1,0 +1,30 @@
+---
+title: "Daily Notes: 2025-11-18"
+date: 2025-11-18
+categories: [daily]
+---
+
+
+ML Notes
+- 
+Explorations using open-source local models.
+
+
+Personal Notes
+-
+- I forked Karpathy's [reader3](https://github.com/karpathy/reader3) and created a version with a built-in local LLM: [reader](https://github.com/jooonkim/reader). I wrote up the value proposition in a [reply tweet](https://x.com/joooonkim/status/1990847411359789483), and I couldn't believe my eyes when I received a like from Karpathy himself. It was incredibly motivating and I spent the rest of the day shipping improvements.
+- I learned a lot about Ollama, Llama 3.2, and about open-source models that can be run locally and "on the edge." I'd love to experiment with more of the advanced SOTA open-source models, but I ran against the limits of my 2020 x64 16GB MacBook. I think the amazing feat of lightweight open-source models is something that isn't discussed enough. It's sad that this appears to be taking the contours of a political statement given the China vs. US AI arms race and the relative positions both players have undertaken.
+- I finally redownloaded Cursor. I was an "early adopter" of Cursor in 2023, and I was an active "vibe coder" in 2024-2025. I stopped "vibe coding" on Replit in April of 2025, and 6 months later, using GPT-5.1 Codex, it is incredible how much better it has become. "This is the worst that AI will ever be" is a statement with wide-ranging implications.
+
+
+Questions I still have
+- 
+- I still don't think I fully understand the possibilities that can be unlocked by locally run open-source models. What are some workflows that I have today that are easier, and faster, if I run them locally?
+
+
+Tomorrow's plan
+- 
+- Would love to get back to pure ML studying tomorrow.
+- Would like to read Raschka's [Converting Llama 2 to Llama 3.2 From Scratch](https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/07_gpt_to_llama/converting-llama2-to-llama3.ipynb).
+
+
