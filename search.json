@@ -18,7 +18,7 @@
     "href": "index.html#latest-posts",
     "title": "Joon Kim / Machine Learning Notes",
     "section": "Latest Posts",
-    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-17\n\n\n\n\n\n\n\n\nNov 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-18\n\n\n\n\n\n\n\n\nNov 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/readings/index.html",
@@ -119,32 +119,46 @@
     "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/daily/2025-11-17/index.html#personal-notes",
-    "href": "posts/daily/2025-11-17/index.html#personal-notes",
-    "title": "Daily Notes: 2025-11-17",
-    "section": "Personal Notes",
-    "text": "Personal Notes"
+    "objectID": "posts/daily/2025-11-18/index.html",
+    "href": "posts/daily/2025-11-18/index.html",
+    "title": "Daily Notes: 2025-11-18",
+    "section": "",
+    "text": "Explorations using open-source local models."
   },
   {
-    "objectID": "posts/daily/2025-11-17/index.html#questions-i-still-have",
-    "href": "posts/daily/2025-11-17/index.html#questions-i-still-have",
-    "title": "Daily Notes: 2025-11-17",
+    "objectID": "posts/daily/2025-11-18/index.html#ml-notes",
+    "href": "posts/daily/2025-11-18/index.html#ml-notes",
+    "title": "Daily Notes: 2025-11-18",
+    "section": "",
+    "text": "Explorations using open-source local models."
+  },
+  {
+    "objectID": "posts/daily/2025-11-18/index.html#personal-notes",
+    "href": "posts/daily/2025-11-18/index.html#personal-notes",
+    "title": "Daily Notes: 2025-11-18",
+    "section": "Personal Notes",
+    "text": "Personal Notes\n\nI forked Karpathy’s reader3 and created a version with a built-in local LLM: reader. I wrote up the value proposition in a reply tweet, and I couldn’t believe my eyes when I received a like from Karpathy himself. It was incredibly motivating and I spent the rest of the day shipping improvements.\nI learned a lot about Ollama, Llama 3.2, and about open-source models that can be run locally and “on the edge.” I’d love to experiment with more of the advanced SOTA open-source models, but I ran against the limits of my 2020 x64 16GB MacBook. I think the amazing feat of lightweight open-source models is something that isn’t discussed enough. It’s sad that this appears to be taking the contours of a political statement given the China vs. US AI arms race and the relative positions both players have undertaken.\nI finally redownloaded Cursor. I was an “early adopter” of Cursor in 2023, and I was an active “vibe coder” in 2024-2025. I stopped “vibe coding” on Replit in April of 2025, and 6 months later, using GPT-5.1 Codex, it is incredible how much better it has become. “This is the worst that AI will ever be” is a statement with wide-ranging implications."
+  },
+  {
+    "objectID": "posts/daily/2025-11-18/index.html#questions-i-still-have",
+    "href": "posts/daily/2025-11-18/index.html#questions-i-still-have",
+    "title": "Daily Notes: 2025-11-18",
     "section": "Questions I still have",
     "text": "Questions I still have"
   },
   {
-    "objectID": "posts/daily/2025-11-17/index.html#tomorrows-plan",
-    "href": "posts/daily/2025-11-17/index.html#tomorrows-plan",
-    "title": "Daily Notes: 2025-11-17",
+    "objectID": "posts/daily/2025-11-18/index.html#tomorrows-plan",
+    "href": "posts/daily/2025-11-18/index.html#tomorrows-plan",
+    "title": "Daily Notes: 2025-11-18",
     "section": "Tomorrow’s plan",
-    "text": "Tomorrow’s plan"
+    "text": "Tomorrow’s plan\n\nWould love to get back to pure ML studying tomorrow.\nWould like to read Raschka’s Converting Llama 2 to Llama 3.2 From Scratch."
   },
   {
     "objectID": "posts/daily/index.html",
     "href": "posts/daily/index.html",
     "title": "Daily ML Logs",
     "section": "",
-    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-17\n\n\n\n\n\n\n\n\nNov 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-18\n\n\n\n\n\n\n\n\nNov 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/daily/2025-11-15/index.html",
