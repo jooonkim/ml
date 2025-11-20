@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-11-19">
 
-<title>Joon Kim / Machine Learning Notes – ML Notes</title>
+<title>Daily Notes: 2025-11-19 – ML Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +21,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2ac2dd3b5788705101668349f3e969a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-2ac2dd3b5788705101668349f3e969a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,65 +104,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-latest-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-latest-posts'] = new List('listing-latest-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -139,7 +115,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">ML Notes</span>
     </a>
   </div>
@@ -150,27 +126,27 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/daily/index.html"> 
+    <a class="nav-link" href="../../../posts/daily/index.html"> 
 <span class="menu-text">Daily</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/concepts/index.html"> 
+    <a class="nav-link" href="../../../posts/concepts/index.html"> 
 <span class="menu-text">Concepts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/math/index.html"> 
+    <a class="nav-link" href="../../../posts/math/index.html"> 
 <span class="menu-text">Math</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/projects/index.html"> 
+    <a class="nav-link" href="../../../posts/projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/readings/index.html"> 
+    <a class="nav-link" href="../../../posts/readings/index.html"> 
 <span class="menu-text">Readings</span></a>
   </li>  
 </ul>
@@ -188,7 +164,7 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -196,24 +172,35 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link active" data-scroll-target="#useful-links">Useful Links</a></li>
-  <li><a href="#latest-posts" id="toc-latest-posts" class="nav-link" data-scroll-target="#latest-posts">Latest Posts</a></li>
+  <li><a href="#ml-notes" id="toc-ml-notes" class="nav-link active" data-scroll-target="#ml-notes">ML Notes</a></li>
+  <li><a href="#personal-notes" id="toc-personal-notes" class="nav-link" data-scroll-target="#personal-notes">Personal Notes</a></li>
+  <li><a href="#questions-i-still-have" id="toc-questions-i-still-have" class="nav-link" data-scroll-target="#questions-i-still-have">Questions I still have</a></li>
+  <li><a href="#tomorrows-plan" id="toc-tomorrows-plan" class="nav-link" data-scroll-target="#tomorrows-plan">Tomorrow’s plan</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Joon Kim / Machine Learning Notes</h1>
-</div>
+<h1 class="title">Daily Notes: 2025-11-19</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">daily</div>
+  </div>
+  </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 19, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -223,132 +210,70 @@ window.Quarto = {
 </header>
 
 
-<p>My collection of Machine Learning notes &amp; musings as I <a href="https://www.swyx.io/learn-in-public">learn in public</a>.</p>
-<section id="useful-links" class="level2">
-<h2 class="anchored" data-anchor-id="useful-links">Useful Links</h2>
+<section id="ml-notes" class="level2">
+<h2 class="anchored" data-anchor-id="ml-notes">ML Notes</h2>
+<p>Training a perceptron model on the Iris dataset</p>
 <ul>
-<li><a href="https://github.com/jooonkim/ml">GitHub Repository</a></li>
-<li><a href="https://www.joon.kim">Personal Website</a></li>
+<li>The perceptron is a binary classifier, so we will consider two flower classes from the <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data">Iris dataset</a> for practical reasons. The preceptron algorithm can be extended to <strong>multi-class classification</strong> using the <strong>One vs All (OvA)</strong> method (where one class is treated as the positive class and all other classes are the negative class).</li>
+<li>It’s very important that the feature pair seems roughly <strong>linearly separable</strong> when judging whether a perceptron is a good choice.</li>
+</ul>
+<div id="6a3ab33f" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(s, header<span class="op">=</span><span class="va">None</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="co"># dataframe</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># print(df.tail()) # just to ensure that the data was loaded correctly</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df.iloc[<span class="dv">0</span>:<span class="dv">100</span>, <span class="dv">4</span>].values <span class="co"># creates a np array (.values) from the species labels (4 == 5th column == species) of the first 100 rows</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.where(y <span class="op">==</span> <span class="st">'Iris-setosa'</span>, <span class="dv">0</span>, <span class="dv">1</span>) <span class="co"># 0 if setosa, 1 if versicolor (first 100 rows only have those two species)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.iloc[<span class="dv">0</span>:<span class="dv">100</span>, [<span class="dv">0</span>, <span class="dv">2</span>]].values <span class="co"># 100 x 2 matrix that extracts two features: sepal length (0) and petal length (2)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the two iris classes in the 100 x 2 matrix to visualize how separable they are before fitting a perceptron</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># It's important that it's roughly linearly separable, which is when a perceptron would be a good choice</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[:<span class="dv">50</span>, <span class="dv">0</span>], X[:<span class="dv">50</span>, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'red'</span>, marker<span class="op">=</span><span class="st">'o'</span>, label <span class="op">=</span> <span class="st">'Setosa'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[<span class="dv">50</span>:<span class="dv">100</span>, <span class="dv">0</span>], X[<span class="dv">50</span>:<span class="dv">100</span>, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'blue'</span>, marker<span class="op">=</span><span class="st">'s'</span>, label <span class="op">=</span> <span class="st">'Versicolor'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the x-axis here would be sepal length (because it's in column 0) and y-axis would be petal length (column 1)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sepal length (cm)'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Petal length (cm)'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-2-output-1.png" width="576" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Seems like a linear decision boundary is possible, which means that a perceptron can classify this dataset perfectly.</li>
+<li>A perceptron would be an example of a <strong>linear classifier</strong></li>
 </ul>
 </section>
-<section id="latest-posts" class="level2">
-<h2 class="anchored" data-anchor-id="latest-posts">Latest Posts</h2>
-<div id="listing-latest-posts" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZGFpbHk=" data-listing-date-sort="1763510400000" data-listing-file-modified-sort="1763619600055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="386">
-<div class="thumbnail"><a href="./posts/daily/2025-11-19/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/daily/2025-11-19/index_files/figure-html/cell-2-output-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-19/index.html" class="no-external">Daily Notes: 2025-11-19</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-19/index.html" class="no-external">
-Training a perceptron model on the Iris dataset
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-19/index.html" class="no-external">
-<div class="listing-date">
-Nov 19, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="ZGFpbHk=" data-listing-date-sort="1763424000000" data-listing-file-modified-sort="1763619600054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="276">
-<div class="thumbnail"><a href="./posts/daily/2025-11-18/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-18/index.html" class="no-external">Daily Notes: 2025-11-18</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-18/index.html" class="no-external">
-Explorations using open-source local models.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-18/index.html" class="no-external">
-<div class="listing-date">
-Nov 18, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="ZGFpbHk=" data-listing-date-sort="1763251200000" data-listing-file-modified-sort="1763619600054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1680">
-<div class="thumbnail"><a href="./posts/daily/2025-11-16/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-16/index.html" class="no-external">Daily Notes: 2025-11-16</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-16/index.html" class="no-external">
-Implementing the perceptron as a simple ML classification algorithm without scikit-learn
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-16/index.html" class="no-external">
-<div class="listing-date">
-Nov 16, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="ZGFpbHk=" data-listing-date-sort="1763164800000" data-listing-file-modified-sort="1763619600050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="795">
-<div class="thumbnail"><a href="./posts/daily/2025-11-15/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-15/index.html" class="no-external">Daily Notes: 2025-11-15</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-15/index.html" class="no-external">
-A Mental Map for ML
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-15/index.html" class="no-external">
-<div class="listing-date">
-Nov 15, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="ZGFpbHk=" data-listing-date-sort="1763078400000" data-listing-file-modified-sort="1763619600049" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1324">
-<div class="thumbnail"><a href="./posts/daily/2025-11-14/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-14/index.html" class="no-external">Daily Notes: 2025-11-14</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-14/index.html" class="no-external">
-Three main types of ML.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-14/index.html" class="no-external">
-<div class="listing-date">
-Nov 14, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-
+<section id="personal-notes" class="level2">
+<h2 class="anchored" data-anchor-id="personal-notes">Personal Notes</h2>
+<ul>
+<li>I shipped UI improvements to the <a href="https://github.com/jooonkim/reader">reader</a> project. Rick Rubin was right - ship improvements to the product by focusing on what I want and need, and hope that there will be others who want the same.</li>
+</ul>
+</section>
+<section id="questions-i-still-have" class="level2">
+<h2 class="anchored" data-anchor-id="questions-i-still-have">Questions I still have</h2>
+<ul>
+<li>When implementing the code, I spent a lot of time trying to figure out why the author wrote each line the way that he did. It made me wonder how much of ML is printing out tails of datasets and plotting data to visualize it as a sanity check.</li>
+</ul>
+</section>
+<section id="tomorrows-plan" class="level2">
+<h2 class="anchored" data-anchor-id="tomorrows-plan">Tomorrow’s plan</h2>
+<ul>
+<li>Finish implementing the perceptron to classify the Iris dataset.</li>
+</ul>
 
 
 </section>

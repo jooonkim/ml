@@ -70,83 +70,6 @@
     "text": "Tomorrow’s plan\n\nActually implement something"
   },
   {
-    "objectID": "posts/daily/2025-11-17/index.html#personal-notes",
-    "href": "posts/daily/2025-11-17/index.html#personal-notes",
-    "title": "Daily Notes: 2025-11-17",
-    "section": "Personal Notes",
-    "text": "Personal Notes"
-  },
-  {
-    "objectID": "posts/daily/2025-11-17/index.html#questions-i-still-have",
-    "href": "posts/daily/2025-11-17/index.html#questions-i-still-have",
-    "title": "Daily Notes: 2025-11-17",
-    "section": "Questions I still have",
-    "text": "Questions I still have"
-  },
-  {
-    "objectID": "posts/daily/2025-11-17/index.html#tomorrows-plan",
-    "href": "posts/daily/2025-11-17/index.html#tomorrows-plan",
-    "title": "Daily Notes: 2025-11-17",
-    "section": "Tomorrow’s plan",
-    "text": "Tomorrow’s plan"
-  },
-  {
-    "objectID": "posts/concepts/index.html",
-    "href": "posts/concepts/index.html",
-    "title": "Concepts",
-    "section": "",
-    "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/readings/index.html",
-    "href": "posts/readings/index.html",
-    "title": "Readings",
-    "section": "",
-    "text": "Notes from textbooks, blog posts, and research papers.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Joon Kim / ML Notes",
-    "section": "",
-    "text": "My collection of ML notes & musings as I learn in public."
-  },
-  {
-    "objectID": "index.html#useful-links",
-    "href": "index.html#useful-links",
-    "title": "Joon Kim / ML Notes",
-    "section": "Useful Links",
-    "text": "Useful Links\n\nGitHub Repository\nPersonal Website"
-  },
-  {
-    "objectID": "index.html#latest-posts",
-    "href": "index.html#latest-posts",
-    "title": "Joon Kim / ML Notes",
-    "section": "Latest Posts",
-    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-18\n\n\n\n\n\n\n\n\nNov 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-17\n\n\n\n\n\n\n\n\nNov 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/projects/index.html",
-    "href": "posts/projects/index.html",
-    "title": "Projects & Experiments",
-    "section": "",
-    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/math/index.html",
-    "href": "posts/math/index.html",
-    "title": "Math Notes",
-    "section": "",
-    "text": "Derivations, proofs, and small math notes related to machine learning.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/daily/index.html",
-    "href": "posts/daily/index.html",
-    "title": "Daily ML Logs",
-    "section": "",
-    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-18\n\n\n\n\n\n\n\n\nNov 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-17\n\n\n\n\n\n\n\n\nNov 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/daily/2025-11-18/index.html",
     "href": "posts/daily/2025-11-18/index.html",
     "title": "Daily Notes: 2025-11-18",
@@ -180,6 +103,97 @@
     "title": "Daily Notes: 2025-11-18",
     "section": "Tomorrow’s plan",
     "text": "Tomorrow’s plan\n\nWould love to get back to pure ML studying tomorrow.\nWould like to read Raschka’s Converting Llama 2 to Llama 3.2 From Scratch."
+  },
+  {
+    "objectID": "posts/concepts/index.html",
+    "href": "posts/concepts/index.html",
+    "title": "Concepts",
+    "section": "",
+    "text": "More polished explanations of ML concepts that I want to be able to reference later.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/readings/index.html",
+    "href": "posts/readings/index.html",
+    "title": "Readings",
+    "section": "",
+    "text": "Notes from textbooks, blog posts, and research papers.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Joon Kim / Machine Learning Notes",
+    "section": "",
+    "text": "My collection of Machine Learning notes & musings as I learn in public."
+  },
+  {
+    "objectID": "index.html#useful-links",
+    "href": "index.html#useful-links",
+    "title": "Joon Kim / Machine Learning Notes",
+    "section": "Useful Links",
+    "text": "Useful Links\n\nGitHub Repository\nPersonal Website"
+  },
+  {
+    "objectID": "index.html#latest-posts",
+    "href": "index.html#latest-posts",
+    "title": "Joon Kim / Machine Learning Notes",
+    "section": "Latest Posts",
+    "text": "Latest Posts\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-19\n\n\n\n\n\n\n\n\nNov 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-18\n\n\n\n\n\n\n\n\nNov 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/projects/index.html",
+    "href": "posts/projects/index.html",
+    "title": "Projects & Experiments",
+    "section": "",
+    "text": "Small experiments and projects: training models, reproducing papers, and playing with datasets.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/math/index.html",
+    "href": "posts/math/index.html",
+    "title": "Math Notes",
+    "section": "",
+    "text": "Derivations, proofs, and small math notes related to machine learning.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/daily/index.html",
+    "href": "posts/daily/index.html",
+    "title": "Daily ML Logs",
+    "section": "",
+    "text": "Short, lightly edited logs of what I worked on each day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-19\n\n\n\n\n\n\n\n\nNov 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-18\n\n\n\n\n\n\n\n\nNov 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-16\n\n\n\n\n\n\n\n\nNov 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-15\n\n\n\n\n\n\n\n\nNov 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDaily Notes: 2025-11-14\n\n\n\n\n\n\n\n\nNov 14, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/daily/2025-11-19/index.html",
+    "href": "posts/daily/2025-11-19/index.html",
+    "title": "Daily Notes: 2025-11-19",
+    "section": "",
+    "text": "Training a perceptron model on the Iris dataset\n\nThe perceptron is a binary classifier, so we will consider two flower classes from the Iris dataset for practical reasons. The preceptron algorithm can be extended to multi-class classification using the One vs All (OvA) method (where one class is treated as the positive class and all other classes are the negative class).\nIt’s very important that the feature pair seems roughly linearly separable when judging whether a perceptron is a good choice.\n\n\nimport os\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ns = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'\ndf = pd.read_csv(s, header=None, encoding='utf-8') # dataframe\n\n# print(df.tail()) # just to ensure that the data was loaded correctly\n\ny = df.iloc[0:100, 4].values # creates a np array (.values) from the species labels (4 == 5th column == species) of the first 100 rows\ny = np.where(y == 'Iris-setosa', 0, 1) # 0 if setosa, 1 if versicolor (first 100 rows only have those two species)\n\nX = df.iloc[0:100, [0, 2]].values # 100 x 2 matrix that extracts two features: sepal length (0) and petal length (2)\n\n# Plot the two iris classes in the 100 x 2 matrix to visualize how separable they are before fitting a perceptron\n# It's important that it's roughly linearly separable, which is when a perceptron would be a good choice\n\nplt.scatter(X[:50, 0], X[:50, 1], color='red', marker='o', label = 'Setosa')\nplt.scatter(X[50:100, 0], X[50:100, 1], color='blue', marker='s', label = 'Versicolor')\n\n# Note that the x-axis here would be sepal length (because it's in column 0) and y-axis would be petal length (column 1)\nplt.xlabel('Sepal length (cm)')\nplt.ylabel('Petal length (cm)')\nplt.legend(loc='upper left')\nplt.show()\n\n\n\n\n\n\n\n\n\nSeems like a linear decision boundary is possible, which means that a perceptron can classify this dataset perfectly.\nA perceptron would be an example of a linear classifier"
+  },
+  {
+    "objectID": "posts/daily/2025-11-19/index.html#ml-notes",
+    "href": "posts/daily/2025-11-19/index.html#ml-notes",
+    "title": "Daily Notes: 2025-11-19",
+    "section": "",
+    "text": "Training a perceptron model on the Iris dataset\n\nThe perceptron is a binary classifier, so we will consider two flower classes from the Iris dataset for practical reasons. The preceptron algorithm can be extended to multi-class classification using the One vs All (OvA) method (where one class is treated as the positive class and all other classes are the negative class).\nIt’s very important that the feature pair seems roughly linearly separable when judging whether a perceptron is a good choice.\n\n\nimport os\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ns = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'\ndf = pd.read_csv(s, header=None, encoding='utf-8') # dataframe\n\n# print(df.tail()) # just to ensure that the data was loaded correctly\n\ny = df.iloc[0:100, 4].values # creates a np array (.values) from the species labels (4 == 5th column == species) of the first 100 rows\ny = np.where(y == 'Iris-setosa', 0, 1) # 0 if setosa, 1 if versicolor (first 100 rows only have those two species)\n\nX = df.iloc[0:100, [0, 2]].values # 100 x 2 matrix that extracts two features: sepal length (0) and petal length (2)\n\n# Plot the two iris classes in the 100 x 2 matrix to visualize how separable they are before fitting a perceptron\n# It's important that it's roughly linearly separable, which is when a perceptron would be a good choice\n\nplt.scatter(X[:50, 0], X[:50, 1], color='red', marker='o', label = 'Setosa')\nplt.scatter(X[50:100, 0], X[50:100, 1], color='blue', marker='s', label = 'Versicolor')\n\n# Note that the x-axis here would be sepal length (because it's in column 0) and y-axis would be petal length (column 1)\nplt.xlabel('Sepal length (cm)')\nplt.ylabel('Petal length (cm)')\nplt.legend(loc='upper left')\nplt.show()\n\n\n\n\n\n\n\n\n\nSeems like a linear decision boundary is possible, which means that a perceptron can classify this dataset perfectly.\nA perceptron would be an example of a linear classifier"
+  },
+  {
+    "objectID": "posts/daily/2025-11-19/index.html#personal-notes",
+    "href": "posts/daily/2025-11-19/index.html#personal-notes",
+    "title": "Daily Notes: 2025-11-19",
+    "section": "Personal Notes",
+    "text": "Personal Notes\n\nI shipped UI improvements to the reader project. Rick Rubin was right - ship improvements to the product by focusing on what I want and need, and hope that there will be others who want the same."
+  },
+  {
+    "objectID": "posts/daily/2025-11-19/index.html#questions-i-still-have",
+    "href": "posts/daily/2025-11-19/index.html#questions-i-still-have",
+    "title": "Daily Notes: 2025-11-19",
+    "section": "Questions I still have",
+    "text": "Questions I still have\n\nWhen implementing the code, I spent a lot of time trying to figure out why the author wrote each line the way that he did. It made me wonder how much of ML is printing out tails of datasets and plotting data to visualize it as a sanity check."
+  },
+  {
+    "objectID": "posts/daily/2025-11-19/index.html#tomorrows-plan",
+    "href": "posts/daily/2025-11-19/index.html#tomorrows-plan",
+    "title": "Daily Notes: 2025-11-19",
+    "section": "Tomorrow’s plan",
+    "text": "Tomorrow’s plan\n\nFinish implementing the perceptron to classify the Iris dataset."
   },
   {
     "objectID": "posts/daily/2025-11-14/index.html",
