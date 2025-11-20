@@ -1,5 +1,5 @@
 ---
-title: "Joon Kim / ML Notes"
+title: "Joon Kim / Machine Learning Notes"
 page-layout: full
 listing:
   id: latest-posts
@@ -11,7 +11,7 @@ listing:
     item-type: "section"
 ---
 
-My collection of ML notes & musings as I [learn in public](https://www.swyx.io/learn-in-public). 
+My collection of Machine Learning notes & musings as I [learn in public](https://www.swyx.io/learn-in-public). 
 
 ## Useful Links
 
