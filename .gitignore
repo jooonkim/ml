@@ -1,2 +1,45 @@
 /.quarto/
 **/*.quarto_ipynb
+_site/
+_freeze/
+hello_files/
+site_libs/
+
+# Operating system / editor noise
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python bytecode / tooling caches
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments / env metadata
+.venv/
+venv/
+.env
+.envrc
+.python-version
+
+# Notebook + REPL leftovers
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
