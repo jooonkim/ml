@@ -1,7 +1,17 @@
-import os
+# pyright: reportMissingImports=false
+from importlib import import_module
+from pathlib import Path
+import sys
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+
+CODE_DIR = Path(__file__).resolve().parent
+if str(CODE_DIR) not in sys.path:
+    sys.path.insert(0, str(CODE_DIR))
+
+Perceptron = import_module("ml_utils").Perceptron
 
 s = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 df = pd.read_csv(s, header=None, encoding='utf-8') # dataframe
@@ -23,5 +33,14 @@ plt.scatter(X[50:100, 0], X[50:100, 1], color='blue', marker='s', label = 'Versi
 plt.xlabel('Sepal length (cm)')
 plt.ylabel('Petal length (cm)')
 plt.legend(loc='upper left')
-plt.show()
+# plt.show()
 
+ppn = Perceptron(eta=0.1, n_iter=10)
+ppn.fit(X,y) # train Perceptron on the Iris data subset
+
+# Explore how the perceptron's training errors evolve over epochs.
+# range(1, len(ppn.errors_) + 1) just creates the epoch numbers (x-axis)
+plt.plot(range(1, len(ppn.errors_) + 1), ppn.errors_, marker='o') # draws a point for each training epoch
+plt.xlabel('Epochs')
+plt.ylabel('Number of updates')
+plt.show()

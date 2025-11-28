@@ -1,14 +1,25 @@
+from pathlib import Path
+import sys
+
 import numpy as np
-from perceptron_implementation import Perceptron
+
+CODE_DIR = Path(__file__).resolve().parents[1]
+if str(CODE_DIR) not in sys.path:
+    sys.path.insert(0, str(CODE_DIR))
+
+from ml_utils import Perceptron
+
 
 def test_perceptron_learns_and_gate():
     # 1) Define the AND dataset
-    X = np.array([
-        [0, 0],
-        [0, 1],
-        [1, 0],
-        [1, 1],
-    ])
+    X = np.array(
+        [
+            [0, 0],
+            [0, 1],
+            [1, 0],
+            [1, 1],
+        ]
+    )
     y = np.array([0, 0, 0, 1])
 
     # 2) Create the model
@@ -23,6 +34,8 @@ def test_perceptron_learns_and_gate():
     # 5) Assert predictions match the true labels
     assert np.array_equal(preds, y)
 
+
 if __name__ == "__main__":
     test_perceptron_learns_and_gate()
     print("AND gate test passed")
+
