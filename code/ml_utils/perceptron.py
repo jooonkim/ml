@@ -1,4 +1,12 @@
-"""Lightweight perceptron implementation shared across Quarto notes."""
+"""Lightweight perceptron implementation shared across Quarto notes.
+
+Notes from Cursor
+
+Package structure: keep shared modules under code/ml_utils/ (or subpackages) and expose public APIs via __all__/__init__.py so posts can import cleanly (from ml_utils import Foo).
+Path hygiene: tests or standalone scripts should add code/ to sys.path the same way the note helper does, so they work whether run from repo root or a subdirectory.
+Type hints & docstrings: match the style in perceptron.py—brief module docstring, class docstring, annotated signatures—to keep IntelliSense useful inside Quarto/VS Code.
+Tests with real data: put pytest-style tests in code/tests/ (mirroring modules) and cover both happy paths and failure modes; run python -m pytest code/tests or individual files before committing.
+"""
 
 from __future__ import annotations
 
