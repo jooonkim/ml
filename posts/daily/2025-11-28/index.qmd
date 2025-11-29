@@ -8,8 +8,49 @@ categories: [daily]
 ML Notes
 - 
 
+Adaline: another single-layer neural network
 
-- 
+- **Adaline**: **Ada**ptive **Li**near **Ne**uron. Also known as the **Widrow-Hoff rule**: Published by Bernard Widrow and Tedd Hoff a few years after Rosenblatt's perceptron algorithm as an improvement.
+- The Adaline algorithm is important because it introduces the importance of defining and minimizing **continuous loss functions**.
+    - This lays the groundwork for other ML classification algorithms such as **logistic regression**, **support vector machines**, **multilayer neural networks**, etc.
+
+Comparison with Perceptron
+- Perceptron learning tweaks the weights when the predicted class (the net input and how it compares to the threshold) disagrees with the label. Each update uses `eta * (target - predict(x))` and it counts the errors per epoch.
+- Consider the following loop from `Perceptron.fit()`:
+
+```{python}
+#| eval: false
+for _ in range(self.n_iter):
+    errors = 0
+    for xi, target in zip(X, y):
+        update = self.eta * (target - self.predict(xi))
+        self.w_ += update * xi
+        self.b_ += update
+        errors += int(update != 0.0)
+    self.errors_.append(errors)
+return self
+```
+
+Adaline uses **Gradient Descent** to differentiate from Perceptron in 2 important ways:
+
+- **Linear activation**: No more thresholding the net input. Instead, Adaline keeps the raw value `net_input = wx + b` and compares that to the true **continuous** target
+- **Cost function and update**: Adaline minimizes the **sum of squared errors (SSE)** between `net_input` and `target`. 
+    - Gradient of SSE w.r.t. weights: `(target - net_input) * x`
+    - Weight update for weights & bias: `w += eta * (target - net_input) * x`
+
+::: {.callout-note title="Why is the actual difference important?"}
+The gradient using the actual difference is important because the updates become *smoother and differentiable*. This allows you to apply *batch or stochastic gradient descent*.
+:::
+
+- Pseudocode for per-sample gradient descent loop:
+    - Compute `net_input` for each sample
+    - Calculate the error which is `target - net_input`
+    - Determine the direction and magnitude to update the weights by multiplying that error by the input vector `x` and learning rate `eta`
+    - Aggregate SSE per epoch to monitor whether it is converging
+
+::: {.callout-note title="Why is this better than Perceptron?"}
+Adaline relies on a continuous error surface, which allows it to converge when a Perceptron might oscillate 
+:::
 
 ```{python}
 #| context: setup
@@ -34,70 +75,20 @@ def _ensure_code_on_path(marker="_quarto.yml", code_dir="code"):
 _ensure_code_on_path()
 ```
 
-```{python}
-#| label: iris-perceptron
-#| cache: true
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-
-from ml_utils import Perceptron
-
-s = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
-df = pd.read_csv(s, header=None, encoding='utf-8') # dataframe
-
-# print(df.tail()) # just to ensure that the data was loaded correctly
-
-y = df.iloc[0:100, 4].values # creates a np array (.values) from the species labels (4 == 5th column == species) of the first 100 rows
-y = np.where(y == 'Iris-setosa', 0, 1) # 0 if setosa, 1 if versicolor (first 100 rows only have those two species)
-
-X = df.iloc[0:100, [0, 2]].values # 100 x 2 matrix that extracts two features: sepal length (0) and petal length (2)
-
-# Plot the two iris classes in the 100 x 2 matrix to visualize how separable they are before fitting a perceptron
-# It's important that it's roughly linearly separable, which is when a perceptron would be a good choice
-
-plt.scatter(X[:50, 0], X[:50, 1], color='red', marker='o', label = 'Setosa')
-plt.scatter(X[50:100, 0], X[50:100, 1], color='blue', marker='s', label = 'Versicolor')
-
-# Note that the x-axis here would be sepal length (because it's in column 0) and y-axis would be petal length (column 1)
-plt.xlabel('Sepal length (cm)')
-plt.ylabel('Petal length (cm)')
-plt.legend(loc='upper left')
-# plt.show()
-
-ppn = Perceptron(eta=0.1, n_iter=10)
-ppn.fit(X,y) # train Perceptron on the Iris data subset
-
-# Explore how the perceptron's training errors evolve over epochs.
-# range(1, len(ppn.errors_) + 1) just creates the epoch numbers (x-axis)
-plt.plot(range(1, len(ppn.errors_) + 1), ppn.errors_, marker='o') # draws a point for each training epoch
-plt.xlabel('Epochs')
-plt.ylabel('Number of updates')
-plt.show()
-```
-
-::: {.callout-note title="Reusable code"}
-This chunk pulls the `Perceptron` class from `code/ml_utils/perceptron.py`. Keeping reusable models in `code/` lets Quarto posts stay lean while GitHub readers can browse the source directly.
-:::
-
 Personal Notes
 -
-- I asked GPT-5.1 Codex to analyze my notes thus far and outline a path for what's to come:
-    - Finish the perceptron loop: add dataset splits (train/test or cross-validation), compute accuracy/confusion matrices, and document failure cases when classes aren’t separable. This turns the current script into a minimal experiment you can evaluate.
-    - Feature scaling & preprocessing: implement standardization pipelines to see how learning rate, convergence, and decision boundaries change, especially before moving beyond Iris.
-    - Logistic regression & soft margins: move from perceptron to logistic regression or linear SVMs to understand probabilistic outputs, loss functions, and regularization—natural evolutions of your current model.
-    - Multi-class strategies: prototype OvA or OvO wrappers around your perceptron/logistic models to reinforce how binary learners extend to multi-class tasks.
-    - Experiment tracking: start logging hyperparameters, metrics, and plots (even in your daily notes) so you build the habit of reproducible ML experiments.
-    - Deepen EDA intuition: answer your own question by comparing outcomes with and without exploratory plots—note when simple visuals caught issues early versus when they weren’t needed.
+- This is the first time I've seen the mathematical intuition emerge as extremely important.
+- It's hard to get back into ML studying. I'm trying to keep the big picture in mind of the "why" behind the learning.
+- It's extremely motivating to listen to how [Gabriel Petersson](https://www.youtube.com/watch?v=vq5WhoPCWQ8) thinks about empowering yourself to learn using AI - getting down to the bottom of things and truly understanding vs. vibecoding.
 
 
 Questions I still have
 - 
-- 
+- Why is Adaline a single layer neural network? I'm assuming it's because there's one "decision" that the algorithm makes before it corrects itself per epoch. This is consistent with what I'd expect given the videos I've seen of MNNs in action. Would love to understand whether this is correct.
 
 
 Tomorrow's plan
 - 
-- 
+- I need to study up on [Gradient Descent](https://www.youtube.com/watch?v=sDv4f4s2SB8) to truly understand Adaline. I will watch [3Blue1Brown's video](https://www.youtube.com/watch?v=IHZwWFHWa-w) as well.
 
 
