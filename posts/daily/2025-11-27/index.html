@@ -212,15 +212,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="ml-notes" class="level2">
 <h2 class="anchored" data-anchor-id="ml-notes">ML Notes</h2>
-<ul>
-<li>We plot a</li>
-</ul>
+<p>In which we test whether the perceptron converged and visualize the decision boundaries for this 2-D dataset.</p>
 <div id="iris-perceptron" class="cell" data-cache="true" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.colors <span class="im">import</span> ListedColormap</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ml_utils.perceptron <span class="im">import</span> Perceptron</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ml_utils <span class="im">import</span> Perceptron</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(s, header<span class="op">=</span><span class="va">None</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="co"># dataframe</span></span>
@@ -254,7 +252,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(ppn.errors_) <span class="op">+</span> <span class="dv">1</span>), ppn.errors_, marker<span class="op">=</span><span class="st">'o'</span>) <span class="co"># draws a point for each training epoch</span></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epochs'</span>)</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of updates'</span>)</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># Converges after 6th epoch</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># Converges after 6th epoch</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_decision_regions(X, y, classifier, resolution<span class="op">=</span><span class="fl">0.02</span>):</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># setup marker generator and color map</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    markers <span class="op">=</span> (<span class="st">'o'</span>, <span class="st">'s'</span>, <span class="st">'^'</span>, <span class="st">'v'</span>, <span class="st">'&lt;'</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    colors <span class="op">=</span> (<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'lightgreen'</span>, <span class="st">'gray'</span>, <span class="st">'cyan'</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    cmap <span class="op">=</span> ListedColormap(colors[:<span class="bu">len</span>(np.unique(y))])</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot the decision surface</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    x1_min, x1_max <span class="op">=</span> X[:, <span class="dv">0</span>].<span class="bu">min</span>() <span class="op">-</span> <span class="dv">1</span>, X[:, <span class="dv">0</span>].<span class="bu">max</span>() <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    x2_min, x2_max <span class="op">=</span> X[:, <span class="dv">1</span>].<span class="bu">min</span>() <span class="op">-</span> <span class="dv">1</span>, X[:, <span class="dv">1</span>].<span class="bu">max</span>() <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    xx1, xx2 <span class="op">=</span> np.meshgrid(np.arange(x1_min, x1_max, resolution),</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>                           np.arange(x2_min, x2_max, resolution))</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    lab <span class="op">=</span> classifier.predict(np.array([xx1.ravel(), xx2.ravel()]).T)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    lab <span class="op">=</span> lab.reshape(xx1.shape)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    plt.contourf(xx1, xx2, lab, alpha<span class="op">=</span><span class="fl">0.3</span>, cmap<span class="op">=</span>cmap)</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    plt.xlim(xx1.<span class="bu">min</span>(), xx1.<span class="bu">max</span>())</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    plt.ylim(xx2.<span class="bu">min</span>(), xx2.<span class="bu">max</span>())</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot class examples</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx, cl <span class="kw">in</span> <span class="bu">enumerate</span>(np.unique(y)):</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        plt.scatter(x<span class="op">=</span>X[y <span class="op">==</span> cl, <span class="dv">0</span>], </span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>                    y<span class="op">=</span>X[y <span class="op">==</span> cl, <span class="dv">1</span>],</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>                    alpha<span class="op">=</span><span class="fl">0.8</span>, </span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>                    c<span class="op">=</span>colors[idx],</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>                    marker<span class="op">=</span>markers[idx], </span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>                    label<span class="op">=</span><span class="ss">f'Class </span><span class="sc">{</span>cl<span class="sc">}</span><span class="ss">'</span>, </span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>                    edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>plot_decision_regions(X, y, classifier<span class="op">=</span>ppn)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sepal length [cm]'</span>)</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Petal length [cm]'</span>)</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -266,6 +300,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
 <figure class="figure">
 <p><img src="index_files/figure-html/iris-perceptron-output-2.png" id="iris-perceptron-2" width="589" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/iris-perceptron-output-3.png" id="iris-perceptron-3" width="576" height="430" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -315,6 +356,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </div>
 </div>
+</section>
+<section id="questions-i-still-have" class="level2">
+<h2 class="anchored" data-anchor-id="questions-i-still-have">Questions I still have</h2>
+<ul>
+<li>Need to resist the urge to brush up on Python basics in a 101 bottom-up style.</li>
+</ul>
+</section>
+<section id="tomorrows-plan" class="level2">
+<h2 class="anchored" data-anchor-id="tomorrows-plan">Tomorrow’s plan</h2>
 <ul>
 <li>I asked GPT-5.1 Codex to analyze my notes thus far and outline a path for what’s to come:
 <ul>
@@ -325,18 +375,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Experiment tracking: start logging hyperparameters, metrics, and plots (even in your daily notes) so you build the habit of reproducible ML experiments.</li>
 <li>Deepen EDA intuition: answer your own question by comparing outcomes with and without exploratory plots—note when simple visuals caught issues early versus when they weren’t needed.</li>
 </ul></li>
-</ul>
-</section>
-<section id="questions-i-still-have" class="level2">
-<h2 class="anchored" data-anchor-id="questions-i-still-have">Questions I still have</h2>
-<ul>
-<li></li>
-</ul>
-</section>
-<section id="tomorrows-plan" class="level2">
-<h2 class="anchored" data-anchor-id="tomorrows-plan">Tomorrow’s plan</h2>
-<ul>
-<li></li>
 </ul>
 
 
