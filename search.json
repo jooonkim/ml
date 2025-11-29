@@ -151,35 +151,35 @@
     "href": "posts/daily/2025-11-28/index.html",
     "title": "Daily Notes: 2025-11-28",
     "section": "",
-    "text": "Adaline: another single-layer neural network\n\nAdaline: Adaptive linear neuron: Published by Bernard Widrow and Tedd Hoff a few years after Rosenblatt’s perceptron algorithm as an improvement.\nAdaline algorithm is important because it introduces the importance of defining and minimizing continuous loss functions."
+    "text": "Adaline: another single-layer neural network\n\nAdaline: Adaptive Linear Neuron. Also known as the Widrow-Hoff rule: Published by Bernard Widrow and Tedd Hoff a few years after Rosenblatt’s perceptron algorithm as an improvement.\nThe Adaline algorithm is important because it introduces the importance of defining and minimizing continuous loss functions.\n\nThis lays the groundwork for other ML classification algorithms such as logistic regression, support vector machines, multilayer neural networks, etc.\n\n\nComparison with Perceptron - Perceptron learning tweaks the weights when the predicted class (the net input and how it compares to the threshold) disagrees with the label. Each update uses eta * (target - predict(x)) and it counts the errors per epoch. - Consider the following loop from Perceptron.fit():\n\nfor _ in range(self.n_iter):\n    errors = 0\n    for xi, target in zip(X, y):\n        update = self.eta * (target - self.predict(xi))\n        self.w_ += update * xi\n        self.b_ += update\n        errors += int(update != 0.0)\n    self.errors_.append(errors)\nreturn self\n\nAdaline uses Gradient Descent to differentiate from Perceptron in 2 important ways:\n\nLinear activation: No more thresholding the net input. Instead, Adaline keeps the raw value net_input = wx + b and compares that to the true continuous target\nCost function and update: Adaline minimizes the sum of squared errors (SSE) between net_input and target.\n\nGradient of SSE w.r.t. weights: (target - net_input) * x\nWeight update for weights & bias: w += eta * (target - net_input) * x\n\n\n\n\n\n\n\n\nNoteWhy is the actual difference important?\n\n\n\nThe gradient using the actual difference is important because the updates become smoother and differentiable. This allows you to apply batch or stochastic gradient descent.\n\n\n\nPseudocode for per-sample gradient descent loop:\n\nCompute net_input for each sample\nCalculate the error which is target - net_input\nDetermine the direction and magnitude to update the weights by multiplying that error by the input vector x and learning rate eta\nAggregate SSE per epoch to monitor whether it is converging\n\n\n\n\n\n\n\n\nNoteWhy is this better than Perceptron?\n\n\n\nAdaline relies on a continuous error surface, which allows it to converge when a Perceptron might oscillate"
   },
   {
     "objectID": "posts/daily/2025-11-28/index.html#ml-notes",
     "href": "posts/daily/2025-11-28/index.html#ml-notes",
     "title": "Daily Notes: 2025-11-28",
     "section": "",
-    "text": "Adaline: another single-layer neural network\n\nAdaline: Adaptive linear neuron: Published by Bernard Widrow and Tedd Hoff a few years after Rosenblatt’s perceptron algorithm as an improvement.\nAdaline algorithm is important because it introduces the importance of defining and minimizing continuous loss functions."
+    "text": "Adaline: another single-layer neural network\n\nAdaline: Adaptive Linear Neuron. Also known as the Widrow-Hoff rule: Published by Bernard Widrow and Tedd Hoff a few years after Rosenblatt’s perceptron algorithm as an improvement.\nThe Adaline algorithm is important because it introduces the importance of defining and minimizing continuous loss functions.\n\nThis lays the groundwork for other ML classification algorithms such as logistic regression, support vector machines, multilayer neural networks, etc.\n\n\nComparison with Perceptron - Perceptron learning tweaks the weights when the predicted class (the net input and how it compares to the threshold) disagrees with the label. Each update uses eta * (target - predict(x)) and it counts the errors per epoch. - Consider the following loop from Perceptron.fit():\n\nfor _ in range(self.n_iter):\n    errors = 0\n    for xi, target in zip(X, y):\n        update = self.eta * (target - self.predict(xi))\n        self.w_ += update * xi\n        self.b_ += update\n        errors += int(update != 0.0)\n    self.errors_.append(errors)\nreturn self\n\nAdaline uses Gradient Descent to differentiate from Perceptron in 2 important ways:\n\nLinear activation: No more thresholding the net input. Instead, Adaline keeps the raw value net_input = wx + b and compares that to the true continuous target\nCost function and update: Adaline minimizes the sum of squared errors (SSE) between net_input and target.\n\nGradient of SSE w.r.t. weights: (target - net_input) * x\nWeight update for weights & bias: w += eta * (target - net_input) * x\n\n\n\n\n\n\n\n\nNoteWhy is the actual difference important?\n\n\n\nThe gradient using the actual difference is important because the updates become smoother and differentiable. This allows you to apply batch or stochastic gradient descent.\n\n\n\nPseudocode for per-sample gradient descent loop:\n\nCompute net_input for each sample\nCalculate the error which is target - net_input\nDetermine the direction and magnitude to update the weights by multiplying that error by the input vector x and learning rate eta\nAggregate SSE per epoch to monitor whether it is converging\n\n\n\n\n\n\n\n\nNoteWhy is this better than Perceptron?\n\n\n\nAdaline relies on a continuous error surface, which allows it to converge when a Perceptron might oscillate"
   },
   {
     "objectID": "posts/daily/2025-11-28/index.html#personal-notes",
     "href": "posts/daily/2025-11-28/index.html#personal-notes",
     "title": "Daily Notes: 2025-11-28",
     "section": "Personal Notes",
-    "text": "Personal Notes"
+    "text": "Personal Notes\n\nThis is the first time I’ve seen the mathematical intuition emerge as extremely important.\nIt’s hard to get back into ML studying. I’m trying to keep the big picture in mind of the “why” behind the learning.\nIt’s extremely motivating to listen to how Gabriel Petersson thinks about empowering yourself to learn using AI - getting down to the bottom of things and truly understanding vs. vibecoding."
   },
   {
     "objectID": "posts/daily/2025-11-28/index.html#questions-i-still-have",
     "href": "posts/daily/2025-11-28/index.html#questions-i-still-have",
     "title": "Daily Notes: 2025-11-28",
     "section": "Questions I still have",
-    "text": "Questions I still have"
+    "text": "Questions I still have\n\nWhy is Adaline a single layer neural network? I’m assuming it’s because there’s one “decision” that the algorithm makes before it corrects itself per epoch. This is consistent with what I’d expect given the videos I’ve seen of MNNs in action. Would love to understand whether this is correct."
   },
   {
     "objectID": "posts/daily/2025-11-28/index.html#tomorrows-plan",
     "href": "posts/daily/2025-11-28/index.html#tomorrows-plan",
     "title": "Daily Notes: 2025-11-28",
     "section": "Tomorrow’s plan",
-    "text": "Tomorrow’s plan"
+    "text": "Tomorrow’s plan\n\nI need to study up on Gradient Descent to truly understand Adaline. I will watch 3Blue1Brown’s video as well."
   },
   {
     "objectID": "posts/projects/index.html",

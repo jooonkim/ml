@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -179,26 +214,87 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="ml-notes">ML Notes</h2>
 <p>Adaline: another single-layer neural network</p>
 <ul>
-<li><strong>Adaline</strong>: <strong>Ada</strong>ptive <strong>li</strong>near <strong>ne</strong>uron: Published by Bernard Widrow and Tedd Hoff a few years after Rosenblatt’s perceptron algorithm as an improvement.</li>
-<li>Adaline algorithm is important because it introduces the importance of defining and minimizing <strong>continuous loss functions</strong>.</li>
+<li><strong>Adaline</strong>: <strong>Ada</strong>ptive <strong>Li</strong>near <strong>Ne</strong>uron. Also known as the <strong>Widrow-Hoff rule</strong>: Published by Bernard Widrow and Tedd Hoff a few years after Rosenblatt’s perceptron algorithm as an improvement.</li>
+<li>The Adaline algorithm is important because it introduces the importance of defining and minimizing <strong>continuous loss functions</strong>.
+<ul>
+<li>This lays the groundwork for other ML classification algorithms such as <strong>logistic regression</strong>, <strong>support vector machines</strong>, <strong>multilayer neural networks</strong>, etc.</li>
+</ul></li>
 </ul>
+<p>Comparison with Perceptron - Perceptron learning tweaks the weights when the predicted class (the net input and how it compares to the threshold) disagrees with the label. Each update uses <code>eta * (target - predict(x))</code> and it counts the errors per epoch. - Consider the following loop from <code>Perceptron.fit()</code>:</p>
+<div id="206c6a8f" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.n_iter):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    errors <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> xi, target <span class="kw">in</span> <span class="bu">zip</span>(X, y):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        update <span class="op">=</span> <span class="va">self</span>.eta <span class="op">*</span> (target <span class="op">-</span> <span class="va">self</span>.predict(xi))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.w_ <span class="op">+=</span> update <span class="op">*</span> xi</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.b_ <span class="op">+=</span> update</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        errors <span class="op">+=</span> <span class="bu">int</span>(update <span class="op">!=</span> <span class="fl">0.0</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.errors_.append(errors)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="va">self</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Adaline uses <strong>Gradient Descent</strong> to differentiate from Perceptron in 2 important ways:</p>
+<ul>
+<li><strong>Linear activation</strong>: No more thresholding the net input. Instead, Adaline keeps the raw value <code>net_input = wx + b</code> and compares that to the true <strong>continuous</strong> target</li>
+<li><strong>Cost function and update</strong>: Adaline minimizes the <strong>sum of squared errors (SSE)</strong> between <code>net_input</code> and <code>target</code>.
+<ul>
+<li>Gradient of SSE w.r.t. weights: <code>(target - net_input) * x</code></li>
+<li>Weight update for weights &amp; bias: <code>w += eta * (target - net_input) * x</code></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Why is the actual difference important?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why is the actual difference important?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The gradient using the actual difference is important because the updates become <em>smoother and differentiable</em>. This allows you to apply <em>batch or stochastic gradient descent</em>.</p>
+</div>
+</div>
+<ul>
+<li>Pseudocode for per-sample gradient descent loop:
+<ul>
+<li>Compute <code>net_input</code> for each sample</li>
+<li>Calculate the error which is <code>target - net_input</code></li>
+<li>Determine the direction and magnitude to update the weights by multiplying that error by the input vector <code>x</code> and learning rate <code>eta</code></li>
+<li>Aggregate SSE per epoch to monitor whether it is converging</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Why is this better than Perceptron?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why is this better than Perceptron?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Adaline relies on a continuous error surface, which allows it to converge when a Perceptron might oscillate</p>
+</div>
+</div>
 </section>
 <section id="personal-notes" class="level2">
 <h2 class="anchored" data-anchor-id="personal-notes">Personal Notes</h2>
 <ul>
-<li></li>
+<li>This is the first time I’ve seen the mathematical intuition emerge as extremely important.</li>
+<li>It’s hard to get back into ML studying. I’m trying to keep the big picture in mind of the “why” behind the learning.</li>
+<li>It’s extremely motivating to listen to how <a href="https://www.youtube.com/watch?v=vq5WhoPCWQ8">Gabriel Petersson</a> thinks about empowering yourself to learn using AI - getting down to the bottom of things and truly understanding vs.&nbsp;vibecoding.</li>
 </ul>
 </section>
 <section id="questions-i-still-have" class="level2">
 <h2 class="anchored" data-anchor-id="questions-i-still-have">Questions I still have</h2>
 <ul>
-<li></li>
+<li>Why is Adaline a single layer neural network? I’m assuming it’s because there’s one “decision” that the algorithm makes before it corrects itself per epoch. This is consistent with what I’d expect given the videos I’ve seen of MNNs in action. Would love to understand whether this is correct.</li>
 </ul>
 </section>
 <section id="tomorrows-plan" class="level2">
 <h2 class="anchored" data-anchor-id="tomorrows-plan">Tomorrow’s plan</h2>
 <ul>
-<li></li>
+<li>I need to study up on <a href="https://www.youtube.com/watch?v=sDv4f4s2SB8">Gradient Descent</a> to truly understand Adaline. I will watch <a href="https://www.youtube.com/watch?v=IHZwWFHWa-w">3Blue1Brown’s video</a> as well.</li>
 </ul>
 
 
