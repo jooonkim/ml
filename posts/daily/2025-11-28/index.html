@@ -213,9 +213,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ml-notes" class="level2">
 <h2 class="anchored" data-anchor-id="ml-notes">ML Notes</h2>
 <ul>
-<li></li>
+<li>We plot a</li>
 </ul>
-<div id="cell-iris-perceptron" class="cell" data-cache="true" data-execution_count="2">
+<div id="iris-perceptron" class="cell" data-cache="true" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -227,36 +227,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># print(df.tail()) # just to ensure that the data was loaded correctly</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df.iloc[<span class="dv">0</span>:<span class="dv">100</span>, <span class="dv">4</span>].values <span class="co"># creates a np array (.values) from the species labels (4 == 5th column == species) of the first 100 rows</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.where(y <span class="op">==</span> <span class="st">'Iris-setosa'</span>, <span class="dv">0</span>, <span class="dv">1</span>) <span class="co"># 0 if setosa, 1 if versicolor (first 100 rows only have those two species)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.iloc[<span class="dv">0</span>:<span class="dv">100</span>, [<span class="dv">0</span>, <span class="dv">2</span>]].values <span class="co"># 100 x 2 matrix that extracts two features: sepal length (0) and petal length (2)</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the two iris classes in the 100 x 2 matrix to visualize how separable they are before fitting a perceptron</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># It's important that it's roughly linearly separable, which is when a perceptron would be a good choice</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[:<span class="dv">50</span>, <span class="dv">0</span>], X[:<span class="dv">50</span>, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'red'</span>, marker<span class="op">=</span><span class="st">'o'</span>, label <span class="op">=</span> <span class="st">'Setosa'</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[<span class="dv">50</span>:<span class="dv">100</span>, <span class="dv">0</span>], X[<span class="dv">50</span>:<span class="dv">100</span>, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'blue'</span>, marker<span class="op">=</span><span class="st">'s'</span>, label <span class="op">=</span> <span class="st">'Versicolor'</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the x-axis here would be sepal length (because it's in column 0) and y-axis would be petal length (column 1)</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sepal length (cm)'</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Petal length (cm)'</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>ppn <span class="op">=</span> Perceptron(eta<span class="op">=</span><span class="fl">0.1</span>, n_iter<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>ppn.fit(X,y) <span class="co"># train Perceptron on the Iris data subset</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Explore how the perceptron's training errors evolve over epochs.</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># range(1, len(ppn.errors_) + 1) just creates the epoch numbers (x-axis)</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(ppn.errors_) <span class="op">+</span> <span class="dv">1</span>), ppn.errors_, marker<span class="op">=</span><span class="st">'o'</span>) <span class="co"># draws a point for each training epoch</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epochs'</span>)</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of updates'</span>)</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Goal here is to restrict the task to a binary classification problem</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df.iloc[<span class="dv">0</span>:<span class="dv">100</span>, <span class="dv">4</span>].values <span class="co"># creates a np array (.values) from the species labels (4 == 5th column == species) of the first 100 rows</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.where(y <span class="op">==</span> <span class="st">'Iris-setosa'</span>, <span class="dv">0</span>, <span class="dv">1</span>) <span class="co"># 0 if setosa, 1 if versicolor (first 100 rows only have those two species)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Goal here is to extract two fairly separable features from the same 100 rows of y</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.iloc[<span class="dv">0</span>:<span class="dv">100</span>, [<span class="dv">0</span>, <span class="dv">2</span>]].values <span class="co"># 100 x 2 matrix that extracts two features: sepal length (0) and petal length (2)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the two iris classes in the 100 x 2 matrix to visualize how separable they are before fitting a perceptron</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># It's important that it's roughly linearly separable, which is when a perceptron would be a good choice</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[:<span class="dv">50</span>, <span class="dv">0</span>], X[:<span class="dv">50</span>, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'red'</span>, marker<span class="op">=</span><span class="st">'o'</span>, label <span class="op">=</span> <span class="st">'Setosa'</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[<span class="dv">50</span>:<span class="dv">100</span>, <span class="dv">0</span>], X[<span class="dv">50</span>:<span class="dv">100</span>, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'blue'</span>, marker<span class="op">=</span><span class="st">'s'</span>, label <span class="op">=</span> <span class="st">'Versicolor'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the x-axis here would be sepal length (because it's in column 0) and y-axis would be petal length (column 1)</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sepal length (cm)'</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Petal length (cm)'</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>ppn <span class="op">=</span> Perceptron(eta<span class="op">=</span><span class="fl">0.1</span>, n_iter<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>ppn.fit(X,y) <span class="co"># train Perceptron on the Iris data subset</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Explore how the perceptron's training errors evolve over epochs.</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># range(1, len(ppn.errors_) + 1) just creates the epoch numbers (x-axis)</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.plot(<span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(ppn.errors_) <span class="op">+</span> <span class="dv">1</span>), ppn.errors_, marker<span class="op">=</span><span class="st">'o'</span>) <span class="co"># draws a point for each training epoch</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epochs'</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of updates'</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># Converges after 6th epoch</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/iris-perceptron-output-1.png" id="iris-perceptron" width="576" height="429" class="figure-img"></p>
+<p><img src="index_files/figure-html/iris-perceptron-output-1.png" id="iris-perceptron-1" width="576" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/iris-perceptron-output-2.png" id="iris-perceptron-2" width="589" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
