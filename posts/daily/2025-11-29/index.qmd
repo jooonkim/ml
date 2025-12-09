@@ -1,0 +1,111 @@
+---
+title: "Daily Notes: 2025-11-29"
+date: 2025-11-29
+categories: [daily]
+---
+
+
+ML Notes
+- 
+
+Gradient Descent, or how machines learn
+
+- When measuring how "costly" a wrong prediction is / how "accurate" a training example was, you can use a **loss function**.
+- One example of a loss function is the **Sum of Squared Errors (SSE)**. Formally defined as:
+
+$SSE = \sum\limits_{i} (y_i - \hat{y}_i)^2$
+
+::: {.callout-note title="What's great about SSE?"}
+- It is said to be appropriate when modeling regression with Gaussian noise.
+- It is not appropriate for classification or distributions with outliers (perhaps because it penalizes large errors heavily?).
+:::
+
+- Recall that **Weights** $w$ represent how strongly each input dimension influences the neuron, and the **Bias** $b$ shifts the activation threshold and acts as an offset.
+    - [3Blue1Brown](https://www.youtube.com/watch?v=IHZwWFHWa-w) says: Neurons are connected to the neurons in the previous layer. The weights are the strength of those connections, and for ReLU-like activations, the bias affects when the neuron is active/inactive.
+    - **ReLU** here refers to a Rectified Linear Unit, and it can be defined as $ReLU(a) = max(0, a)$. Basically, the sigmoid was a slow learner and hard to train, and the ReLU made things easier by making a neuron "active" ($a$) or "inactive" ($0$).
+- A network "learns" by adjusting the parameters $W$ and $b$ to minimize a cost function / loss function. 
+
+::: {.callout-note title="W vs. w"}
+$W$ and $w$ mean different things in neural networks.
+
+$W$: A weight matrix for an entire layer. If a layer has $n_{in}$ inputs and $m_{out}$ neurons, then $W \in R^{n_{in} \times m_{out}}$. Each row is the weight vector of *one neuron*, and $z = Wx + b$ is the equivalent of doing many individual dot products at once.
+
+$w$: A weight vector for a single neuron.
+
+$w = \begin{bmatrix}
+w_1 \\
+w_2 \\
+\vdots \\
+w_n
+\end{bmatrix}$
+:::
+
+Formally, **Gradient Descent** is the algorithm used to minimize a loss function $J(\theta)$ by iteratively updating parameters in the direction that reduces the loss:
+
+$\theta := \theta - \eta \nabla_{\theta} J(\theta)$
+
+- What is great about Gradient Descent is that the network can minimize this loss function by converging towards a local minimum, even when the derivative of the minimum is not 0.
+- Gradient Descent, by design, can take big "steps" towards the minimum when it determines that it is far away, and smaller steps when it determines that it is closer.
+- Think of a "step" as the derivative of the sum of squared residuals with respect to a certain parameter, multiplied by a learning rate
+- Gradient Descent stops taking steps when the "step size" is very close to 0 or if it is forced to give up (i.e., it surpasses the maximum number of steps)
+
+::: {.callout-note title="Why is it called Gradient Descent?"}
+- A **Gradient** is two or more derivatives of the same function
+- A **Gradient** gives the direction of steepest increase (from Multivariable Calculus)
+- We use this Gradient to **descend** (-C) ### to the lowest point of a loss function
+:::
+
+Gradient Descent in plain English:
+
+1. Find the derivative of the Loss Function for each parameter in it. (i.e., take the Gradient of the Loss Function).
+2. Pick random values for the parameters, and plug them into the Gradient.
+3. Calculate the step sizes, where step size == slope * learning rate
+4. Calculate the new parameters, where new parameter = old parameter - step size
+5. Repeat 3 - 4 until the step size is very small or you reach a max number of steps.
+
+```{python}
+#| context: setup
+#| echo: false
+#| include: false
+import sys
+from pathlib import Path
+
+
+def _ensure_code_on_path(marker="_quarto.yml", code_dir="code"):
+    """Add the shared code directory to sys.path when rendering notes."""
+    cwd = Path.cwd().resolve()
+    for candidate in (cwd, *cwd.parents):
+        if (candidate / marker).exists():
+            code_path = candidate / code_dir
+            if code_path.exists() and str(code_path) not in sys.path:
+                sys.path.insert(0, str(code_path))
+            return
+    raise RuntimeError(f"Could not locate {marker} above {cwd}")
+
+
+_ensure_code_on_path()
+```
+
+Personal Notes
+-
+- Gabriel Petersson said to "decide between diffusion or LLMs" when starting out with ML. It seems that modern ML has two giant "starting domains" that give you maximum learning per unit of effort. In these worlds:
+    - the abstractions are clean
+    - the tooling is mature
+    - the concepts are foundational
+    - the project ideas are endless
+    - the market impact is real
+    - the architecture teaches you almost everything else downstream
+- It is interesting because you can look at this as:
+    - **Diffusion** = generative modeling in continuous noise spaces (images, for example, are made of continuous values).
+    - **LLMs** = generative modeling in discrete token spaces (language is discrete and is generated by tokens, or integer indices in a finite vocabulary).
+- The final frontier for LLMs appears to be domain expertise and writing great evals. It seems like that's what's missing with today's frontier models - how well does it replicate something a domain expert would consider to be good? That is the competitive advantage. More to come here (would like to experiment with interviewing domain experts and writing evals with them).
+
+
+Questions I still have
+- 
+- To answer a question from yesterday, it does seem like MNNs are a version of the SNN where there is a $wx + b$ weight & bias calculation per layer, and then you do it again and again.
+
+
+Tomorrow's plan
+- 
+- I need to complete my understanding of Gradient Descent. I developed an intuition for it, but it is still basic.

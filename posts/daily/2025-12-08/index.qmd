@@ -1,0 +1,172 @@
+---
+title: "Daily Notes: 2025-12-08"
+date: 2025-12-08
+categories: [daily]
+---
+
+
+ML Notes
+- 
+Gradient Descent + Returning to Adaline
+
+#### Gradient Descent in plain English:
+
+1. Find the derivative of the Loss Function for each parameter in it. (i.e., take the Gradient of the Loss Function).
+2. Pick random values for the parameters, and plug them into the Gradient.
+3. Calculate the step sizes, where step size == slope * learning rate
+4. Calculate the new parameters, where new parameter = old parameter - step size
+5. Repeat 3 - 4 until the step size is very small or you reach a max number of steps.
+
+- When you do this over multiple weights, Gradient Descent also helps you understand which weights and connections matter *more* in a given step
+- Gradient Descent encodes the relative importance of each weight
+- Therefore, Gradient Descent is learning defined by minimizing the output of a loss function.
+
+#### Returning to Adaline, which makes full use of the loss function being differentiable...
+
+Reminder from 11/28 Notes:
+
+- Adaline uses **Gradient Descent** to differentiate from Perceptron in 2 important ways:
+    - **Linear activation**: No more thresholding the net input. Instead, Adaline keeps the raw value `net_input = wx + b` and compares that to the true **continuous** target
+    - **Cost function and update**: Adaline minimizes the **sum of squared errors (SSE)** between `net_input` and `target`. 
+        - Gradient of SSE w.r.t. weights: `(target - net_input) * x`
+        - Weight update for weights & bias: `w += eta * (target - net_input) * x`
+
+::: {.callout-note title="Why is the actual difference important?"}
+The gradient using the actual difference is important because the updates become *smoother and differentiable*. This allows you to apply *batch or stochastic gradient descent*.
+:::
+
+- Pseudocode for per-sample gradient descent loop:
+    - Compute `net_input` for each sample
+    - Calculate the error which is `target - net_input`
+    - Determine the direction and magnitude to update the weights by multiplying that error by the input vector `x` and learning rate `eta`
+    - Aggregate SSE per epoch to monitor whether it is converging
+
+::: {.callout-note title="Why is this better than Perceptron?"}
+Adaline relies on a continuous error surface, which allows it to converge when a Perceptron might oscillate 
+:::
+
+```{python}
+#| context: setup
+#| echo: false
+#| include: false
+import sys
+from pathlib import Path
+
+
+def _ensure_code_on_path(marker="_quarto.yml", code_dir="code"):
+    """Add the shared code directory to sys.path when rendering notes."""
+    cwd = Path.cwd().resolve()
+    for candidate in (cwd, *cwd.parents):
+        if (candidate / marker).exists():
+            code_path = candidate / code_dir
+            if code_path.exists() and str(code_path) not in sys.path:
+                sys.path.insert(0, str(code_path))
+            return
+    raise RuntimeError(f"Could not locate {marker} above {cwd}")
+
+
+_ensure_code_on_path()
+```
+
+Implementation
+```{python}
+from __future__ import annotations
+from mimetypes import init
+
+import numpy as np
+
+__all__ = ["AdalineGD"]
+
+class AdalineGD:
+    """ADAptive LInear NEuron classifier.
+
+    Parameters
+    --------------
+
+    eta: float. 
+        This is the learning rate (between 0.0 and 1.0)
+    n_iter: int
+        Passes over the training dataset
+    random_state: int
+        Random number generator seed for random weight generalization
+    
+    Attributes
+    ---------------
+    w_: 1D-Array
+        Weights after fitting
+    b_: Scalar
+        Bias after fitting
+    losses_: list
+        Mean Squared Error loss function values in each epoch
+    """
+    def __init__(self, eta=0.01, n_iter = 50, random_state = 1):
+        self.eta = eta
+        self.n_iter = n_iter
+        self.random_state = random_state
+
+    def net_input(self, X):
+        """Calculate net input"""
+        return np.dot(X, self.w_) + self.b_
+
+    def activation(self, X):
+        """Compute linear activation"""
+        return X
+    
+    def predict(self, X): 
+        """Return class label after unit step"""
+        return np.where(self.activation(self.net_input(X)) >= 0.5, 1, 0)
+
+    def fit(self, X, y):
+        """ Fit training data.
+
+        Parameters
+        -----------
+        X: array-like, shape = [m_examples, n_features]
+            Training vectors
+            m_examples: # of examples
+            n_features: # of features
+        
+        y: array-like, shape = [m_examples]
+            Target values
+        
+        Returns
+        -----------
+        self: object
+        """
+        rgen = np.random.RandomState(self.random_state)
+        self.w_ = rgen.normal(loc=0.0, scale=0.01, size=X.shape[1])
+        self.b_ = np.float_(0.)
+        self.losses_ = []
+
+        for i in range(self.n_iter): # for each epoch
+            net_input = self.net_input(X) 
+            output = self.activation(net_input)
+            errors = (y - output)
+            """This step is important!
+            We are calculating the gradient based on the whole training set,
+            not just evaluating each individual training example (as in the perceptron).
+            """
+            self.w_ += self.eta * 2.0 * X.T.dot(errors) / X.shape[0]
+            self.b_ += self.eta * 2.0 * errors.mean() 
+            loss = (errors**2).mean()
+            self.losses_.append(loss)
+        return self
+```
+
+Personal Notes
+-
+- 3Blue1Brown brought up an interesting point in his Neural Networks intro video that representation in terms of linear algebra is useful because of the libraries that have already been built and optimized for fast performance (`numpy`). Might seem obvious, but cool.
+- 3Blue1Brown also mentioned that Gradient Descent is a good reason why the neural network calculations (the neuron calculations involving weights & biases) should be continuous and not discrete values.
+- Remember that the neural network was never told what patterns to look for... Gradient Descent can often figure it out
+
+Questions I still have
+- 
+- It's not quite clear how the errors array contains partial derivatives?
+- I am still not 100% confident with my file structure (where I save my .py implementations and how I run it within my Quarto notes)
+
+
+Tomorrow's plan
+- 
+- Go through the Adaline implementation with GPT-5.1 Codex, line by line, until I can fully explain what each step is doing.
+
+
