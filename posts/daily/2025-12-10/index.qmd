@@ -1,20 +1,38 @@
-"""Lightweight Adaline implementation shared across Quarto notes.
+---
+title: "Daily Notes: 2025-12-10"
+date: 2025-12-10
+categories: [daily]
+---
 
-Notes from Cursor
 
-Package structure: keep shared modules under code/ml_utils/ (or subpackages) and expose public APIs via __all__/__init__.py so posts can import cleanly (from ml_utils import Foo).
-Path hygiene: tests or standalone scripts should add code/ to sys.path the same way the note helper does, so they work whether run from repo root or a subdirectory.
-Type hints & docstrings: match the style in perceptron.py—brief module docstring, class docstring, annotated signatures—to keep IntelliSense useful inside Quarto/VS Code.
-Tests with real data: put pytest-style tests in code/tests/ (mirroring modules) and cover both happy paths and failure modes; run python -m pytest code/tests or individual files before committing.
-"""
+ML Notes
+- 
+Adaline implementation
 
-from __future__ import annotations
-from mimetypes import init
+```{python}
+#| context: setup
+#| echo: false
+#| include: false
+import sys
+from pathlib import Path
 
-import numpy as np
 
-__all__ = ["AdalineGD"]
+def _ensure_code_on_path(marker="_quarto.yml", code_dir="code"):
+    """Add the shared code directory to sys.path when rendering notes."""
+    cwd = Path.cwd().resolve()
+    for candidate in (cwd, *cwd.parents):
+        if (candidate / marker).exists():
+            code_path = candidate / code_dir
+            if code_path.exists() and str(code_path) not in sys.path:
+                sys.path.insert(0, str(code_path))
+            return
+    raise RuntimeError(f"Could not locate {marker} above {cwd}")
 
+
+_ensure_code_on_path()
+```
+
+```{python}
 class AdalineGD:
     """ADAptive LInear NEuron classifier.
 
@@ -122,14 +140,20 @@ class AdalineGD:
 
             X has rows of training examples, columns of features
             errors is rows of how wrong we were per example
-            X.T is the transpose of X so that each feature lines up with the errors across example
-            X.T.dot(errors) is the dot product that combines every feature with its errors. 
-            X is (n_samples, n_features); errors is (n_samples,). Flipping X gives X.T as (n_features, n_samples).
-            Dotting (n_features, n_samples) with (n_samples,) yields (n_features,): a separate summed value for each feature.
+            X.T is the transpose of X so that each feature lines up with the 
+                errors across example
+            X.T.dot(errors) is the dot product that combines every feature with 
+                its errors. 
+            X is (n_samples, n_features); errors is (n_samples,). 
+            Flipping X gives X.T as (n_features, n_samples).
+            Dotting (n_features, n_samples) with (n_samples,) yields (n_features,):
+                a separate summed value for each feature.
             
             Recall that the loss is the mean squared error
-            Therefore, we need to divide by N (# of examples) so the summed gradient becomes an average
-            / X.shape[0] means “take the average over all examples” so we dont overreact to any single case.
+            Therefore, we need to divide by N (# of examples) so the 
+                summed gradient becomes an average
+            / X.shape[0] means “take the average over all examples” so we dont 
+                overreact to any single case.
 
             Bias update: nudge the bias by the avg error
             """
@@ -141,5 +165,20 @@ class AdalineGD:
             self.losses_.append(loss)
         return self
 
+```
+
+Personal Notes
+-
+- I think I understand the implementation line by line. This [tweet](https://x.com/GabrielPeterss4/status/1861924146336448817) by GabrielPeterss4 helped. It's worth reviewing again and again.
+
+
+Questions I still have
+- 
+- Need to be able to implement this from scratch. I wonder if I'm missing the forest for the trees here, but I do think it's important to really understand Gradient Descent forwards and backwards.
+
+
+Tomorrow's plan
+- 
+- 
 
 

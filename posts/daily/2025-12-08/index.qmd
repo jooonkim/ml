@@ -13,10 +13,11 @@ Gradient Descent + Returning to Adaline
 
 1. Find the derivative of the Loss Function for each parameter in it. (i.e., take the Gradient of the Loss Function).
 2. Pick random values for the parameters, and plug them into the Gradient.
-3. Calculate the step sizes, where step size == slope * learning rate
-4. Calculate the new parameters, where new parameter = old parameter - step size
+3. Calculate the step sizes, where step size = learning rate * Gradient
+4. Calculate the new parameters, where new parameter = old parameter - step size (the minus sign moves you downhill)
 5. Repeat 3 - 4 until the step size is very small or you reach a max number of steps.
 
+- For a single parameter, the Gradient is the slope of the loss with respect to that parameter (slope == Gradient).
 - When you do this over multiple weights, Gradient Descent also helps you understand which weights and connections matter *more* in a given step
 - Gradient Descent encodes the relative importance of each weight
 - Therefore, Gradient Descent is learning defined by minimizing the output of a loss function.
@@ -68,7 +69,7 @@ def _ensure_code_on_path(marker="_quarto.yml", code_dir="code"):
 _ensure_code_on_path()
 ```
 
-Implementation
+Implementation (annotation comes tomorrow)
 ```{python}
 from __future__ import annotations
 from mimetypes import init
@@ -157,7 +158,7 @@ Personal Notes
 -
 - 3Blue1Brown brought up an interesting point in his Neural Networks intro video that representation in terms of linear algebra is useful because of the libraries that have already been built and optimized for fast performance (`numpy`). Might seem obvious, but cool.
 - 3Blue1Brown also mentioned that Gradient Descent is a good reason why the neural network calculations (the neuron calculations involving weights & biases) should be continuous and not discrete values.
-- Remember that the neural network was never told what patterns to look for... Gradient Descent can often figure it out
+- Remember that the neural network was never told what patterns to look for... Gradient Descent can often figure it out. It's crazy how much you can do just by minimizing loss across the training data.
 
 Questions I still have
 - 

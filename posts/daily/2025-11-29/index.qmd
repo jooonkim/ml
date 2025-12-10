@@ -52,7 +52,7 @@ $\theta := \theta - \eta \nabla_{\theta} J(\theta)$
 ::: {.callout-note title="Why is it called Gradient Descent?"}
 - A **Gradient** is two or more derivatives of the same function
 - A **Gradient** gives the direction of steepest increase (from Multivariable Calculus)
-- We use this Gradient to **descend** (-C) ### to the lowest point of a loss function
+- We use this Gradient to descend in the direction of $-\nabla J(\theta)$ to reach the lowest point of the loss function.
 :::
 
 Gradient Descent in plain English:
