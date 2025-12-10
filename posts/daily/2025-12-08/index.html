@@ -218,11 +218,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Find the derivative of the Loss Function for each parameter in it. (i.e., take the Gradient of the Loss Function).</li>
 <li>Pick random values for the parameters, and plug them into the Gradient.</li>
-<li>Calculate the step sizes, where step size == slope * learning rate</li>
-<li>Calculate the new parameters, where new parameter = old parameter - step size</li>
+<li>Calculate the step sizes, where step size = learning rate * Gradient</li>
+<li>Calculate the new parameters, where new parameter = old parameter - step size (the minus sign moves you downhill)</li>
 <li>Repeat 3 - 4 until the step size is very small or you reach a max number of steps.</li>
 </ol>
 <ul>
+<li>For a single parameter, the Gradient is the slope of the loss with respect to that parameter (slope == Gradient).</li>
 <li>When you do this over multiple weights, Gradient Descent also helps you understand which weights and connections matter <em>more</em> in a given step</li>
 <li>Gradient Descent encodes the relative importance of each weight</li>
 <li>Therefore, Gradient Descent is learning defined by minimizing the output of a loss function.</li>
@@ -277,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Adaline relies on a continuous error surface, which allows it to converge when a Perceptron might oscillate</p>
 </div>
 </div>
-<p>Implementation</p>
+<p>Implementation (annotation comes tomorrow)</p>
 <div id="5d724922" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mimetypes <span class="im">import</span> init</span>
@@ -368,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>3Blue1Brown brought up an interesting point in his Neural Networks intro video that representation in terms of linear algebra is useful because of the libraries that have already been built and optimized for fast performance (<code>numpy</code>). Might seem obvious, but cool.</li>
 <li>3Blue1Brown also mentioned that Gradient Descent is a good reason why the neural network calculations (the neuron calculations involving weights &amp; biases) should be continuous and not discrete values.</li>
-<li>Remember that the neural network was never told what patterns to look for… Gradient Descent can often figure it out</li>
+<li>Remember that the neural network was never told what patterns to look for… Gradient Descent can often figure it out. It’s crazy how much you can do just by minimizing loss across the training data.</li>
 </ul>
 </section>
 <section id="questions-i-still-have" class="level2">
