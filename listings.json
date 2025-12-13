@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/daily/2025-12-13/index.html",
+      "/posts/daily/2025-12-11/index.html",
       "/posts/daily/2025-12-10/index.html",
       "/posts/daily/2025-12-08/index.html",
       "/posts/daily/2025-11-29/index.html",
@@ -23,8 +25,14 @@
     "items": []
   },
   {
+    "listing": "/posts/projects/index.html",
+    "items": []
+  },
+  {
     "listing": "/posts/daily/index.html",
     "items": [
+      "/posts/daily/2025-12-13/index.html",
+      "/posts/daily/2025-12-11/index.html",
       "/posts/daily/2025-12-10/index.html",
       "/posts/daily/2025-12-08/index.html",
       "/posts/daily/2025-11-29/index.html",
@@ -36,10 +44,6 @@
       "/posts/daily/2025-11-15/index.html",
       "/posts/daily/2025-11-14/index.html"
     ]
-  },
-  {
-    "listing": "/posts/projects/index.html",
-    "items": []
   },
   {
     "listing": "/posts/concepts/index.html",

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-12-13">
 
-<title>Joon Kim / Machine Learning Notes – ML Notes</title>
+<title>Daily Notes: 2025-12-13 – ML Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +21,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c9977d45a3686ad219da56a32de8e67a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c9977d45a3686ad219da56a32de8e67a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,65 +104,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-latest-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-latest-posts'] = new List('listing-latest-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -139,7 +115,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">ML Notes</span>
     </a>
   </div>
@@ -150,27 +126,27 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/daily/index.html"> 
+    <a class="nav-link" href="../../../posts/daily/index.html"> 
 <span class="menu-text">Daily</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/concepts/index.html"> 
+    <a class="nav-link" href="../../../posts/concepts/index.html"> 
 <span class="menu-text">Concepts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/math/index.html"> 
+    <a class="nav-link" href="../../../posts/math/index.html"> 
 <span class="menu-text">Math</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/projects/index.html"> 
+    <a class="nav-link" href="../../../posts/projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts/readings/index.html"> 
+    <a class="nav-link" href="../../../posts/readings/index.html"> 
 <span class="menu-text">Readings</span></a>
   </li>  
 </ul>
@@ -188,7 +164,7 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -196,24 +172,35 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link active" data-scroll-target="#useful-links">Useful Links</a></li>
-  <li><a href="#latest-posts" id="toc-latest-posts" class="nav-link" data-scroll-target="#latest-posts">Latest Posts</a></li>
+  <li><a href="#ml-notes" id="toc-ml-notes" class="nav-link active" data-scroll-target="#ml-notes">ML Notes</a></li>
+  <li><a href="#personal-notes" id="toc-personal-notes" class="nav-link" data-scroll-target="#personal-notes">Personal Notes</a></li>
+  <li><a href="#questions-i-still-have" id="toc-questions-i-still-have" class="nav-link" data-scroll-target="#questions-i-still-have">Questions I still have</a></li>
+  <li><a href="#tomorrows-plan" id="toc-tomorrows-plan" class="nav-link" data-scroll-target="#tomorrows-plan">Tomorrow’s plan</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Joon Kim / Machine Learning Notes</h1>
-</div>
+<h1 class="title">Daily Notes: 2025-12-13</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">daily</div>
+  </div>
+  </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 13, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -223,242 +210,166 @@ window.Quarto = {
 </header>
 
 
-<p>My collection of Machine Learning notes &amp; musings as I <a href="https://www.swyx.io/learn-in-public">learn in public</a>.</p>
-<section id="useful-links" class="level2">
-<h2 class="anchored" data-anchor-id="useful-links">Useful Links</h2>
+<section id="ml-notes" class="level2">
+<h2 class="anchored" data-anchor-id="ml-notes">ML Notes</h2>
+<p>Brief Interlude on Python</p>
 <ul>
-<li><a href="https://github.com/jooonkim/ml">GitHub Repository</a></li>
-<li><a href="https://www.joon.kim">Personal Website</a></li>
+<li>For debugging/testing, using <code>python -i</code> as in <code>python3 -i helloworld.py</code> is helpful because it runs the program and then enters the interactive shell afterwards.
+<ul>
+<li>This is helpful when I define a function and then experiment with this defined function</li>
+<li>Also helpful when I use exception handling</li>
+</ul></li>
+<li>Use <code>snake_case</code> for multiple word variable names instead of camelCase
+<ul>
+<li>Prefer lowercase</li>
+</ul></li>
+<li>Use leading <code>_</code> for “private” or internal names. This is helpful because it reduces accidental use outside a module/class. Not real access control.
+<ul>
+<li>E.g., <code>def _internal_helper</code></li>
+<li><code>from module import *</code> will skip underscored names</li>
+</ul></li>
+<li>You can add placeholders for statements to be added later with a <code>pass</code> such as below:</li>
+</ul>
+<div id="d3bb0435" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="kw">in</span> namelist:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># not evaluated yet</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># statements</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>You have to close files after opening and using them, like as follows:</li>
+</ul>
+<div id="b2aa058e" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'foo.txt'</span>,<span class="st">'r'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use f</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>You can achieve the same purpose using <code>with</code> and it automatically closes:</li>
+</ul>
+<div id="3be0e7ec" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'foo.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># automatically closes afterwards</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for line-by-line reads</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> f:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Process the line</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for reading the entire file into a strong</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> f.read()</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for writing into a file</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="st">'some text</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="exception-handling" class="level4">
+<h4 class="anchored" data-anchor-id="exception-handling">Exception Handling</h4>
+<ul>
+<li><strong>Exception Handling</strong>: This is how Python deals with things going wrong. Errors are “exceptions”</li>
+<li>Wrap risky code in <code>try</code> blocks</li>
+<li>With proper exception handling, if an error/exception occurs, control jumps to an <code>except</code> block.</li>
+<li>Without an <code>except</code> block, any runtime error can crash our script.</li>
+<li>With an <code>except</code> block:
+<ul>
+<li>Long-running programs stay alive after isolated failures</li>
+<li>Friendly error messages instead of tracebacks</li>
+<li>Differentiate between expected issues (aka user error) and bugs</li>
+</ul></li>
+<li>Importantly, the name must match the type of error you’re trying to catch (e.g., <code>ValueError</code>, <code>ZeroDivisionError</code>)</li>
+<li>Exceptions have associated values that can be passed to variables (e.g., <code>except ValueError as e</code>)</li>
+<li>Also, <code>finally</code> can be used for cleanup and for code that <em>must</em> run whether or not an exception occurs
+<ul>
+<li>Also useful for managing resources (esp.&nbsp;files)</li>
+</ul></li>
+</ul>
+<div id="7f5b2e71" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> divide(num, denom)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Can't divide by zero—please try again."</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> e: <span class="co"># can catch different kinds of exceptions, and prints the associated value</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Value error—please try again."</span>, e)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Result:"</span>, result)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    cleanup_resources()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Here’s something I wrote, which also includes an <code>f-string</code> that allows me to drop values into the string with {…}</li>
+</ul>
+<div id="51636957" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> portfolio_cost(file_name):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    total_cost <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(file_name, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> line <span class="kw">in</span> f:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            fields <span class="op">=</span> line.split()</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                number_shares <span class="op">=</span> <span class="bu">float</span>(fields[<span class="dv">1</span>])</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                purchase_price <span class="op">=</span> <span class="bu">float</span>(fields[<span class="dv">2</span>])</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                total_cost <span class="op">+=</span> number_shares <span class="op">*</span> purchase_price</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> e:</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f"Couldn't parse: </span><span class="sc">{</span>line<span class="sc">.</span>strip()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">"Reason: "</span>, e)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_cost</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="objects" class="level4">
+<h4 class="anchored" data-anchor-id="objects">Objects</h4>
+<ul>
+<li>All of the basic data types (strings, integers, lists, etc.) are Objects, therefore they involve “methods” to carry out operations</li>
+<li>You make your own Objects as follows (with their own methods):</li>
+</ul>
+<div id="ee1cafb8" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.health <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> move(<span class="va">self</span>, points):</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.health <span class="op">-=</span> points</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li><code>__init__</code> method initializes a new instance and is important for storing data attributes</li>
+<li>By convention, the method is called on <code>self</code> and <code>self</code> is defined as the first argument
+<ul>
+<li>The actual name is unimportant. Just know that the object is always passed as the first argument.</li>
+<li>Just conventional Python style to call it <code>self</code></li>
+</ul></li>
+<li><code>import module as m</code> imports a module (a namespace) that are the (global) variables and functions defined in <code>module.py</code>
+<ul>
+<li>Everything defined with global scope can be called as <code>m.method()</code></li>
+<li><code>from module import function</code> allows you to import certain functions from a module and put them into local scope. No need to use the module prefix <code>module.function()</code></li>
+<li><code>from module import *</code> allows you to import all functions. Don’t use this often in practice because it impacts readability.</li>
+</ul></li>
 </ul>
 </section>
-<section id="latest-posts" class="level2">
-<h2 class="anchored" data-anchor-id="latest-posts">Latest Posts</h2>
-<div id="listing-latest-posts" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZGFpbHk=" data-listing-date-sort="1765551600000" data-listing-file-modified-sort="1765611267214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="999">
-<div class="thumbnail"><a href="./posts/daily/2025-12-13/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-12-13/index.html" class="no-external">Daily Notes: 2025-12-13</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-12-13/index.html" class="no-external">
-Brief Interlude on Python
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-12-13/index.html" class="no-external">
-<div class="listing-date">
-Dec 13, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="ZGFpbHk=" data-listing-date-sort="1765378800000" data-listing-file-modified-sort="1765602289052" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="255">
-<div class="thumbnail"><a href="./posts/daily/2025-12-11/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-12-11/index.html" class="no-external">Daily Notes: 2025-12-11</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-12-11/index.html" class="no-external">
-Introduction to Classification (Using scikit-learn)
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-12-11/index.html" class="no-external">
-<div class="listing-date">
-Dec 11, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="ZGFpbHk=" data-listing-date-sort="1765292400000" data-listing-file-modified-sort="1765346709280" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1805">
-<div class="thumbnail"><a href="./posts/daily/2025-12-10/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-12-10/index.html" class="no-external">Daily Notes: 2025-12-10</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-12-10/index.html" class="no-external">
-Adaline implementation
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-12-10/index.html" class="no-external">
-<div class="listing-date">
-Dec 10, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="ZGFpbHk=" data-listing-date-sort="1765119600000" data-listing-file-modified-sort="1765345343749" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1393">
-<div class="thumbnail"><a href="./posts/daily/2025-12-08/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-12-08/index.html" class="no-external">Daily Notes: 2025-12-08</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-12-08/index.html" class="no-external">
-Gradient Descent + Returning to Adaline
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-12-08/index.html" class="no-external">
-<div class="listing-date">
-Dec 8, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="ZGFpbHk=" data-listing-date-sort="1764342000000" data-listing-file-modified-sort="1765341789410" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="952">
-<div class="thumbnail"><a href="./posts/daily/2025-11-29/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-29/index.html" class="no-external">Daily Notes: 2025-11-29</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-29/index.html" class="no-external">
-Gradient Descent, or how machines learn
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-29/index.html" class="no-external">
-<div class="listing-date">
-Nov 29, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="ZGFpbHk=" data-listing-date-sort="1764255600000" data-listing-file-modified-sort="1764394537373" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="667">
-<div class="thumbnail"><a href="./posts/daily/2025-11-28/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-28/index.html" class="no-external">Daily Notes: 2025-11-28</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-28/index.html" class="no-external">
-Adaline: another single-layer neural network
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-28/index.html" class="no-external">
-<div class="listing-date">
-Nov 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="ZGFpbHk=" data-listing-date-sort="1764169200000" data-listing-file-modified-sort="1764379732658" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1232">
-<div class="thumbnail"><a href="./posts/daily/2025-11-27/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/daily/2025-11-27/index_files/figure-html/iris-perceptron-output-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-27/index.html" class="no-external">Daily Notes: 2025-11-27</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-27/index.html" class="no-external">
-In which we test whether the perceptron converged and visualize the decision boundaries for this 2-D dataset.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-27/index.html" class="no-external">
-<div class="listing-date">
-Nov 27, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="ZGFpbHk=" data-listing-date-sort="1763478000000" data-listing-file-modified-sort="1763619568225" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="386">
-<div class="thumbnail"><a href="./posts/daily/2025-11-19/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/daily/2025-11-19/index_files/figure-html/cell-2-output-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-19/index.html" class="no-external">Daily Notes: 2025-11-19</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-19/index.html" class="no-external">
-Training a perceptron model on the Iris dataset
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-19/index.html" class="no-external">
-<div class="listing-date">
-Nov 19, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="ZGFpbHk=" data-listing-date-sort="1763391600000" data-listing-file-modified-sort="1763530815985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="276">
-<div class="thumbnail"><a href="./posts/daily/2025-11-18/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-18/index.html" class="no-external">Daily Notes: 2025-11-18</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-18/index.html" class="no-external">
-Explorations using open-source local models.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-18/index.html" class="no-external">
-<div class="listing-date">
-Nov 18, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="ZGFpbHk=" data-listing-date-sort="1763218800000" data-listing-file-modified-sort="1763344431094" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1680">
-<div class="thumbnail"><a href="./posts/daily/2025-11-16/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/daily/2025-11-16/index.html" class="no-external">Daily Notes: 2025-11-16</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/daily/2025-11-16/index.html" class="no-external">
-Implementing the perceptron as a simple ML classification algorithm without scikit-learn
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/daily/2025-11-16/index.html" class="no-external">
-<div class="listing-date">
-Nov 16, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-
+</section>
+<section id="personal-notes" class="level2">
+<h2 class="anchored" data-anchor-id="personal-notes">Personal Notes</h2>
+<ul>
+<li>I’m feeling a lot of anxiety to start “doing” rather than just consuming information, step by step, from a textbook. I’ve been coding more aggressively as a result.</li>
+<li>A reminder to myself on how learning via a textbook should feel:
+<ul>
+<li>like pieces of a puzzle retroactively coming together</li>
+<li>like previous experiences making far more sense in context</li>
+<li>like seeing in the light what I once grasped around for in the dark</li>
+</ul></li>
+<li>I’m trying to avoid tutorial hell by building until I get stuck, and grasping around for the necessary context as I go.</li>
+</ul>
+</section>
+<section id="questions-i-still-have" class="level2">
+<h2 class="anchored" data-anchor-id="questions-i-still-have">Questions I still have</h2>
+<ul>
+<li></li>
+</ul>
+</section>
+<section id="tomorrows-plan" class="level2">
+<h2 class="anchored" data-anchor-id="tomorrows-plan">Tomorrow’s plan</h2>
+<ul>
+<li></li>
+</ul>
 
 
 </section>
