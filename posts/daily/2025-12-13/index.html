@@ -230,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>You can add placeholders for statements to be added later with a <code>pass</code> such as below:</li>
 </ul>
-<div id="d3bb0435" class="cell" data-execution_count="2">
+<div id="10d371ac" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="kw">in</span> namelist:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># not evaluated yet</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>You have to close files after opening and using them, like as follows:</li>
 </ul>
-<div id="b2aa058e" class="cell" data-execution_count="3">
+<div id="9b7790ea" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">'foo.txt'</span>,<span class="st">'r'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use f</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>f.close()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>You can achieve the same purpose using <code>with</code> and it automatically closes:</li>
 </ul>
-<div id="3be0e7ec" class="cell" data-execution_count="4">
+<div id="e41d4f23" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'foo.txt'</span>, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># automatically closes afterwards</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -282,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Also useful for managing resources (esp.&nbsp;files)</li>
 </ul></li>
 </ul>
-<div id="7f5b2e71" class="cell" data-execution_count="5">
+<div id="f554e3e4" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> divide(num, denom)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
@@ -297,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Here’s something I wrote, which also includes an <code>f-string</code> that allows me to drop values into the string with {…}</li>
 </ul>
-<div id="51636957" class="cell" data-execution_count="6">
+<div id="bf6a4c49" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> portfolio_cost(file_name):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    total_cost <span class="op">=</span> <span class="fl">0.0</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -320,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>All of the basic data types (strings, integers, lists, etc.) are Objects, therefore they involve “methods” to carry out operations</li>
 <li>You make your own Objects as follows (with their own methods):</li>
 </ul>
-<div id="ee1cafb8" class="cell" data-execution_count="7">
+<div id="38be1650" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -344,6 +344,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>from module import *</code> allows you to import all functions. Don’t use this often in practice because it impacts readability.</li>
 </ul></li>
 </ul>
+</section>
+<section id="data-structures" class="level4">
+<h4 class="anchored" data-anchor-id="data-structures">Data Structures</h4>
+<ul>
+<li>Three options for data structures:
+<ul>
+<li>tuples</li>
+<li>dictionaries</li>
+<li>classes (user-defined)</li>
+</ul></li>
+<li><strong>Tuples</strong> are a collection of values (e.g., <code>s = (GOOG, 10, 300.20)</code>).
+<ul>
+<li>Can be used like an array (<code>quantity = s[1]</code>)</li>
+<li>Can be unpacked into separate variables (<code>name, quantity, price = s</code>).</li>
+<li>Immutable (<code>s[1] = 1</code> throws a <code>TypeError</code>)</li>
+</ul></li>
+<li><strong>Dictionaries</strong> are an unordered collection of key-value pairs (e.g., s = {‘name’: GOOG, …})
+<ul>
+<li>Use the key values to access (<code>google_price = s[price]</code>)</li>
+<li>Can be modified (<code>s[price] = 320.20</code>)</li>
+</ul></li>
+<li><strong>User-Defined Classes</strong> as defined above provide the nice clean syntax we know and love (e.g., <code>s.name</code>).</li>
+<li>Some “advanced” variants that are worth knowing:
+<ul>
+<li><strong>Slots</strong>: Saves memory</li>
+<li><strong>Dataclasses</strong>: Reduces coding</li>
+<li><strong>Named Tuples</strong>: Immutability/Tuple behavior</li>
+</ul></li>
+<li>Why are <strong>Slots</strong> so great?
+<ul>
+<li><code>__slots__</code> are useful as a <em>performance optimization</em> because Python typically creates a <code>__dict__</code> for the attributes of every instance of an object.</li>
+<li>These per-instance dictionaries allow you to add arbitary attributes at runtime, but have high memory overhead.</li>
+<li>In exchange for enumerating the attributes your instances will ever need in advance, a fixed slot layout saves the memory overhead of per-instance dictionaries.</li>
+<li>This is especially useful when you have many objects.</li>
+</ul></li>
+</ul>
+<div id="63a1baa5" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">__slots__</span>(<span class="st">'name'</span>, <span class="st">'age'</span>, <span class="st">'health'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.health <span class="op">=</span> <span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Why are <strong>Dataclasses</strong> so great?
+<ul>
+<li>It’s just easier… it helps make boilerplate-free classes.</li>
+<li>Python auto-generates helpers like <code>__init__</code></li>
+<li>You do need to annotate the types (even if it’s just <code>Any</code>)</li>
+</ul></li>
+</ul>
+<div id="93eacdc4" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    age: <span class="bu">int</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    health: <span class="bu">int</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Why are <strong>Named Tuples</strong> so great?
+<ul>
+<li><em>Dataclasses with guaranteed immutability.</em></li>
+<li>The most important feature is <strong>Immutability</strong>, which allows you to safely use them as dict keys</li>
+<li>Other features for tuples (indexing, etc.) are useful here too.</li>
+</ul></li>
+</ul>
+<div id="2413e5cf" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player(typing.NamedTuple):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    age: <span class="bu">int</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    health: <span class="bu">int</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 </section>
 <section id="personal-notes" class="level2">
