@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/daily/2025-12-21/index.html",
+      "/posts/daily/2025-12-20/index.html",
       "/posts/daily/2025-12-14/index.html",
       "/posts/daily/2025-12-13/index.html",
       "/posts/daily/2025-12-11/index.html",
@@ -32,6 +34,8 @@
   {
     "listing": "/posts/daily/index.html",
     "items": [
+      "/posts/daily/2025-12-21/index.html",
+      "/posts/daily/2025-12-20/index.html",
       "/posts/daily/2025-12-14/index.html",
       "/posts/daily/2025-12-13/index.html",
       "/posts/daily/2025-12-11/index.html",
