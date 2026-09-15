@@ -1,0 +1,114 @@
+[
+  {
+    "source": "posts/daily/2025-11-14/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "ML foundations and learning habits",
+    "sha256": "9aeeddb155b05f2225b78e3f5bf9d8dd3dbc4227fd9483753add3e293f56edec",
+    "topic": "ML foundations and learning habits"
+  },
+  {
+    "source": "posts/daily/2025-11-15/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "A mental map of ML and its mathematics",
+    "sha256": "c8a2bb7d5439e3e8de686610e27847980f826eedb83aa7c5ddd292d538fc0cfb",
+    "topic": "A mental map of ML and its mathematics"
+  },
+  {
+    "source": "posts/daily/2025-11-16/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Implementing a perceptron from scratch",
+    "sha256": "387c862e8d80d0f27755322a348019ea8a3e5a77944316ee773466b7066ee9d8",
+    "topic": "Implementing a perceptron from scratch"
+  },
+  {
+    "source": "posts/daily/2025-11-18/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Exploring local language models",
+    "sha256": "b872ebdeb5e7b0e2fc03bd9861d25551336ad71062df091f189713e2bcd966b8",
+    "topic": "Exploring local language models"
+  },
+  {
+    "source": "posts/daily/2025-11-19/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Visualizing the Iris dataset",
+    "sha256": "cf09088987c55acfaa6d7a125658f60fb8f55be700136398ec1b38875448ef4f",
+    "topic": "Visualizing the Iris dataset"
+  },
+  {
+    "source": "posts/daily/2025-11-27/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Perceptron convergence and decision boundaries",
+    "sha256": "55b2ee3ec0a702909dc0cbfff0dd5c4b0118f4050798d6cfc9d53527ce12bd3e",
+    "topic": "Perceptron convergence and decision boundaries"
+  },
+  {
+    "source": "posts/daily/2025-11-28/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Adaline and linear activation",
+    "sha256": "d23fd0f13866871ada648307cee6a3e541078a430a4a45d4bd3c5bb1c1567990",
+    "topic": "Adaline and linear activation"
+  },
+  {
+    "source": "posts/daily/2025-11-29/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Understanding gradient descent",
+    "sha256": "120adfaaf687d2adcae95687c6a638e846928cfc2c3530736c321204cd9ea5cb",
+    "topic": "Understanding gradient descent"
+  },
+  {
+    "source": "posts/daily/2025-12-08/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Gradient descent and Adaline",
+    "sha256": "b311a19bec2bba68877c8fb7109355e5286f75e2057029a3c71f61f4c87d172e",
+    "topic": "Gradient descent and Adaline"
+  },
+  {
+    "source": "posts/daily/2025-12-10/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Adaline implementation, line by line",
+    "sha256": "2f6417701d28a775164d125dd16c8f7ae9653035906eae1879d4be0d3ec60aa8",
+    "topic": "Adaline implementation, line by line"
+  },
+  {
+    "source": "posts/daily/2025-12-11/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Classification with scikit-learn",
+    "sha256": "6d282a29498862ef44a9420825be006bc1375fc633b2c5936f223b9bb9e2a9f0",
+    "topic": "Classification with scikit-learn"
+  },
+  {
+    "source": "posts/daily/2025-12-13/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Python essentials for ML",
+    "sha256": "b915d556ff6a65b760af34013e2cd7774ac729a663d3948f7da63e4f00d8f6a5",
+    "topic": "Python essentials for ML"
+  },
+  {
+    "source": "posts/daily/2025-12-14/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Planning a customer churn project",
+    "sha256": "62aeb47461c23f5ea796afe80789f6dfa4c4c79647237e0372b330dd888e72f5",
+    "topic": "Planning a customer churn project"
+  },
+  {
+    "source": "posts/daily/2025-12-20/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Bias, variance, and regularization",
+    "sha256": "5f3679cb01db11be08162bb5646b92ee566e78a0f20400a66aac96d8cf8f7e34",
+    "topic": "Bias, variance, and regularization"
+  },
+  {
+    "source": "posts/daily/2025-12-21/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Linear regression and gradient descent",
+    "sha256": "f0531a69e30aa655dc9cd8e5d6b638f46e2110c8df2da8e8e65d3fdb65301fcb",
+    "topic": "Linear regression and gradient descent"
+  },
+  {
+    "source": "posts/daily/2025-12-27/index.qmd",
+    "notebook": "ML.ipynb",
+    "title": "Logistic regression and the sigmoid function",
+    "sha256": "f49ef3e7a67da494e4dadb3557c4f3bc0a43f2b292bdfcafa941ee8a32de069e",
+    "topic": "Logistic regression and the sigmoid function"
+  }
+]

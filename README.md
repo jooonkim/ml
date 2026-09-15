@@ -1,44 +1,29 @@
-# ML Notes
+# ML learning journal
 
-One running document: **[index.qmd](index.qmd)**.
+**[Read the notebook](ML.ipynb)** · **[Open in Colab](https://colab.research.google.com/github/jooonkim/ml/blob/main/ML.ipynb)** · **[Website](https://jooonkim.github.io/ml/)**
 
-Read it at https://jooonkim.github.io/ml/.
+One notebook: **ML.ipynb**. It contains all 16 earlier entries, with explanations, equations, personal notes, references, code, and results together.
 
-## Write
+## Daily workflow
 
-Edit `index.qmd` locally or use **Edit this page** on the website.
-Put new topics near the top, below the insertion marker:
+1. Open **ML.ipynb** in Colab.
+2. Add a text cell with `## Topic` at the end. Use `### Subtopic` inside it. Dates are optional.
+3. Add explanations and code cells. Run experiments and keep useful outputs.
+4. Update **Next** near the top.
+5. Choose **File → Save a copy in GitHub**, repository `jooonkim/ml`, branch `main`, path **ML.ipynb**. Reuse this path each time.
 
-```markdown
-## Attention masks
+GitHub tracks revisions. Saving only to Drive does not update GitHub. Include outputs when saving if you want plots to appear publicly. Colab's table of contents navigates topic headings; Quarto generates website navigation from the same headings.
 
-My explanation, question, code snippet, or result.
+## Running
 
-### A small example
+The migrated examples run on CPU and use NumPy, pandas, Matplotlib, and scikit-learn, normally available in Colab. For local use, install `requirements-notebooks.txt`. Each historical executable example has its imports; run the whole notebook top to bottom to reproduce saved outputs. Illustrative snippets originally marked non-executable are Markdown code blocks, not runnable cells. Add PyTorch imports when you begin the LLM exercises.
 
-More detail when useful.
-```
+## Website
 
-- `## Topic` creates a topic and adds it to the website’s topic navigation.
-- `### Subtopic` creates a heading inside a topic.
-- No dates, categories, or per-topic metadata needed. GitHub commit history records saved revisions after you commit and push.
-- Update **Next** whenever you want a reminder of where to resume.
-- Plain code fences (for example, three backticks followed by `python`) display code. The running notebook does not execute code during publishing.
+The existing Quarto site links to the notebook on GitHub and keeps the historical pages under `posts/daily/`. It does not render or execute the new notebook. GitHub and Colab are the main reading and editing interfaces; edit **ML.ipynb** going forward.
 
-## Optional shortcut
+## Migration
 
-```sh
-./new-topic "Attention masks"
-```
+All 16 original notes are mapped in `migration-manifest.json` with original file hashes. Original prose, questions, personal notes, and source links are retained. Formatting changes convert Quarto callouts to Markdown and organize topics. Obsolete rendering setup cells were removed. Executable examples use `np.float64`, include a missing NumPy import, embed the shared perceptron class, and use the bundled Iris dataset to run without downloads. This preserves the learning record; it is not a factual review of the notes.
 
-This inserts a heading and writing placeholder at the top of the notebook. It preserves existing text and refuses duplicate topic names. With no arguments, it asks for a topic. Requires Python 3. You can always type `##` yourself instead.
-
-## Preview and publish
-
-Preview locally with `quarto preview`. Commit and push to `main` when ready; GitHub Actions renders and deploys the website automatically.
-
-One-time GitHub setup: **Settings → Pages → Build and deployment → Source → GitHub Actions**.
-
-Existing notes remain under `posts/daily/` with their original URLs, linked as **Older notes**. Other old source files remain available in the repository.
-
-Publishing does not run Python examples. Existing frozen results are reused where available; other examples display as code. Run experiments separately and paste or link results you want to keep.
+Optional local shortcut: `./new-topic "Attention"` appends a topic and blank code cell to **ML.ipynb**, refusing duplicate topics. You can simply add text/code cells in Colab instead.

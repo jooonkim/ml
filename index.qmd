@@ -1,17 +1,9 @@
 ---
-title: "Building an LLM from scratch"
-execute:
-  enabled: false
+title: "ML learning journal"
 ---
 
-My running notes as I build and learn. Rough explanations, questions, and small discoveries belong here.
+[Read the notebook on GitHub](https://github.com/jooonkim/ml/blob/main/ML.ipynb) · [Open in Colab](https://colab.research.google.com/github/jooonkim/ml/blob/main/ML.ipynb)
 
-**Next:** Pick the next small thing to build or understand.
+All my notes, explanations, code, and results live in one notebook.
 
-<!-- new-topic: insert new topics below this line -->
-
-## Starting here
-
-I’m building an LLM from scratch and keeping my notes in one place.
-
-[Older notes](posts/daily/index.qmd)
+[Original notes](posts/daily/index.qmd)

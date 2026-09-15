@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""Add a topic to the running notebook without replacing existing notes."""
-import re
-import sys
+"""Append a topic to the single learning notebook."""
+import json, sys, uuid
 from pathlib import Path
-
-notebook = Path(__file__).resolve().parent / "index.qmd"
-marker = "<!-- new-topic: insert new topics below this line -->"
-title = " ".join(sys.argv[1:]).strip() if len(sys.argv) > 1 else input("Topic: ").strip()
-title = re.sub(r"^#+\s*", "", title).strip()
+p = Path(__file__).resolve().parent / "ML.ipynb"
+title = " ".join(sys.argv[1:]).strip().lstrip("#").strip() if len(sys.argv)>1 else input("Topic: ").strip()
 if not title or "\n" in title or "\r" in title:
-    sys.exit("Use a nonempty, single-line topic title.")
-text = notebook.read_text()
-if text.count(marker) != 1:
-    sys.exit("Could not find the unique topic insertion marker; no changes made.")
-heading = "## " + title
-if heading in text.splitlines():
-    sys.exit("That topic already exists. Edit its existing section in index.qmd.")
-notebook.write_text(text.replace(marker, marker + "\n\n" + heading + "\n\nWrite here.", 1))
-print(f"Added '{title}' near the top of {notebook}")
+    sys.exit("Use a nonempty single-line title.")
+nb=json.loads(p.read_text())
+heading="## "+title
+for c in nb["cells"]:
+    source=c["source"] if isinstance(c["source"],str) else "".join(c["source"])
+    if heading in source.splitlines():
+        sys.exit("That topic already exists; edit its section instead.")
+nb["cells"].extend([
+    dict(cell_type="markdown",metadata={},id=uuid.uuid4().hex[:12],source=heading+"\n\n"),
+    dict(cell_type="code",metadata={},id=uuid.uuid4().hex[:12],source="",execution_count=None,outputs=[])
+])
+p.write_text(json.dumps(nb,indent=1,ensure_ascii=False)+"\n")
+print("Added topic: "+title)
