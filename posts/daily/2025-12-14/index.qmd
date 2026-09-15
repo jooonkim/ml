@@ -1,0 +1,98 @@
+---
+title: "Daily Notes: 2025-12-14"
+date: 2025-12-14
+categories: [daily]
+---
+
+
+ML Notes
+- 
+Project-Based Learning (Sabbatical Day 1)
+
+#### Data Preparation
+- Before any task, it's important to prepare the data by understanding the columns, understand the target definition, and define safe and consistent `train/val/test` splits.
+- Questions you should be asking: What columns are categorical vs. numeric? What are the names of any important columns? Are there any missing values that need imputation?
+- Also great to run `df.head()` and `df.info()` and histograms/bar charts.
+- In our case, `df['Churn'].value_counts()` is great to understand the raw counts of each label. How many churners are there? How rare is it?
+    - This can also help stratify your train/val/test splits so each set preserves the ratio (no accidental “easy” test set).
+
+- We're using a helper function for `load_data`. Why? *It's important to be consistent about preprocessing.*
+    - Stratifying into train/val/test is consistent for each experiment. 
+    - You can document the **random seed**, i.e., the number provided to a random number generator so that the rows are shuffled the same way.
+- The goal is to be consistent about shuffling and splitting the data!
+
+```{python}
+#| eval: false
+
+"""Data loading utilities: fetch OpenML dataset and split into train/val/test."""
+from typing import Tuple
+from sklearn.datasets import fetch_openml
+
+def load_data(dataset_id: str, test_size: float = 0.2, val_size: float = 0.1, random_state: int = 42) -> Tuple[object, object, object, object]:
+    """Fetch dataset via OpenML, then return (X_train, X_val, X_test, y variants).
+
+    Placeholder: use sklearn.datasets.fetch_openml, then train/val/test split.
+    Over-explain steps when implemented so future readers learn why each choice matters.
+    """
+    # Download the raw table from OpenML to understand the dataset
+    churn_data = fetch_openml(data_id="45568")
+
+```
+
+#### Python Notes
+- Putting reusable logic code under `src/` (short for "source") is conventional for keeping the project tidy
+- The reusable functions, models, training data is all within `src/` and reports, implementation, etc. are separate.
+- Python also treats `src/` as the source root, so relative imports stay clean.
+
+Personal Notes
+-
+- Today is Day 1 of my one week sabbatical, a sprint to cover as much ML mastery as possible by the end of the week.
+- To approach this from a project-based learning perspective, I chose to create the following [project](https://github.com/jooonkim/churn-ml)
+- Need to understand **trees, kNN, ensembles, SVMs/kernels, theory/VC, randomized optimization, information theory, Bayesian learning, clustering/EM, ICA/manifold learning, RL**.
+- Therefore, I chose a project that is not just following along with Andrej Karpathy's "Zero to Hero" and more of a "classical" ML problem.
+    - I will do an LLM-focused project as a 2-day "attention from scratch" mini-lab at the end.
+    - LLM-focused project: Great for creating a deep intuition for gradients, cross-entropy, batching, etc.
+- I'll also get in the habit of writing reports. For each experiment, write a 2–3 sentence “hypothesis → result → takeaway”.
+
+#### Project Goals
+- Compare multiple supervised algorithms: decision trees, kNN, ensembles, SVMs/kernels, neural nets. 
+- Do optimization & uncertainty in a practical way: randomized search / hyperparameter tuning, thinking about inductive bias + generalization, and even “deconstructing AdamW” concepts via controlled experiments. 
+- Do unsupervised: clustering + EM/GMM intuition, feature selection/transformation (ICA, manifold learning). 
+- Use the exact tooling expectations: sklearn pipelines/CV/calibration + PyTorch MLP.
+
+#### Project scope
+- I chose a **tabular churn analysis** task: using ML models to predict customer churn using structured datasets.
+- Using the `telco-customer-churn` [dataset](https://www.openml.org/search?type=data&status=active&id=45568).
+
+##### Deliverables
+1) **sklearn baselines (fast, high learning ROI)**: Run and compare:
+- Logistic Regression (strong baseline)
+- Decision Tree
+- Random Forest / Gradient Boosting
+- SVM (RBF or linear)
+- kNN
+All using the same Pipeline(preprocess → model) and Stratified CV.
+
+Metrics to report
+
+- ROC-AUC + PR-AUC (PR-AUC is important if churn is imbalanced)
+- F1 (macro or positive-class)
+- Confusion matrix
+- Calibration curve (optional but great)
+
+2) **PyTorch model (beginner-friendly)**: Train a small MLP for churn:
+- Option A (simplest): reuse the sklearn preprocessing output (one-hot + scaled) and feed that into an MLP.
+- Option B (more “deep learning”): learn embeddings for categorical columns + concat with scaled numeric features.
+Either way, you’ll learn the “real” deep learning loop: batching, loss, optimizer, early stopping.
+
+#### Summary: Scope and Learning Plan
+- **Dataset:** Telco Customer Churn (`openml id=45568`), tabular, binary target.
+- **Primary goal:** Learn ML by comparing diverse models, not just finishing quickly.
+- **Baselines (sklearn, all via Pipeline + Stratified CV):** Logistic Regression, Decision Tree, Random Forest/Gradient Boosting, SVM (RBF or linear), kNN. Report ROC-AUC, PR-AUC, F1 (positive class), confusion matrix, and optionally calibration curves.
+- **Hyperparameter tuning:** Small, educational `RandomizedSearchCV` grids to see variance and inductive bias effects. Log mean/std CV scores and settings.
+- **PyTorch MLP:** Start with preprocessed tabular features (one-hot + scaled). Train a small MLP with batching, optimizer choice (SGD vs Adam/AdamW), early stopping. Later, try embeddings for categorical features.
+- **Unsupervised explorations:** Clustering (k-means, GMM/EM) to inspect churn by cluster; dimensionality reductions (PCA/ICA; t-SNE/UMAP for visualization); feature importance/selection (tree/permutation-based).
+- **Reporting habit:** For each experiment, write a short entry in `report/report.md` (hypothesis → setup → metrics → takeaway) and save plots to `report/figures/` (ROC/PR curves, confusion matrices, calibration, learning curves).
+- **Data discipline:** Use consistent train/val/test splits (stratified), avoid leakage, and keep preprocessing inside the pipeline so CV/test use the exact same transforms.
+
+

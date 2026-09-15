@@ -1,0 +1,66 @@
+---
+title: "Daily Notes: 2025-12-11"
+date: 2025-12-11
+categories: [daily]
+---
+
+
+ML Notes
+- 
+Introduction to Classification (Using scikit-learn)
+
+- Given the "no free lunch theorem," it is always recommended to try a handful of different learning algorithms to choose the best for a particular problem.
+- Factors include:
+    - The amount of training examples or features
+    - The amount of noise in the dataset
+    - Whether the classes are linearly separable
+
+#### 5 main steps involved in training a supervised ML algorithm
+1. Selecting features + collecting (labeled) training examples.
+2. Choosing a performance metric.
+3. Choosing a learning algorithm + training a model.
+4. Evaluating the performance based on the performance metric.
+5. Changing the settings of the algorithm + tuning the model. (Adjusting hyperparameters like learning rate, # of epochs, etc.)
+
+
+
+- 
+
+```{python}
+#| context: setup
+#| echo: false
+#| include: false
+import sys
+from pathlib import Path
+
+
+def _ensure_code_on_path(marker="_quarto.yml", code_dir="code"):
+    """Add the shared code directory to sys.path when rendering notes."""
+    cwd = Path.cwd().resolve()
+    for candidate in (cwd, *cwd.parents):
+        if (candidate / marker).exists():
+            code_path = candidate / code_dir
+            if code_path.exists() and str(code_path) not in sys.path:
+                sys.path.insert(0, str(code_path))
+            return
+    raise RuntimeError(f"Could not locate {marker} above {cwd}")
+
+
+_ensure_code_on_path()
+```
+
+Personal Notes
+-
+- 
+
+
+Questions I still have
+- 
+- 
+
+
+Tomorrow's plan
+- 
+- 
+
+
