@@ -1,38 +1,33 @@
 project:
   type: website
+  render:
+    - index.qmd
+    - 404.qmd
+    - posts/daily/**/*.qmd
 
 website:
   title: "ML Notes"
-  description: "Incremental notes on machine learning, math, and experiments."
+  site-url: https://jooonkim.github.io/ml/
+  repo-url: https://github.com/jooonkim/ml
+  repo-actions: [edit]
   navbar:
-    left:
-      - text: Home
-        href: index.qmd
-      - text: Daily
-        href: posts/daily/index.qmd
-      - text: Concepts
-        href: posts/concepts/index.qmd
-      - text: Math
-        href: posts/math/index.qmd
-      - text: Projects
-        href: posts/projects/index.qmd
-      - text: Readings
-        href: posts/readings/index.qmd
     right:
+      - text: Older notes
+        href: posts/daily/index.qmd
       - icon: github
-        href: https://github.com/<you>/<repo>
-  # site-url: https://ml.yourdomain.com
+        href: https://github.com/jooonkim/ml
 
 format:
   html:
     theme: cosmo
     toc: true
+    toc-title: Topics
+    toc-depth: 2
     code-copy: true
-    df-print: paged
     highlight-style: github
 
 execute:
-  freeze: auto
-  cache: true
+  freeze: true
+  eval: false
   echo: true
   warning: false

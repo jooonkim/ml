@@ -1,25 +1,17 @@
 ---
-title: "Joon Kim / Machine Learning Notes"
-page-layout: full
-listing:
-  id: latest-posts
-  contents: posts
-  sort: "date desc"
-  type: default
-  max-items: 10
-  exclude:
-    item-type: "section"
+title: "Building an LLM from scratch"
+execute:
+  enabled: false
 ---
 
-My collection of Machine Learning notes & musings as I [learn in public](https://www.swyx.io/learn-in-public). 
+My running notes as I build and learn. Rough explanations, questions, and small discoveries belong here.
 
-## Useful Links
+**Next:** Pick the next small thing to build or understand.
 
-- [GitHub Repository](https://github.com/jooonkim/ml)
-- [Personal Website](https://www.joon.kim)
+<!-- new-topic: insert new topics below this line -->
 
+## Starting here
 
-## Latest Posts
+I’m building an LLM from scratch and keeping my notes in one place.
 
-:::{#latest-posts}
-:::
+[Older notes](posts/daily/index.qmd)

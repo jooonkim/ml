@@ -1,216 +1,44 @@
-# Joon Kim's ML Notes
+# ML Notes
 
-A repository of ML notes as I learn in public. Hosted using [Quarto](https://quarto.org) and GitHub Pages.
+One running document: **[index.qmd](index.qmd)**.
 
-This site separates my notes into:
+Read it at https://jooonkim.github.io/ml/.
 
-```daily/``` — daily learning logs
+## Write
 
-```concepts/``` — polished concept explainers
+Edit `index.qmd` locally or use **Edit this page** on the website.
+Put new topics near the top, below the insertion marker:
 
-```math/``` — derivations and math notes
-
-```projects/``` — experiments, notebooks, demos
-
-```readings/``` — book & paper notes
-
-Everything is organized into standalone “posts” (which I believe is Quarto's recommended best practices).
-
-## Quick Start
-0) Install [Quarto](https://quarto.org/docs/get-started)
-1) Preview locally
-```bash 
-quarto preview
-```
-2) Initialize git and push to GitHub
-```bash
-git init
-git add .
-git commit -m "init: structured ml notes"
-git branch -M main
-git remote add origin https://github.com/<you>/<repo>.git
-git push -u origin main
-```
-3) Publish to GitHub Pages (creates gh-pages branch)
-```bash
-quarto publish gh-pages
-```
-The live site will be served from the ```gh-pages``` branch, automatically updated whenever you run quarto publish.
-
-## Simple Workflow for Daily Notes
-
-This project includes a helper script called ```new-daily``` that automatically creates a daily ML post in the correct folder structure and inserts a template for consistent note-taking.
-
-One-time setup
-```bash
-chmod +x new-daily
-```
-
-Usage
-```bash
-./new-daily
-```
-
-This generates:
-```bash
-posts/daily/YYYY-MM-DD/index.qmd
-```
-
-With frontmatter:
-```yaml
----
-title: "Daily Notes: YYYY-MM-DD"
-date: YYYY-MM-DD
-categories: [daily]
----
-```
-
-And a template body:
 ```markdown
-## Notes
--
+## Attention masks
 
-## Questions I still have
--
+My explanation, question, code snippet, or result.
 
-## Tomorrow's plan
--
+### A small example
+
+More detail when useful.
 ```
 
-You can then edit the file normally.
+- `## Topic` creates a topic and adds it to the website’s topic navigation.
+- `### Subtopic` creates a heading inside a topic.
+- No dates, categories, or per-topic metadata needed. GitHub commit history records saved revisions after you commit and push.
+- Update **Next** whenever you want a reminder of where to resume.
+- Plain code fences (for example, three backticks followed by `python`) display code. The running notebook does not execute code during publishing.
 
-### How it works
+## Optional shortcut
 
-- Determines today’s date using date ```+%Y-%m-%d```
-- Creates the folder ```posts/daily/YYYY-MM-DD/```
-- Writes an ```index.qmd``` file with the appropriate metadata + sections
-- Compatible with Quarto 1.8+
-
-If desired, this script can be extended to accept manual dates, open VS Code automatically, or auto-commit + auto-publish.
-
-## Creating New Notes (Quarto 1.8+)
-
-Posts are created by simply making a folder and adding an ```index.qmd```.
-
-This approach is simple, future-proof, and fully compatible with Quarto’s listing system.
-
-### 📝 Concept Explainer
-
-Example: “Softmax Intuition”
-```bash
-mkdir -p posts/concepts/softmax-intuition
-nano posts/concepts/softmax-intuition/index.qmd
+```sh
+./new-topic "Attention masks"
 ```
 
-Frontmatter:
-```yaml
----
-title: "Softmax Intuition"
-date: YYYY-MM-DD
-categories: [concepts]
----
-```
-Write the explainer below the YAML block.
+This inserts a heading and writing placeholder at the top of the notebook. It preserves existing text and refuses duplicate topic names. With no arguments, it asks for a topic. Requires Python 3. You can always type `##` yourself instead.
 
-### 🧮 Math Derivation
-```bash
-mkdir -p posts/math/relu-backprop
-nano posts/math/relu-backprop/index.qmd
-```
+## Preview and publish
 
-Frontmatter:
-```yaml
----
-title: "Backprop Through ReLU"
-date: YYYY-MM-DD
-categories: [math]
----
-```
-### 🧪 Project Notebook
+Preview locally with `quarto preview`. Commit and push to `main` when ready; GitHub Actions renders and deploys the website automatically.
 
-Projects live under:
-```bash
-posts/projects/<project-name>/
-```
+One-time GitHub setup: **Settings → Pages → Build and deployment → Source → GitHub Actions**.
 
-Add notebooks directly:
-```bash
-mkdir -p posts/projects/mnist-from-scratch
-cp mnist.ipynb posts/projects/mnist-from-scratch/
-```
+Existing notes remain under `posts/daily/` with their original URLs, linked as **Older notes**. Other old source files remain available in the repository.
 
-Quarto automatically renders ```.ipynb``` files when publishing.
-
-### 📚 Reading Notes
-```bash
-mkdir -p posts/readings/murphy-ch3
-nano posts/readings/murphy-ch3/index.qmd
-```
-Frontmatter:
-```yaml
----
-title: "Murphy — Chapter 3 Notes"
-date: YYYY-MM-DD
-categories: [readings]
----
-```
-
-Reference citations via the included ```references.bib```.
-
-## Understanding main vs. gh-pages
-
-- ```main``` branch: Contains all source files (.qmd, .ipynb, posts, images, config). This is where editing happens.
-
-- ```gh-pages``` branch: Contains the rendered HTML website. Do NOT edit this branch manually—Quarto overwrites it on each publish.
-
-Publishing workflow:
-```bash
-quarto publish gh-pages
-```
-
-This:
-
-1. Builds the site → ```_site/```
-2. Writes it into ```gh-pages``` branch
-3. Pushes it to GitHub Pages
-
-Your live site updates instantly.
-
-## Project Structure Overview
-```pgsql
-ml/
-├── _quarto.yml
-├── index.qmd
-├── references.bib
-└── posts/
-    ├── daily/
-    │   └── YYYY-MM-DD/
-    │       └── index.qmd
-    ├── concepts/
-    │   └── <topic>/index.qmd
-    ├── math/
-    │   └── <topic>/index.qmd
-    ├── projects/
-    │   └── <project>/index.qmd or *.ipynb
-    └── readings/
-        └── <source>/index.qmd
-```
-
-
-Quarto automatically lists posts on the homepage and within category pages.
-
-## Personal Reminders...
-
-Always edit ```main``` branch, never ```gh-pages```
-
-Use ```./new-daily``` every day when taking notes
-
-Publish updates with:
-```bash
-quarto publish gh-pages
-```
-
-Preview locally first:
-```bash
-quarto preview
-```
+Publishing does not run Python examples. Existing frozen results are reused where available; other examples display as code. Run experiments separately and paste or link results you want to keep.

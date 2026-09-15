@@ -1,11 +1,11 @@
 ---
-title: "Daily ML Logs"
+title: "Older notes"
 item-type: section
 listing:
-  contents: .
+  contents: "*/index.qmd"
   sort: "date desc"
   type: default
 page-layout: full
 ---
 
-Short, lightly edited logs of what I worked on each day.
+My earlier learning logs. New writing lives in the [running notebook](../../index.qmd).

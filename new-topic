@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+"""Add a topic to the running notebook without replacing existing notes."""
+import re
+import sys
+from pathlib import Path
+
+notebook = Path(__file__).resolve().parent / "index.qmd"
+marker = "<!-- new-topic: insert new topics below this line -->"
+title = " ".join(sys.argv[1:]).strip() if len(sys.argv) > 1 else input("Topic: ").strip()
+title = re.sub(r"^#+\s*", "", title).strip()
+if not title or "\n" in title or "\r" in title:
+    sys.exit("Use a nonempty, single-line topic title.")
+text = notebook.read_text()
+if text.count(marker) != 1:
+    sys.exit("Could not find the unique topic insertion marker; no changes made.")
+heading = "## " + title
+if heading in text.splitlines():
+    sys.exit("That topic already exists. Edit its existing section in index.qmd.")
+notebook.write_text(text.replace(marker, marker + "\n\n" + heading + "\n\nWrite here.", 1))
+print(f"Added '{title}' near the top of {notebook}")
