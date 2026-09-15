@@ -1,9 +1,111 @@
 ---
-title: "ML learning journal"
+title: "Building an LLM from scratch"
+subtitle: "A public machine learning journal by Joon Kim"
+page-layout: full
 ---
 
-[Read the notebook on GitHub](https://github.com/jooonkim/ml/blob/main/ML.ipynb) · [Open in Colab](https://colab.research.google.com/github/jooonkim/ml/blob/main/ML.ipynb)
+I’m learning machine learning by implementing ideas, running experiments, and building a small language model from the ground up.
 
-All my notes, explanations, code, and results live in one notebook.
+::: {.callout-important}
+## Current focus
 
-[Original notes](posts/daily/index.qmd)
+**Tokenization and data loading** — getting from raw text to the batches a language model can learn from.
+:::
+
+::: {.columns}
+::: {.column width="33%"}
+### Read the journal
+
+My explanations, questions, mistakes, and takeaways in one notebook.
+
+[Read ML.ipynb on GitHub](https://github.com/jooonkim/ml/blob/main/ML.ipynb){.btn .btn-primary}
+:::
+
+::: {.column width="33%"}
+### Run the code
+
+Open the same notebook in Colab and run the experiments in a browser.
+
+[Open ML.ipynb in Colab](https://colab.research.google.com/github/jooonkim/ml/blob/main/ML.ipynb){.btn .btn-primary}
+:::
+
+::: {.column width="33%"}
+### Follow the course
+
+Use Raschka’s book as the guided path behind my notes.
+
+[Browse chapter notebooks](https://github.com/jooonkim/ml/tree/main/notebooks){.btn .btn-primary}
+:::
+:::
+
+## Where I am in the build
+
+`Foundations` → **`Tokenization`** → `Attention` → `GPT model` → `Pretraining` → `Fine-tuning` → `Evaluation`
+
+The bold step is the one I’m working through now. Each step will eventually link to a journal section, an experiment, and a runnable Colab notebook.
+
+## Latest journal topics
+
+The notebook is the complete record. These are the threads I’m carrying forward:
+
+- **Understanding gradient descent** — how loss becomes a parameter update.
+- **Implementing a perceptron and Adaline** — small models that make the learning loop visible.
+- **Tokenization and data loading** — the next bridge from classical ML to language models.
+
+[Continue through the journal](https://github.com/jooonkim/ml/blob/main/ML.ipynb)
+
+## My experiments
+
+Small implementations and projects that make the ideas concrete:
+
+| Project | What it teaches | Where to start |
+|---|---|---|
+| Perceptron from scratch | Weights, bias, prediction, and mistakes | [`code/ml_utils/perceptron.py`](https://github.com/jooonkim/ml/blob/main/code/ml_utils/perceptron.py) |
+| Adaline and gradient descent | Loss, gradients, and batch updates | [Journal section](https://github.com/jooonkim/ml/blob/main/ML.ipynb) |
+| Iris classification | A complete small classification experiment | [Journal section](https://github.com/jooonkim/ml/blob/main/ML.ipynb) |
+| Customer churn project | Data splits, pipelines, metrics, and generalization | [Historical notes](https://github.com/jooonkim/ml/blob/main/ML.ipynb) |
+
+## My chapter notebooks
+
+These are the notebooks I actively study. They follow Raschka’s chapter headings while leaving the important implementation for me to type. The complete upstream course is linked from each notebook; it is not copied into this repository.
+
+- [Chapter 1 — Understanding Large Language Models](https://colab.research.google.com/github/jooonkim/ml/blob/main/notebooks/chapter-01.ipynb)
+- [Chapter 2 — Working with Text Data](https://colab.research.google.com/github/jooonkim/ml/blob/main/notebooks/chapter-02.ipynb)
+- [Chapter 3 — Coding Attention Mechanisms](https://colab.research.google.com/github/jooonkim/ml/blob/main/notebooks/chapter-03.ipynb)
+- [Chapter 4 — Implementing a GPT Model](https://colab.research.google.com/github/jooonkim/ml/blob/main/notebooks/chapter-04.ipynb)
+- [Chapter 5 — Pretraining on Unlabeled Data](https://colab.research.google.com/github/jooonkim/ml/blob/main/notebooks/chapter-05.ipynb)
+- [Chapter 6 — Finetuning for Text Classification](https://colab.research.google.com/github/jooonkim/ml/blob/main/notebooks/chapter-06.ipynb)
+- [Chapter 7 — Finetuning to Follow Instructions](https://colab.research.google.com/github/jooonkim/ml/blob/main/notebooks/chapter-07.ipynb)
+
+## How I work
+
+**Read → implement in Colab → record what I learned → commit to GitHub.**
+
+The website is the map. GitHub stores the notebooks and history. Colab is where the code runs.
+
+## A simple daily study loop
+
+I follow [Sebastian Raschka’s framework for getting the most from a technical book](https://sebastianraschka.com/blog/2025/reading-books.html):
+
+1. **Read offline for 20 minutes** to understand the big picture.
+2. **Read again with code** in Colab; type and run the important parts.
+3. **Attempt one exercise** before checking the solution.
+4. **Review what is still unclear** and write the useful explanation in [ML.ipynb](https://github.com/jooonkim/ml/blob/main/ML.ipynb).
+5. **Use the idea** by changing one thing or applying it to a small experiment.
+
+Every session ends with three lines in the notebook: **what I learned**, **what is still unclear**, and **what I will try next**.
+
+```text
+[ ] Read without coding
+[ ] Run one small code section
+[ ] Try one exercise or change
+[ ] Write the takeaway and next step
+[ ] Save to GitHub
+```
+
+## Explore
+
+- [My chapter notebooks](notebooks/chapter-01.ipynb)
+- [All chapter notebooks on GitHub](https://github.com/jooonkim/ml/tree/main/notebooks)
+- [GitHub repository](https://github.com/jooonkim/ml)
+- [Raschka’s original repository](https://github.com/rasbt/LLMs-from-scratch)

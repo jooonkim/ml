@@ -3,7 +3,6 @@ project:
   render:
     - index.qmd
     - 404.qmd
-    - posts/daily/**/*.qmd
 
 website:
   title: "ML Notes"
@@ -11,9 +10,12 @@ website:
   repo-url: https://github.com/jooonkim/ml
   repo-actions: [edit]
   navbar:
+    left:
+      - text: Journal
+        href: index.qmd
+      - text: Chapter notebooks
+        href: https://github.com/jooonkim/ml/tree/main/notebooks
     right:
-      - text: Older notes
-        href: posts/daily/index.qmd
       - icon: github
         href: https://github.com/jooonkim/ml
 
