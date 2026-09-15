@@ -1,61 +1,52 @@
-# ML learning journal
+# Joon’s machine learning notes
 
-**[Read the journal](ML.ipynb)** · **[Open the first chapter in Colab](https://colab.research.google.com/github/jooonkim/ml/blob/main/notebooks/chapter-01.ipynb)** · **[Website](https://jooonkim.github.io/ml/)**
+This repository has two parts:
 
-`ML.ipynb` preserves my original 16 ML notes. The seven notebooks in `notebooks/` are the active chapter-by-chapter learning path.
+- [`foundational-notes.ipynb`](foundational-notes.ipynb) — general machine learning concepts and my original notes.
+- [`notebooks/`](notebooks/) — my active companion notebooks for Raschka’s LLM chapters.
 
-## Daily workflow
+The companion notebooks follow the book’s headings, but the important code is left for me to type. Raschka’s original notebooks are linked inside each one.
 
-1. Open the current `notebooks/chapter-XX.ipynb` in Colab.
-2. Read the matching Raschka chapter offline before coding.
-3. Write the explanation and type the important code into the TODO cells.
-4. Attempt an exercise, change one thing, and record the result in that chapter notebook.
-5. Save the notebook to GitHub at the same path.
+## The daily workflow
 
-GitHub tracks revisions. Saving only to Drive does not update GitHub. Include outputs when saving if you want plots to appear publicly. Colab's table of contents navigates topic headings; Quarto generates website navigation from the same headings.
+Work on one small section at a time.
 
-## Raschka’s study method, made daily
-
-This project follows [Sebastian Raschka's five-stage approach to technical books](https://sebastianraschka.com/blog/2025/reading-books.html). For each chapter or small topic, use this loop:
-
-1. **First read — 20 minutes, offline.** Read for the big picture. Do not code or search for answers yet. Mark confusing ideas.
-2. **Second read — code.** Open the matching chapter notebook in Colab. Type and run the important code yourself. If results differ, check seeds, package versions, hardware, and the upstream repository.
-3. **Exercise.** Attempt at least one exercise before looking at the solution.
-4. **Review.** Return to your highlights. Look up only the questions that still matter, then write the useful explanation in the chapter notebook.
-5. **Use it.** Change one thing or apply the idea to a small experiment. Record the result and choose the next step.
-
-### The everyday checklist
+1. Open the current chapter notebook in Colab.
+2. Read that section of the book for 20 minutes without coding.
+3. Return to the notebook and write what the section is doing in your own words.
+4. Type the important code into the TODO cell and run it.
+5. Attempt one exercise or change one thing.
+6. Write three short lines at the bottom:
 
 ```text
-[ ] Read for 20 minutes without coding
-[ ] Re-type and run one small code section
-[ ] Change one variable or try one exercise
-[ ] Write: what I learned / what is unclear / what I will try next
-[ ] Save the chapter notebook to GitHub
+What I learned:
+What is still unclear:
+What I will try next:
 ```
 
-One checkbox session is enough. A chapter may take several sessions: first read, code, exercises, review, then project. Easy chapters can be skimmed; difficult chapters deserve more than one pass.
+7. Save the notebook back to GitHub at the same path.
 
-## Running
+That is a complete study session. A chapter can take several sessions.
 
-The chapter notebooks are deliberately unfinished: their TODO cells are where I type the important code. Colab provides the working environment; I add packages only when a chapter needs them.
+## Where to start
 
-## My chapter notebooks
+Chapter 1 is reading-only, so the active path begins with Chapter 2.
 
-The main learning path is now seven small companion notebooks. They follow Raschka’s chapter headings, but they do not copy the implementation. The important code cells are TODO prompts so I have to type, run, and understand the code myself.
-
-| Chapter | Notebook |
+| Notebook | Topic |
 |---|---|
-| 1. Understanding Large Language Models | [chapter-01.ipynb](notebooks/chapter-01.ipynb) |
-| 2. Working with Text Data | [chapter-02.ipynb](notebooks/chapter-02.ipynb) |
-| 3. Coding Attention Mechanisms | [chapter-03.ipynb](notebooks/chapter-03.ipynb) |
-| 4. Implementing a GPT Model | [chapter-04.ipynb](notebooks/chapter-04.ipynb) |
-| 5. Pretraining on Unlabeled Data | [chapter-05.ipynb](notebooks/chapter-05.ipynb) |
-| 6. Finetuning for Text Classification | [chapter-06.ipynb](notebooks/chapter-06.ipynb) |
-| 7. Finetuning to Follow Instructions | [chapter-07.ipynb](notebooks/chapter-07.ipynb) |
+| [Chapter 2](notebooks/chapter-02.ipynb) | Working with Text Data |
+| [Chapter 3](notebooks/chapter-03.ipynb) | Coding Attention Mechanisms |
+| [Chapter 4](notebooks/chapter-04.ipynb) | Implementing a GPT Model |
+| [Chapter 5](notebooks/chapter-05.ipynb) | Pretraining on Unlabeled Data |
+| [Chapter 6](notebooks/chapter-06.ipynb) | Fine-tuning for Text Classification |
+| [Chapter 7](notebooks/chapter-07.ipynb) | Fine-tuning to Follow Instructions |
 
-The full upstream course remains available at [Raschka’s repository](https://github.com/rasbt/LLMs-from-scratch), including bonus notebooks and solutions. Use the source notebook for comparison only after attempting the TODO cell yourself.
+## Opening a notebook
 
-## Website
+Use the **Open in Colab** link inside each notebook. When you finish a session, choose **File → Save a copy in GitHub**, select `jooonkim/ml`, and save over the same notebook path.
 
-The site is a small landing page for the journal and chapter notebooks. GitHub and Colab are the main reading and editing interfaces.
+The website is a simple map of the notebooks. GitHub stores the files and history. Colab is where the code runs.
+
+## Source
+
+The chapter structure follows [Sebastian Raschka’s LLMs-from-scratch book and repository](https://github.com/rasbt/LLMs-from-scratch). The reading workflow is based on [his technical-book recommendations](https://sebastianraschka.com/blog/2025/reading-books.html).
